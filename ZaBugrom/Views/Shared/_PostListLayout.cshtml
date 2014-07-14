@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="filter-div">
+    <p>
+        Страны:
+    </p>
+    <p>
+        <select name="country-filter" id="country-filter">
+            <option>Все страны</option>
+            <option>Мои страны</option>
+        </select>
+    </p>
+    <p>
+        Отсортировать по:
+    </p>
+    <p>
+        <select name="sort-filter" id="sort-filter">
+            <option>Времени</option>
+            <option>Рейтингу</option>
+        </select>
+    </p>
+</div>
+
+@RenderBody()
+
+@Scripts.Render("~/bundles/Shared/_PostListLayout")

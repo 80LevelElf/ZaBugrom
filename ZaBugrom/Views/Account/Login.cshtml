@@ -1,0 +1,19 @@
+﻿@model Models.InputModels.LoginInputModel
+
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="middle-form" action="@Url.Action("Login")" method="POST">
+    @{
+        <p>@Html.ValidationSummary()</p>
+        <p>Логин</p>
+        <p> @Html.EditorFor(i => i.Login)</p>
+        <p>Пароль</p>
+        <p> @Html.EditorFor(i => i.Password)</p>
+        <div data-create="dialog-buttons"></div>
+        <div data-create="separate-line"></div>
+        <p>Так же вы можете <a href="@Url.Action("Register")">зарегистрироваться</a>, если до сих пор этого не сделали.</p>
+    }
+</form>

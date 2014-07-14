@@ -1,0 +1,285 @@
+﻿body {
+    font-size: 16px;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    margin: 0;
+    min-width: 1000px;
+}
+
+header, footer, nav, section {
+    display: block;
+    min-width: 1000px;
+}
+
+div.content {
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 210px; /*200 + 10(just for style)*/
+}
+
+*:focus {
+    outline: 0; /*remove browser selection*/
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Basic elements
+-----------------------------------------------------------*/
+a {
+    text-decoration:none;
+    color: #00bfff;
+    cursor: pointer;
+}
+
+a:hover {
+    border-bottom: 1px solid #00bfff;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    background-color: white;
+    border: 1px solid #aaa;
+    min-height: 23px;
+    padding-left: 10px;
+    box-sizing: border-box; /*To not increase element over 100%*/
+}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover,
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    outline: 1px solid #00bfff;
+}
+
+/* Fix JQuiery UI
+-----------------------------------------------------------*/
+.ui-widget
+{
+    font-size: 80% !important;
+}
+
+/* For additional elements(via element create)
+-----------------------------------------------------------*/
+div.dialog-buttons-div {
+    text-align: right;
+}
+
+div.separate-line {
+    width: 100%;
+    border-bottom: 1px solid black;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Pages-specific
+-----------------------------------------------------------*/
+form.middle-form 
+{
+    margin-top: 20px;
+    margin-left: 38%;
+    margin-right: 38%;
+}
+
+form.middle-form p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+form.middle-form input[type="text"], form.middle-form input[type="password"], form.middle-form input[type="email"] {
+    width: 100%;
+}
+
+/* Header
+-----------------------------------------------------------*/
+header {
+    background: url("images/header/1.jpg") no-repeat;
+    background-size: cover;
+    background-position: 0 -200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+header label {
+    padding: 4px;
+}
+
+header .header-opacity 
+{
+    background-color: white;
+    opacity: 0.85;
+}
+
+header label.city-name {
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+header div.tool-bar {
+    height: 30px;
+    margin-top: 170px; /*200-30*/
+    width: 100%;
+}
+
+header div.tool-bar div.post-menu {
+    display: inline;
+    margin-left: 200px;
+}
+
+header div.tool-bar div.post-menu a{
+    display: inline;
+}
+
+header div.tool-bar div.post-menu a:hover {
+    border-bottom: 2px solid #00bfff;
+}
+
+header div.tool-bar div.user-menu {
+    display: flex;
+    float: right;
+}
+
+header div.tool-bar div.user-menu a:hover {
+    border-bottom: 0;
+}
+
+header a 
+{
+    color: black;
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    margin: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+header a.settings-button {
+    background: url("images/settings.png") no-repeat;
+}
+
+header a.settings-button:hover {
+    background: url("images/settings_hover.png") no-repeat;
+}
+
+header a.login-button 
+{
+    min-width: 20px;
+    background: url("images/login.png") no-repeat;
+}
+
+header a.login-button label 
+{
+    position: absolute;
+    right: 25px;
+    top: 170px;
+    cursor: pointer;
+}
+
+header a.login-button label:hover, header a.login-button:hover label
+{
+    color: #00bfff;
+}
+
+header a.login-button:hover {
+    background: url("images/login_hover.png") no-repeat;
+}
+
+header a.inbox-button, header a.user-button {
+    font-weight: bold;
+    background-color: #ccc;
+    text-align: center;
+    border-bottom: 0;
+    height: 22px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+header a.inbox-button {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 0;
+}
+
+header a.user-button {
+    margin-right: 0;
+    border-right: 1px solid black;
+}
+
+header a.inbox-button:hover, header a.user-button:hover 
+{
+    background-color: #888;
+    color: white;
+}
+
+/* Filter div
+-----------------------------------------------------------*/
+div#filter-div 
+{
+    margin: 10px;
+    padding: 4px;
+    position: absolute;
+    left: 0;
+    border: 1px dashed black;
+}
+
+div#filter-div p 
+{
+    margin: 5px;
+}
+
+div#filter-div select 
+{
+    width: 150px /*160-5*2*/;
+}
