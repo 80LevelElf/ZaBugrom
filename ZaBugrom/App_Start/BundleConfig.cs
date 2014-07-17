@@ -33,9 +33,10 @@ namespace ZaBugrom
             //Pages
             bundles.Add(new ScriptBundle("~/bundles/Shared/_PostListLayout").Include(
                         "~/Scripts/ZaBugrom/Shared/_PostListLayout.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/Account/Register").Include(
                         "~/Scripts/ZaBugrom/Account/Register.js"));
+            bundles.Add(new ScriptBundle("~/bundles/Account/Profile").Include(
+                        "~/Scripts/ZaBugrom/Account/Profile.js"));
 
             //---CSS
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
@@ -46,6 +47,7 @@ namespace ZaBugrom
                         "~/Content/themes/base/jquery-ui.theme.css"));
 
             bundles.Add(new StyleBundle("~/Pages/Account/Register/css").Include("~/Content/Pages/Account/Register.css"));
+            bundles.Add(new StyleBundle("~/Pages/Account/Profile/css").Include("~/Content/Pages/Account/Profile.css"));
         }
     }
 }

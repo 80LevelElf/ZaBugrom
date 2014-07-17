@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Models.InputModels
+namespace Models.InputModels.Account
 {
     public class RegistrationInputModel
     {
@@ -11,7 +11,7 @@ namespace Models.InputModels
 
         [Required]
         [DisplayName("Логин")]
-        public string Login { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

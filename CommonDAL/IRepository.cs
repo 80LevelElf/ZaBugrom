@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CommonDAL
 {
@@ -10,8 +6,12 @@ namespace CommonDAL
     {
         T GetById(int id);
         List<T> GetList(); 
-        int Create(T instance);
-        void Update(int id, T instance);
+        int Insert(T instance);
+        int Insert(IEnumerable<T> instanceList);
+        void Update(T instance);
+        void Update(IEnumerable<T> instanceList);
         void Delete(int id);
+        void Delete(T instance);
+        void Delete(IEnumerable<T> instanceList);
     }
 }

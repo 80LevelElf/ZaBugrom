@@ -1,15 +1,15 @@
-﻿@model Models.InputModels.LoginInputModel
+﻿@model Models.InputModels.Account.LoginInputModel
 
 @{
     ViewBag.Title = "Вход";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form class="middle-form" action="@Url.Action("Login")" method="POST">
+<form class="middle-size" action="@Url.Action("Login")" method="POST">
     @{
         <p>@Html.ValidationSummary()</p>
         <p>Логин</p>
-        <p> @Html.EditorFor(i => i.Login)</p>
+        <p> @Html.EditorFor(i => i.Name)</p>
         <p>Пароль</p>
         <p> @Html.EditorFor(i => i.Password)</p>
         <div data-create="dialog-buttons"></div>

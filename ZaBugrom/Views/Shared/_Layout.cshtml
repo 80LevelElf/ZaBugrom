@@ -28,7 +28,7 @@
                     @{
                         if (WebSecurity.IsAuthenticated)
                         {
-                            <a class="user-button">@WebSecurity.CurrentUserName</a>
+                            <a class="user-button" href="@Url.Action("ProfileSettings", "Account")">@WebSecurity.CurrentUserName</a>
                             <a class="inbox-button">3</a>
                         }
                     }

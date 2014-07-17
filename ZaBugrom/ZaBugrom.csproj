@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EmitMapper">
+      <HintPath>..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
@@ -149,9 +152,11 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\ElementExstensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Managers\MembershipManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +165,7 @@
     <Content Include="Content\images\login_hover.png" />
     <Content Include="Content\images\settings.png" />
     <Content Include="Content\images\settings_hover.png" />
+    <Content Include="Content\Pages\Account\Profile.css" />
     <Content Include="Content\Pages\Account\Register.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -193,7 +199,6 @@
     <Content Include="Content\themes\base\minified\jquery-ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="RecaptchaNet.ReadMe.txt" />
     <Content Include="Scripts\jquery-2.1.1-vsdoc.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -209,6 +214,7 @@
     <Content Include="Scripts\knockout-3.1.0.debug.js" />
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ZaBugrom\Account\Profile.js" />
     <Content Include="Scripts\ZaBugrom\Account\Register.js" />
     <Content Include="Scripts\ZaBugrom\ElementCreater.js" />
     <Content Include="Scripts\ZaBugrom\JQueryUIPreparer.js" />
@@ -230,7 +236,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\HeaderImages\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -246,6 +252,10 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonDAL\CommonDAL.csproj">
+      <Project>{9ECBF065-EC54-4733-B824-EC04D8A15D94}</Project>
+      <Name>CommonDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZaBugromModel\Models.csproj">
       <Project>{BBB5EAF4-B0A2-4052-8B27-EB35CB8102D6}</Project>
       <Name>Models</Name>
@@ -258,6 +268,8 @@
     <None Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_PostListLayout.cshtml" />
+    <Content Include="Views\Shared\_ProfileLayout.cshtml" />
+    <Content Include="Views\Account\ProfileSettings.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

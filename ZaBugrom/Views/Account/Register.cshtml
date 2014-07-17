@@ -1,18 +1,17 @@
-﻿@using Recaptcha.Web.Mvc
-@model Models.InputModels.RegistrationInputModel
+﻿@model Models.InputModels.Account.RegistrationInputModel
 
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form class="middle-form" action="@Url.Action("Register")" method="POST">
+<form class="middle-size" action="@Url.Action("Register")" method="POST">
     @{
         <p>@Html.ValidationSummary()</p>
         <p>Email</p>
         <p> @Html.EditorFor(i => i.Email)</p>
         <p>Логин</p>
-        <p> @Html.EditorFor(i => i.Login)</p>
+        <p> @Html.EditorFor(i => i.Name)</p>
         <p>Пароль</p>
         <p> @Html.EditorFor(i => i.Password)</p>
         <div data-create="dialog-buttons"></div>

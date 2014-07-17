@@ -1,9 +1,8 @@
 ﻿namespace Models.Data
 {
-    class HeaderImage
+    public class HeaderImageData : Data
     {
-        public int Id;
-        public string ImagePath;
+        public string FileName;
         public string Title;
         public int ShiftByX;
         public int ShiftByY;

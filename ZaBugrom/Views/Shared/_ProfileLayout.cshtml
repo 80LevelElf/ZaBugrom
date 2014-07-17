@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "_ProfileLayout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="big-size">
+    <div class="profile-menu-div">
+        <a class="selected">Сообщения</a>
+        <a>Настройки аккаунта</a>
+        <a>Настройки контента</a>
+    </div>
+
+    <div class="profile-data-div">
+        @RenderBody()
+    </div>
+</div>
+
+@Styles.Render("~/Pages/Account/Profile/css")
+@Scripts.Render("~/bundles/Account/Profile")

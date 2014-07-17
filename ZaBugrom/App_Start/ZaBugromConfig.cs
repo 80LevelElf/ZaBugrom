@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
+using CommonDAL.SqlDAL;
 using WebMatrix.WebData;
 
 namespace ZaBugrom.App_Start
@@ -11,11 +9,18 @@ namespace ZaBugrom.App_Start
         public static void Prepare()
         {
             PrepareSimpleMembershipProvider();
+            PrepareBlToolKit();
         }
 
         private static void PrepareSimpleMembershipProvider()
         {
-            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Users", "Id", "Name", true);
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserData", "Id", "Name", true);
+        }
+
+        private static void PrepareBlToolKit()
+        {
+            //Set connection string
+            AbstractSqlRepository.SetDataBaseConfig(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         }
     }
 }
