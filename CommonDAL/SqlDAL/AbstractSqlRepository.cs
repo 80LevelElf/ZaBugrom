@@ -6,17 +6,14 @@ using BLToolkit.DataAccess;
 
 namespace CommonDAL.SqlDAL
 {
-    /// <summary>
-    /// Abstract class which using to get access to DbManager
-    /// </summary>
-    public abstract class AbstractSqlRepository
+    public abstract class AbstractSqlRepository : DataAccessor
     {
+        protected static DbManager CommonDbManager { get; set; }
+
         public static void SetDataBaseConfig(string connectionString)
         {
             CommonDbManager = new DbManager(new SqlDataProvider(), connectionString);
         }
-
-        protected static DbManager CommonDbManager { get; private set; }
     }
 
     public abstract class AbstractSqlRepository<T> : AbstractSqlRepository, IRepository<T>
@@ -27,7 +24,7 @@ namespace CommonDAL.SqlDAL
         {
             if (CommonDbManager == null)
             {
-                throw new NullReferenceException("Please, initialize CommonDbManager before using of AbstractSqlRepository.");
+                throw new NullReferenceException("Please, initialize DbManager before using of AbstractSqlRepository.");
             }
 
             _sqlQuery = new SqlQuery<T>(CommonDbManager);

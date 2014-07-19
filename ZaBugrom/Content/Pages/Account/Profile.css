@@ -1,7 +1,7 @@
 ﻿div.profile-menu-div {
     float: left;
     width: 30%;
-    border: 1px dashed black;
+    border: 1px solid #aaaaaa;
     padding: 6px;
 }
 
@@ -20,8 +20,10 @@ div.profile-menu-div a.selected
 div.profile-data-div {
     float: right;
     width: 65%;
+    border: 1px solid #aaaaaa;
+    padding-bottom: 12px;
 }
 
-div.profile-data-div #tabs select {
+div.profile-data-div select {
     min-width: 150px;
 }

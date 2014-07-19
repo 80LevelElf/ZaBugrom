@@ -112,6 +112,9 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 div.dialog-buttons-div {
     text-align: right;
 }
+div.dialog-save-div {
+    text-align: right;
+}
 
 div.separate-line {
     width: 100%;
@@ -144,6 +147,17 @@ form.middle-size p, form.big-size p {
 form.middle-size input[type="text"], form.middle-size input[type="password"], form.middle-size input[type="email"],
 form.big-size    input[type="text"], form.big-size    input[type="password"], form.big-size    input[type="email"] {
     width: 100%;
+}
+
+.separate 
+{
+    font-size: 1.3em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5px;
+    width: 75%;
+    border-bottom: 1px solid #aaaaaa;
 }
 
 /* Header
@@ -281,7 +295,7 @@ div#filter-div
     padding: 4px;
     position: absolute;
     left: 0;
-    border: 1px dashed black;
+    border: 1px solid #aaaaaa;
 }
 
 div#filter-div p 

@@ -15,5 +15,13 @@ namespace Models.InputModels.Account
         public string Email { get; set; }
 
         public Gender Gender { get; set; }
+
+        [DisplayName("Старый пароль")]
+        [DataType(DataType.Password)]
+        public string OldPassword { get; set; }
+
+        [DisplayName("Новый пароль")]
+        [DataType(DataType.Password)]
+        public string NewPassword { get; set; }
     }
 }

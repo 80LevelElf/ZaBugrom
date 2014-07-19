@@ -1,5 +1,6 @@
 ﻿/*  Elements
 dialog-buttons = div with submit and cancel button
+dialog-save = div with submit-"refresh" button
 separate-line = line with 100% width to separate
 ___________________________________
   Events
@@ -15,6 +16,11 @@ $(function() {
         .addClass("dialog-buttons-div")
         .append("<input type='submit' value='OK' />")
         .append("<button data-event='browser-back'>Назад</button>");
+
+    //refresh-button
+    $("div[data-create='dialog-save']")
+        .addClass("dialog-save-div")
+        .append("<input type='submit' value='Сохранить' />");
 
     //separate-lie
     $("div[data-create='separate-line']").addClass("separate-line");

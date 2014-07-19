@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using System.Web.Security;
+using BLToolkit.Reflection;
 using CommonDAL.SqlDAL;
 using EmitMapper;
 using Models.Data;
@@ -11,7 +11,7 @@ namespace ZaBugrom.Controllers
 {
     public class AccountController : Controller
     {
-        private static UserRepository _userRepository = new UserRepository();
+        private static readonly UserRepository _userRepository = TypeAccessor<UserRepository>.CreateInstance();
 
         [HttpGet]
         public ActionResult Login()
@@ -34,7 +34,7 @@ namespace ZaBugrom.Controllers
             {
                 if (WebSecurity.IsAccountLockedOut(model.Name, 6, 3600))
                 {
-                    ModelState.AddModelError("",
+                    ModelState.AddModelError("Password",
                        "Вы пытались ввести пароль слишком много раз. Вам придеться подождать час, прежде чем попытаться войти снова.");
                 }
 
@@ -69,7 +69,18 @@ namespace ZaBugrom.Controllers
 
             if (WebSecurity.UserExists(model.Name))
             {
-                ModelState.AddModelError(string.Empty, "Пользователь с таким логином уже существует!");
+                ModelState.AddModelError("Name", "Пользователь с таким логином уже существует!");
+            }
+
+            if (_userRepository.IsEmailExist(model.Email))
+            {
+                //TODO пока не работает
+                ModelState.AddModelError("Email", "Пользователь с таким email уже существует!");
+            }
+
+            //To show new errors
+            if (!ModelState.IsValid)
+            {
                 return View(model);
             }
 
@@ -83,8 +94,7 @@ namespace ZaBugrom.Controllers
         [HttpGet]
         public ActionResult ProfileSettings()
         {
-            var id = WebSecurity.CurrentUserId;
-            var userData = _userRepository.GetById(id);
+            var userData = GetCurrentUser();
             var model = ObjectMapperManager.DefaultInstance.GetMapper<UserData, ProfileSettingsInputModel>().Map(userData);
             return View(model);
         }
@@ -93,37 +103,93 @@ namespace ZaBugrom.Controllers
         [HttpPost]
         public ActionResult ProfileSettings(ProfileSettingsInputModel model)
         {
-            var id = WebSecurity.CurrentUserId;
-            var userData = _userRepository.GetById(id);
-
-            bool isContinue = true;
-
-            //If login change
-            if (!string.Equals(userData.Name, model.Name))
+            if (!ModelState.IsValid)
             {
-                if (WebSecurity.UserExists(model.Name))
+                return View(model);
+            }
+
+            var userData = GetCurrentUser();
+
+            //We change settings only if everything is ok
+            bool isContinue = true;
+            bool isNeedToLogout = false;
+            bool isNeedToChangePassword = false;
+
+            //If password change
+            if (!string.IsNullOrEmpty(model.NewPassword))
+            {
+                if (MembershipManager.MembershipProvider.ValidateUser(userData.Name, model.OldPassword))
                 {
-                    ModelState.AddModelError(string.Empty, "Юзер с логином" + model.Name +" уже существует!");
-                    isContinue = false;
+                    isNeedToChangePassword = true;
                 }
-
-                if (isContinue)
+                else
                 {
-                    userData.Name = model.Name;
-                    _userRepository.Update(userData);
-
-                    WebSecurity.Logout();
-                    //TODO почему-то разлогинивает только после обновления
+                    ModelState.AddModelError("OldPassword", "Вы ввели неправильный старый пароль!");
+                    isContinue = false;
                 }
             }
 
             //If email change
             if (!string.Equals(userData.Email, model.Email))
             {
-                //TODO: сделать sp на проверку существования email
+                if (_userRepository.IsEmailExist(model.Email))
+                {
+                    //TODO пока не работает
+                    ModelState.AddModelError("Email", "Пользователь с данным email уже существует!");
+                    isContinue = false;
+                }
+                else
+                {
+                    userData.Email = model.Email;
+                }
+            }
+
+            //If gender change
+            if (userData.Gender != model.Gender)
+            {
+                userData.Gender = model.Gender;
+            }
+
+            //If login change
+            if (!string.Equals(userData.Name, model.Name))
+            {
+                if (WebSecurity.UserExists(model.Name))
+                {
+                    ModelState.AddModelError("Name", "Юзер с логином " + model.Name + " уже существует!");
+                    isContinue = false;
+                }
+                else
+                {
+                    userData.Name = model.Name;
+                    isNeedToLogout = true;
+                }
+            }
+
+            //Do changes
+            if (isContinue)
+            {
+                _userRepository.Update(userData);
+
+                if (isNeedToChangePassword)
+                {
+                    MembershipManager.MembershipProvider.ChangePassword(userData.Name, model.OldPassword, model.NewPassword);
+                    model.NewPassword = string.Empty;
+                    model.OldPassword = string.Empty;
+                }
+
+                if (isNeedToLogout)
+                {
+                    WebSecurity.Logout();
+                    return RedirectToAction("Login");
+                }
             }
 
             return View(model); //If username have changed - redirect to Login and then to settings again
+        }
+
+        private static UserData GetCurrentUser()
+        {
+            return _userRepository.GetById(WebSecurity.CurrentUserId);
         }
     }
 }

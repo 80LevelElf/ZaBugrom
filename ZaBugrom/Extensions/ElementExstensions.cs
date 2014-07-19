@@ -20,7 +20,7 @@ namespace ZaBugrom.Extensions
             IEnumerable<SelectListItem> items = values.Select(value => new SelectListItem()
             {
                 Text = GetEnumDescription(value),
-                Value = GetEnumDescription(value),
+                Value = value.ToString(),
                 Selected = (Equals(value, selectedValue))
             });
             return htmlHelper.DropDownListFor(expression, items);
