@@ -30,7 +30,10 @@ $(function() {
         history.back();
         event.preventDefault();
     });
+
     $("*[data-event='browser-to-main']").bind("click", function () {
-        MoveTo("Index", "Home");
+        if (event.target == this) {
+            MoveTo("Index", "Home");
+        }
     });
 })

@@ -1,4 +1,5 @@
-﻿using BLToolkit.DataAccess;
+﻿using BLToolkit.Data;
+using BLToolkit.DataAccess;
 using Models.Data;
 
 namespace CommonDAL.SqlDAL
@@ -8,7 +9,7 @@ namespace CommonDAL.SqlDAL
         [SprocName("spUserGetEmail")]
         public abstract string GetEmail(int id);
 
-        [SprocName("spUserIsEmailExist")]
+        [SprocName("spUserIsEmailExist"), ScalarSource(ScalarSourceType.ReturnValue)]
         public abstract bool IsEmailExist(string email);
     }
 }

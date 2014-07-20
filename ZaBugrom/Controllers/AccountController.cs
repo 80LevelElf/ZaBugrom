@@ -74,7 +74,6 @@ namespace ZaBugrom.Controllers
 
             if (_userRepository.IsEmailExist(model.Email))
             {
-                //TODO пока не работает
                 ModelState.AddModelError("Email", "Пользователь с таким email уже существует!");
             }
 
@@ -134,7 +133,6 @@ namespace ZaBugrom.Controllers
             {
                 if (_userRepository.IsEmailExist(model.Email))
                 {
-                    //TODO пока не работает
                     ModelState.AddModelError("Email", "Пользователь с данным email уже существует!");
                     isContinue = false;
                 }

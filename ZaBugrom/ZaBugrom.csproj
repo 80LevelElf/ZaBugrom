@@ -154,6 +154,7 @@
     <Compile Include="App_Start\ZaBugromConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions\ElementExstensions.cs" />
     <Compile Include="Global.asax.cs">
@@ -163,7 +164,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\header\1.jpg" />
+    <Content Include="Content\images\HeaderImages\1.jpg" />
     <Content Include="Content\images\login.png" />
     <Content Include="Content\images\login_hover.png" />
     <Content Include="Content\images\settings.png" />
@@ -222,6 +223,7 @@
     <Content Include="Scripts\ZaBugrom\ElementCreater.js" />
     <Content Include="Scripts\ZaBugrom\JQueryUIPreparer.js" />
     <Content Include="Scripts\ZaBugrom\Mover.js" />
+    <Content Include="Scripts\ZaBugrom\Shared\_Layout.js" />
     <Content Include="Scripts\ZaBugrom\Shared\_PostListLayout.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -239,7 +241,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\HeaderImages\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -258,6 +260,10 @@
     <ProjectReference Include="..\CommonDAL\CommonDAL.csproj">
       <Project>{9ECBF065-EC54-4733-B824-EC04D8A15D94}</Project>
       <Name>CommonDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Managers\Managers.csproj">
+      <Project>{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}</Project>
+      <Name>Managers</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZaBugromModel\Models.csproj">
       <Project>{BBB5EAF4-B0A2-4052-8B27-EB35CB8102D6}</Project>

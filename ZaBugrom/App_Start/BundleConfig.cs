@@ -31,8 +31,11 @@ namespace ZaBugrom
                         "~/Scripts/ZaBugrom/Mover.js"));
 
             //Pages
+            bundles.Add(new ScriptBundle("~/bundles/Shared/_Layout").Include(
+                        "~/Scripts/ZaBugrom/Shared/_Layout.js"));
             bundles.Add(new ScriptBundle("~/bundles/Shared/_PostListLayout").Include(
                         "~/Scripts/ZaBugrom/Shared/_PostListLayout.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/Account/Register").Include(
                         "~/Scripts/ZaBugrom/Account/Register.js"));
             bundles.Add(new ScriptBundle("~/bundles/Account/Profile").Include(

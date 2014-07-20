@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using CommonDAL.SqlDAL;
+using Managers;
 using WebMatrix.WebData;
 
 namespace ZaBugrom.App_Start
@@ -10,6 +11,7 @@ namespace ZaBugrom.App_Start
         {
             PrepareSimpleMembershipProvider();
             PrepareBlToolKit();
+            PrepareHeaderImageManager();
         }
 
         private static void PrepareSimpleMembershipProvider()
@@ -21,6 +23,11 @@ namespace ZaBugrom.App_Start
         {
             //Set connection string
             AbstractSqlRepository.SetDataBaseConfig(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+        }
+
+        private static void PrepareHeaderImageManager()
+        {
+            HeaderImageManager.Load();
         }
     }
 }

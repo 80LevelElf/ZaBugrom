@@ -11,11 +11,12 @@
                         "~/bundles/jqueryval",
                         "~/bundles/creater",
                         "~/bundles/preparer",
-                        "~/bundles/mover")
+                        "~/bundles/mover",
+                        "~/bundles/Shared/_Layout")
     </head>
     <body>
-        <header data-event="browser-to-main">
-            <label class="city-name header-opacity">Токио</label>
+        <header data-event='browser-to-main'>
+            <label class="city-name header-opacity"></label>
             <div class="tool-bar header-opacity">
                 <div class="post-menu">
                     <a>Лента</a>
@@ -28,8 +29,21 @@
                     @{
                         if (WebSecurity.IsAuthenticated)
                         {
-                            <a class="user-button" href="@Url.Action("ProfileSettings", "Account")">@WebSecurity.CurrentUserName</a>
-                            <a class="inbox-button">3</a>
+                            <div class="user-div">
+                                <a class="user-button">@WebSecurity.CurrentUserName</a>
+                                <a class="inbox-button">3</a>
+                                <div class="user-quick-area">
+                                    <div class="user-quick-area-left">
+                                        <img class="avatar" title="Ваш аватар"/>
+                                        <label class="rating" title="Ваш рейтинг">100</label>
+                                    </div>
+                                    <div class="user-quick-area-right">
+                                        <a href="#myPosts">Мои посты</a>
+                                        <a href="#myComments">Мои комментарии</a>
+                                        <a href="@Url.Action("ProfileSettings", "Account")">Настройки</a>
+                                    </div>
+                                    </div>
+                            </div>
                         }
                     }
                     <a class="login-button" href="@Url.Action("Login", "Account")">
