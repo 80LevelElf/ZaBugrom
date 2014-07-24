@@ -5,11 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaBugrom", "ZaBugrom\ZaBugr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "ZaBugromModel\Models.csproj", "{BBB5EAF4-B0A2-4052-8B27-EB35CB8102D6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DALs", "DALs", "{232CA701-15D5-44A8-9CC0-0A91A40A673E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDAL", "CommonDAL\CommonDAL.csproj", "{9ECBF065-EC54-4733-B824-EC04D8A15D94}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managers", "Managers\Managers.csproj", "{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "CommonDAL\DAL.csproj", "{9ECBF065-EC54-4733-B824-EC04D8A15D94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,15 +25,8 @@ Global
 		{9ECBF065-EC54-4733-B824-EC04D8A15D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ECBF065-EC54-4733-B824-EC04D8A15D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ECBF065-EC54-4733-B824-EC04D8A15D94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{9ECBF065-EC54-4733-B824-EC04D8A15D94} = {232CA701-15D5-44A8-9CC0-0A91A40A673E}
 	EndGlobalSection
 EndGlobal

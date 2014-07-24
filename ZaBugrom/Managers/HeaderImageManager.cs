@@ -4,7 +4,7 @@ using BLToolkit.Reflection;
 using CommonDAL.SqlDAL;
 using Models.Data;
 
-namespace Managers
+namespace ZaBugrom.Managers
 {
     public static class HeaderImageManager
     {

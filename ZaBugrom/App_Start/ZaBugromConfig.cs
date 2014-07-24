@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using CommonDAL.SqlDAL;
-using Managers;
 using WebMatrix.WebData;
+using ZaBugrom.Managers;
 
 namespace ZaBugrom.App_Start
 {

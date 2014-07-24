@@ -160,7 +160,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Managers\MembershipManager.cs" />
+    <Compile Include="Managers\ContentPathManager.cs" />
+    <Compile Include="Managers\HeaderImageManager.cs" />
+    <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="Managers\SettingsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +172,7 @@
     <Content Include="Content\images\login_hover.png" />
     <Content Include="Content\images\settings.png" />
     <Content Include="Content\images\settings_hover.png" />
+    <Content Include="Content\images\UserAvatars\393f0646-39b8-453f-a147-bf4eb04ebc92.jpg" />
     <Content Include="Content\Pages\Account\Profile.css" />
     <Content Include="Content\Pages\Account\Register.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -257,13 +261,9 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonDAL\CommonDAL.csproj">
+    <ProjectReference Include="..\CommonDAL\DAL.csproj">
       <Project>{9ECBF065-EC54-4733-B824-EC04D8A15D94}</Project>
-      <Name>CommonDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Managers\Managers.csproj">
-      <Project>{3B3E598B-2147-433D-9DCF-A0B18C2AD8FF}</Project>
-      <Name>Managers</Name>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZaBugromModel\Models.csproj">
       <Project>{BBB5EAF4-B0A2-4052-8B27-EB35CB8102D6}</Project>

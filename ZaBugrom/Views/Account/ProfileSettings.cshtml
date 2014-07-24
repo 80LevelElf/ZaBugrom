@@ -8,7 +8,7 @@
 }
 
 
-<form class="big-size" method="POST" action="@Url.Action("ProfileSettings")">
+<form class="big-size" method="POST" action="@Url.Action("ProfileSettings")" enctype="multipart/form-data">
     <p>@Html.ValidationSummary()</p>
     <p class="separate">Основные настройки</p>
     <p>Логин (при изменении логина нужно будет осуществить повторный вход с новым логином):</p>
@@ -23,8 +23,9 @@
     <p>Новый пароль:</p>
     <p>@Html.EditorFor(i => i.NewPassword)</p>
     <p class="separate">Аватар</p>
-    <p>Выберите новый аватар из файла на компьютере:</p>
-    <input type="file"/>
+    <p>Выберите новый аватар из файла на компьютере
+        (формат - png или jpg, аватар автоматически приведеться к стандартному размеру):</p>
+    <input type="file" name="AvatarPostedFile" id="AvatarPostedFile">
     <div data-create="separate-line"></div>
     <div data-create='dialog-save'></div>
 </form>

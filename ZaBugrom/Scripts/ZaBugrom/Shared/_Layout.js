@@ -5,7 +5,7 @@
         var header = $("header");
         header.css(
         {
-            "background": "url(\"Content/images/HeaderImages/" + headerImage.FileName + "\")",
+            "background": "url(\"http://" + window.location.host + "/Content/images/HeaderImages/" + headerImage.FileName + "\")",
             "background-position": "-" + headerImage.ShiftByX + "px -" + headerImage.ShiftByY + "px",
             "background-repeat" : "no-repeat",
             "background-size" : "cover"

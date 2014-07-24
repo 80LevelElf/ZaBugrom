@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Managers;
+using ZaBugrom.Managers;
 
 namespace ZaBugrom.Controllers
 {

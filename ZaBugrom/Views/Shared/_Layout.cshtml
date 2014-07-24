@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using ZaBugrom.Managers
+@{
+    var userData = UserManager.GetCurrentUser();
+}
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -34,7 +39,7 @@
                                 <a class="inbox-button">3</a>
                                 <div class="user-quick-area">
                                     <div class="user-quick-area-left">
-                                        <img class="avatar" title="Ваш аватар"/>
+                                        <img class="avatar" runat="server" title="Ваш аватар" src="@userData.AvatarPath" />
                                         <label class="rating" title="Ваш рейтинг">100</label>
                                     </div>
                                     <div class="user-quick-area-right">

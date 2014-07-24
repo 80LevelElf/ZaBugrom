@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.IO;
+using System.Web.Helpers;
+using System.Web.Mvc;
 using BLToolkit.Reflection;
 using CommonDAL.SqlDAL;
 using EmitMapper;
@@ -11,8 +14,6 @@ namespace ZaBugrom.Controllers
 {
     public class AccountController : Controller
     {
-        private static readonly UserRepository _userRepository = TypeAccessor<UserRepository>.CreateInstance();
-
         [HttpGet]
         public ActionResult Login()
         {
@@ -72,7 +73,7 @@ namespace ZaBugrom.Controllers
                 ModelState.AddModelError("Name", "Пользователь с таким логином уже существует!");
             }
 
-            if (_userRepository.IsEmailExist(model.Email))
+            if (UserManager.UserRepository.IsEmailExist(model.Email))
             {
                 ModelState.AddModelError("Email", "Пользователь с таким email уже существует!");
             }
@@ -93,7 +94,7 @@ namespace ZaBugrom.Controllers
         [HttpGet]
         public ActionResult ProfileSettings()
         {
-            var userData = GetCurrentUser();
+            var userData = UserManager.GetCurrentUser();
             var model = ObjectMapperManager.DefaultInstance.GetMapper<UserData, ProfileSettingsInputModel>().Map(userData);
             return View(model);
         }
@@ -107,7 +108,7 @@ namespace ZaBugrom.Controllers
                 return View(model);
             }
 
-            var userData = GetCurrentUser();
+            var userData = UserManager.GetCurrentUser();
 
             //We change settings only if everything is ok
             bool isContinue = true;
@@ -117,7 +118,7 @@ namespace ZaBugrom.Controllers
             //If password change
             if (!string.IsNullOrEmpty(model.NewPassword))
             {
-                if (MembershipManager.MembershipProvider.ValidateUser(userData.Name, model.OldPassword))
+                if (UserManager.MembershipProvider.ValidateUser(userData.Name, model.OldPassword))
                 {
                     isNeedToChangePassword = true;
                 }
@@ -131,7 +132,7 @@ namespace ZaBugrom.Controllers
             //If email change
             if (!string.Equals(userData.Email, model.Email))
             {
-                if (_userRepository.IsEmailExist(model.Email))
+                if (UserManager.UserRepository.IsEmailExist(model.Email))
                 {
                     ModelState.AddModelError("Email", "Пользователь с данным email уже существует!");
                     isContinue = false;
@@ -163,14 +164,44 @@ namespace ZaBugrom.Controllers
                 }
             }
 
+            //If avatar change
+            var avatarPostedFile = model.AvatarPostedFile;
+            if (avatarPostedFile != null)
+            {
+                var extension = Path.GetExtension(avatarPostedFile.FileName);
+
+                if (extension != ".jpg" && extension != ".png")
+                {
+                    ModelState.AddModelError("AvatarPostedFile", "Аватар должен быть в формате jpg или png!");
+                    isContinue = false;
+                }
+
+                //Scale avatar
+                var image = new WebImage(avatarPostedFile.InputStream);
+                //We use x*SettingsManager.AvatarSize to have the best quality of image
+                image.Resize(5*SettingsManager.AvatarSize, 5*SettingsManager.AvatarSize);
+
+                if (isContinue)
+                {
+                    var newAvatarName = string.Concat(Guid.NewGuid(), extension);
+                    var newAvatarPath = Path.Combine(Server.MapPath(ContentPathManager.UserAvatarFolder), newAvatarName);
+
+                    //Save image as real hard disk path (as C:/MyFolder/image)
+                    image.Save(newAvatarPath);
+
+                    //Save avatar path by virtual path (as ~/Content/image)
+                    userData.AvatarPath = Path.Combine(ContentPathManager.UserAvatarFolder, newAvatarName);
+                }
+            }
+
             //Do changes
             if (isContinue)
             {
-                _userRepository.Update(userData);
+                UserManager.UserRepository.Update(userData);
 
                 if (isNeedToChangePassword)
                 {
-                    MembershipManager.MembershipProvider.ChangePassword(userData.Name, model.OldPassword, model.NewPassword);
+                    UserManager.MembershipProvider.ChangePassword(userData.Name, model.OldPassword, model.NewPassword);
                     model.NewPassword = string.Empty;
                     model.OldPassword = string.Empty;
                 }
@@ -183,11 +214,6 @@ namespace ZaBugrom.Controllers
             }
 
             return View(model); //If username have changed - redirect to Login and then to settings again
-        }
-
-        private static UserData GetCurrentUser()
-        {
-            return _userRepository.GetById(WebSecurity.CurrentUserId);
         }
     }
 }
