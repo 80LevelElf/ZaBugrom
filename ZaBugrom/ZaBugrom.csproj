@@ -154,6 +154,7 @@
     <Compile Include="App_Start\ZaBugromConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddContentController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions\ElementExstensions.cs" />
@@ -167,14 +168,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\add_new_post.png" />
+    <Content Include="Content\images\add_new_post_hover.png" />
     <Content Include="Content\images\HeaderImages\1.jpg" />
     <Content Include="Content\images\login.png" />
     <Content Include="Content\images\login_hover.png" />
+    <Content Include="Content\images\refresh.png" />
+    <Content Include="Content\images\refresh_hover.png" />
     <Content Include="Content\images\settings.png" />
     <Content Include="Content\images\settings_hover.png" />
     <Content Include="Content\images\UserAvatars\393f0646-39b8-453f-a147-bf4eb04ebc92.jpg" />
+    <Content Include="Content\images\UserAvatars\3d1f15cb-b8d2-44aa-a990-20aff3c78e3e.jpg" />
+    <Content Include="Content\images\UserAvatars\3fe8bb1c-fdfe-4092-8843-0cb494313d5d.jpg" />
+    <Content Include="Content\images\UserAvatars\813ae7cf-2901-4c1c-a038-4f9ee18b7f8e.jpg" />
+    <Content Include="Content\images\UserAvatars\dd1dac70-773c-4558-9f3f-68e5e474c9e4.jpg" />
+    <Content Include="Content\images\UserAvatars\f2d1c45a-4c9f-4f83-ba05-33aef7345592.jpg" />
     <Content Include="Content\Pages\Account\Profile.css" />
     <Content Include="Content\Pages\Account\Register.css" />
+    <Content Include="Content\Pages\AddContent\Default.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -249,7 +260,6 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -279,6 +289,9 @@
     <Content Include="Views\Shared\_PostListLayout.cshtml" />
     <Content Include="Views\Shared\_ProfileLayout.cshtml" />
     <Content Include="Views\Account\ProfileSettings.cshtml" />
+    <Content Include="Views\Shared\_PostLayout.cshtml" />
+    <Content Include="Views\Shared\_AddPostLayout.cshtml" />
+    <Content Include="Views\AddContent\AddSimplePost.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

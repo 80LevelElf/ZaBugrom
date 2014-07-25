@@ -2,25 +2,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="filter-div">
-    <p>
-        Страны:
-    </p>
-    <p>
-        <select name="country-filter" id="country-filter">
-            <option>Все страны</option>
-            <option>Мои страны</option>
-        </select>
-    </p>
-    <p>
-        Отсортировать по:
-    </p>
-    <p>
-        <select name="sort-filter" id="sort-filter">
-            <option>Времени</option>
-            <option>Рейтингу</option>
-        </select>
-    </p>
+<div class="left-div">
+    <div class="filter-div">
+        <p>
+            Страны:
+        </p>
+        <p>
+            <select>
+                <option>Все страны</option>
+                <option>Мои страны</option>
+            </select>
+        </p>
+        <p>
+            Отсортировать по:
+        </p>
+        <p>
+            <select>
+                <option>Времени</option>
+                <option>Рейтингу</option>
+            </select>
+        </p>
+    </div>
+    
+    <div class="post-tools-div">
+        <input class="refresh" type="submit" value="" title="Обновить посты, используя фильтры"/>
+        <a class="add-new-post" title="Добавить новый пост" href="@Url.Action("Index", "AddContent")"></a>
+    </div>
 </div>
 
 @RenderBody()

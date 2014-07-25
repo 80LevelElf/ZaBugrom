@@ -51,6 +51,8 @@ namespace ZaBugrom
 
             bundles.Add(new StyleBundle("~/Pages/Account/Register/css").Include("~/Content/Pages/Account/Register.css"));
             bundles.Add(new StyleBundle("~/Pages/Account/Profile/css").Include("~/Content/Pages/Account/Profile.css"));
+
+            bundles.Add(new StyleBundle("~/Pages/AddContent/Default/css").Include("~/Content/Pages/AddContent/Default.css"));
         }
     }
 }

@@ -48,11 +48,15 @@
     <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="Data\HeaderImageData.cs" />
     <Compile Include="Data\Data.cs" />
-    <Compile Include="Data\Posts\Post.cs" />
+    <Compile Include="Data\Posts\DefaultPostData.cs" />
+    <Compile Include="Data\Posts\PostData.cs" />
+    <Compile Include="Data\Posts\VideoPostData.cs" />
     <Compile Include="Data\UserData.cs" />
     <Compile Include="InputModels\Account\LoginInputModel.cs" />
     <Compile Include="InputModels\Account\ProfileSettingsInputModel.cs" />
     <Compile Include="InputModels\Account\RegistrationInputModel.cs" />
+    <Compile Include="InputModels\AddContent\AddPostInputModel.cs" />
+    <Compile Include="InputModels\AddContent\AddSimplePostInputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
