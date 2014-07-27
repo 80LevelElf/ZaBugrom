@@ -41,6 +41,11 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/Account/Profile").Include(
                         "~/Scripts/ZaBugrom/Account/Profile.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/AddPost/AddSimplePost").Include(
+                        "~/Scripts/ZaBugrom/AddPost/AddSimplePost.js"));
+            bundles.Add(new ScriptBundle("~/bundles/AddPost/AddVideoPost").Include(
+                        "~/Scripts/ZaBugrom/AddPost/AddVideoPost.js"));
+
             //---CSS
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
@@ -52,7 +57,9 @@ namespace ZaBugrom
             bundles.Add(new StyleBundle("~/Pages/Account/Register/css").Include("~/Content/Pages/Account/Register.css"));
             bundles.Add(new StyleBundle("~/Pages/Account/Profile/css").Include("~/Content/Pages/Account/Profile.css"));
 
-            bundles.Add(new StyleBundle("~/Pages/AddContent/Default/css").Include("~/Content/Pages/AddContent/Default.css"));
+            bundles.Add(new StyleBundle("~/Pages/AddPost/Default/css").Include("~/Content/Pages/AddPost/Default.css"));
+            bundles.Add(new StyleBundle("~/Pages/AddPost/AddSimplePost/css").Include("~/Content/Pages/AddPost/AddSimplePost.css"));
+            bundles.Add(new StyleBundle("~/Pages/AddPost/AddVideoPost/css").Include("~/Content/Pages/AddPost/AddVideoPost.css"));
         }
     }
 }

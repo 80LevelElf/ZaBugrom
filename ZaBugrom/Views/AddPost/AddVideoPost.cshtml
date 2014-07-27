@@ -1,0 +1,25 @@
+﻿@model Models.InputModels.AddContent.AddVideoPostInputModel
+
+@{
+    ViewBag.Title = "AddVideoPost";
+    Layout = "~/Views/Shared/_AddPostLayout.cshtml";
+}
+
+<form action="@Url.Action("AddVideoPost")" method="POST">
+    <p>
+        Заголовок:
+    </p>
+    <p>
+        <input id="Title" name="Title" type="text" placeholder="Заголовок вашего поста" value=""/>
+    </p>
+    <p>
+        Ссылка на видео (пока поддерживается только Youtube):
+    </p>
+    <p>
+        <input id="Source" name="Source" type="text" placeholder="Ссылка на видео" value=""/>
+    </p>
+    <div data-create="dialog-buttons"></div>
+</form>
+
+@Styles.Render("~/Pages/AddPost/AddVideoPost/css")
+@Scripts.Render("~/bundles/AddPost/AddVideoPost")

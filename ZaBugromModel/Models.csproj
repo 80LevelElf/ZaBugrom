@@ -57,6 +57,7 @@
     <Compile Include="InputModels\Account\RegistrationInputModel.cs" />
     <Compile Include="InputModels\AddContent\AddPostInputModel.cs" />
     <Compile Include="InputModels\AddContent\AddSimplePostInputModel.cs" />
+    <Compile Include="InputModels\AddContent\AddVideoPostInputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

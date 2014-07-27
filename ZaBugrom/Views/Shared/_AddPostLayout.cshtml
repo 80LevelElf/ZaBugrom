@@ -1,22 +1,20 @@
-﻿@model Models.InputModels.AddContent.AddPostInputModel
-@{
+﻿@{
     ViewBag.Title = "Добавить новый пост";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="big-size">
     <div id="type-div">
-        <a id="simple"></a>
-        <a id="video"></a>
+        <a id="simple" href="@Url.Action("AddSimplePost", "AddPost")">Обычный пост</a>
+        <a id="video" href="@Url.Action("AddVideoPost", "AddPost")">Видео пост</a>
     </div>
     <div id="content-div">
-        <p>
-            <input type="text" placeholder="Заголовок вашего поста" value=""/>
-        </p>
         <p>
             @RenderBody()
         </p>
     </div>
+    <div data-create="separate-line"></div>
+    <p id="message"></p>
 </div>
 
-@Styles.Render("~/Pages/AddContent/Default/css")
+@Styles.Render("~/Pages/AddPost/Default/css")

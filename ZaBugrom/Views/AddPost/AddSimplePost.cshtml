@@ -1,0 +1,25 @@
+﻿@model Models.InputModels.AddContent.AddSimplePostInputModel
+
+@{
+    ViewBag.Title = "Добавить обычный пост";
+    Layout = "~/Views/Shared/_AddPostLayout.cshtml";
+}
+
+<form action="@Url.Action("AddSimplePost")" method="POST">
+    <p>
+        <label>Заголовок:</label>
+    </p>
+    <p>
+        <input id="Title" name="Title" type="text" placeholder="Заголовок вашего поста" value=""/>
+    </p>
+    <p>
+        Пост:
+    </p>
+    <p>
+        <textarea id="Source" name="Source"></textarea>
+    </p>
+    <div data-create="dialog-buttons"></div>
+</form>
+
+@Styles.Render("~/Pages/AddPost/AddSimplePost/css")
+@Scripts.Render("~/bundles/AddPost/AddSimplePost")

@@ -154,7 +154,7 @@
     <Compile Include="App_Start\ZaBugromConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AddContentController.cs" />
+    <Compile Include="Controllers\AddPostController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions\ElementExstensions.cs" />
@@ -170,6 +170,7 @@
   <ItemGroup>
     <Content Include="Content\images\add_new_post.png" />
     <Content Include="Content\images\add_new_post_hover.png" />
+    <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\HeaderImages\1.jpg" />
     <Content Include="Content\images\login.png" />
     <Content Include="Content\images\login_hover.png" />
@@ -185,7 +186,9 @@
     <Content Include="Content\images\UserAvatars\f2d1c45a-4c9f-4f83-ba05-33aef7345592.jpg" />
     <Content Include="Content\Pages\Account\Profile.css" />
     <Content Include="Content\Pages\Account\Register.css" />
-    <Content Include="Content\Pages\AddContent\Default.css" />
+    <Content Include="Content\Pages\AddPost\AddSimplePost.css" />
+    <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
+    <Content Include="Content\Pages\AddPost\Default.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -235,6 +238,8 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\ZaBugrom\Account\Profile.js" />
     <Content Include="Scripts\ZaBugrom\Account\Register.js" />
+    <Content Include="Scripts\ZaBugrom\AddPost\AddSimplePost.js" />
+    <Content Include="Scripts\ZaBugrom\AddPost\AddVideoPost.js" />
     <Content Include="Scripts\ZaBugrom\ElementCreater.js" />
     <Content Include="Scripts\ZaBugrom\JQueryUIPreparer.js" />
     <Content Include="Scripts\ZaBugrom\Mover.js" />
@@ -291,7 +296,8 @@
     <Content Include="Views\Account\ProfileSettings.cshtml" />
     <Content Include="Views\Shared\_PostLayout.cshtml" />
     <Content Include="Views\Shared\_AddPostLayout.cshtml" />
-    <Content Include="Views\AddContent\AddSimplePost.cshtml" />
+    <Content Include="Views\AddPost\AddSimplePost.cshtml" />
+    <Content Include="Views\AddPost\AddVideoPost.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
