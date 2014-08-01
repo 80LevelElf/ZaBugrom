@@ -1,0 +1,11 @@
+﻿@model Models.Data.PostData
+
+@{
+    ViewBag.Title = "VideoPost";
+    Layout = "~/Views/Shared/_PostLayout.cshtml";
+}
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/@Model.Source" frameborder="0" allowfullscreen>
+</iframe>
+
+

@@ -1,8 +1,10 @@
-﻿@model Models.Data.Posts.PostData
+﻿@model Models.Data.PostData
 
 <div class="post">
-    <div class="post-header"></div>
+    <div class="post-header">@Model.Title</div>
     <div class="post-content">
         @RenderBody()
     </div>
 </div>
+
+@Styles.Render("~/Pages/Shared/_PostLayout/css")

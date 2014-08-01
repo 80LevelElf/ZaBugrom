@@ -22,6 +22,12 @@
                 <option>Рейтингу</option>
             </select>
         </p>
+        <p>
+            Не показывать посты с рейтингом ниже:
+        </p>
+        <p>
+            <input type="number" value="-5"/>
+        </p>
     </div>
     
     <div class="post-tools-div">
@@ -30,6 +36,8 @@
     </div>
 </div>
 
-@RenderBody()
+<div id="post-list-div">
+    @RenderBody()
+</div>
 
 @Scripts.Render("~/bundles/Shared/_PostListLayout")

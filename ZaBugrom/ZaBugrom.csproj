@@ -157,14 +157,17 @@
     <Compile Include="Controllers\AddPostController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Extensions\ElementExstensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Managers\ContentPathManager.cs" />
     <Compile Include="Managers\HeaderImageManager.cs" />
+    <Compile Include="Managers\RepositoryManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Managers\SettingsManager.cs" />
+    <Compile Include="Managers\VideoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +192,8 @@
     <Content Include="Content\Pages\AddPost\AddSimplePost.css" />
     <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
     <Content Include="Content\Pages\AddPost\Default.css" />
+    <Content Include="Content\Pages\Shared\_PostLayout.css" />
+    <Content Include="Content\Pages\Shared\_ProfileLayout.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -265,6 +270,7 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Content\Pages\Post\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -298,6 +304,8 @@
     <Content Include="Views\Shared\_AddPostLayout.cshtml" />
     <Content Include="Views\AddPost\AddSimplePost.cshtml" />
     <Content Include="Views\AddPost\AddVideoPost.cshtml" />
+    <Content Include="Views\Post\SimplePost.cshtml" />
+    <Content Include="Views\Post\VideoPost.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

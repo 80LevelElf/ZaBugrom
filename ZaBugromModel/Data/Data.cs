@@ -7,6 +7,6 @@ namespace Models.Data
         [PrimaryKey]
         [Identity]
         [NonUpdatable]
-        public int Id;
+        public int Id { get; set; }
     }
 }

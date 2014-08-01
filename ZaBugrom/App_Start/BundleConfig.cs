@@ -30,17 +30,21 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/mover").Include(
                         "~/Scripts/ZaBugrom/Mover.js"));
 
-            //Pages
+            //Main layouts
             bundles.Add(new ScriptBundle("~/bundles/Shared/_Layout").Include(
                         "~/Scripts/ZaBugrom/Shared/_Layout.js"));
             bundles.Add(new ScriptBundle("~/bundles/Shared/_PostListLayout").Include(
                         "~/Scripts/ZaBugrom/Shared/_PostListLayout.js"));
 
+            //Profile
+            bundles.Add(new ScriptBundle("~/bundles/Account/_ProfileLayout").Include(
+                        "~/Scripts/ZaBugrom/Account/Register.js"));
             bundles.Add(new ScriptBundle("~/bundles/Account/Register").Include(
                         "~/Scripts/ZaBugrom/Account/Register.js"));
             bundles.Add(new ScriptBundle("~/bundles/Account/Profile").Include(
                         "~/Scripts/ZaBugrom/Account/Profile.js"));
 
+            //AddPost
             bundles.Add(new ScriptBundle("~/bundles/AddPost/AddSimplePost").Include(
                         "~/Scripts/ZaBugrom/AddPost/AddSimplePost.js"));
             bundles.Add(new ScriptBundle("~/bundles/AddPost/AddVideoPost").Include(
@@ -49,14 +53,24 @@ namespace ZaBugrom
             //---CSS
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
+            //JQuiry
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery-ui.css",
                         "~/Content/themes/base/jquery-ui.structure.css",
                         "~/Content/themes/base/jquery-ui.theme.css"));
 
+            //Layouts
+            bundles.Add(new StyleBundle("~/Pages/Shared/_ProfileLayout/css").Include("~/Content/Pages/Shared/_ProfileLayout.css"));
+            bundles.Add(new StyleBundle("~/Pages/Shared/_PostLayout/css").Include("~/Content/Pages/Shared/_PostLayout.css"));
+
+            //Post
+            bundles.Add(new StyleBundle("~/Pages/Account/Register/css").Include("~/Content/Pages/Account/Register.css"));
+
+            //Profile
             bundles.Add(new StyleBundle("~/Pages/Account/Register/css").Include("~/Content/Pages/Account/Register.css"));
             bundles.Add(new StyleBundle("~/Pages/Account/Profile/css").Include("~/Content/Pages/Account/Profile.css"));
 
+            //AddPost
             bundles.Add(new StyleBundle("~/Pages/AddPost/Default/css").Include("~/Content/Pages/AddPost/Default.css"));
             bundles.Add(new StyleBundle("~/Pages/AddPost/AddSimplePost/css").Include("~/Content/Pages/AddPost/AddSimplePost.css"));
             bundles.Add(new StyleBundle("~/Pages/AddPost/AddVideoPost/css").Include("~/Content/Pages/AddPost/AddVideoPost.css"));

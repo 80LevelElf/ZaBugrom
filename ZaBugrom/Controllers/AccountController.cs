@@ -73,7 +73,7 @@ namespace ZaBugrom.Controllers
                 ModelState.AddModelError("Name", "Пользователь с таким логином уже существует!");
             }
 
-            if (UserManager.UserRepository.IsEmailExist(model.Email))
+            if (RepositoryManager.UserRepository.IsEmailExist(model.Email))
             {
                 ModelState.AddModelError("Email", "Пользователь с таким email уже существует!");
             }
@@ -132,7 +132,7 @@ namespace ZaBugrom.Controllers
             //If email change
             if (!string.Equals(userData.Email, model.Email))
             {
-                if (UserManager.UserRepository.IsEmailExist(model.Email))
+                if (RepositoryManager.UserRepository.IsEmailExist(model.Email))
                 {
                     ModelState.AddModelError("Email", "Пользователь с данным email уже существует!");
                     isContinue = false;
@@ -197,7 +197,7 @@ namespace ZaBugrom.Controllers
             //Do changes
             if (isContinue)
             {
-                UserManager.UserRepository.Update(userData);
+                RepositoryManager.UserRepository.Update(userData);
 
                 if (isNeedToChangePassword)
                 {

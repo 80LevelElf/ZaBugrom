@@ -8,6 +8,5 @@ namespace ZaBugrom.Controllers
         {
             return View();
         }
-
     }
 }

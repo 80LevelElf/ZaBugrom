@@ -4,7 +4,7 @@ namespace Models.InputModels.Account
 {
     public class RegistrationInputModel
     {
-        [Required]
+        [Required] 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 

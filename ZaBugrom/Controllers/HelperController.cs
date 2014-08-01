@@ -10,6 +10,5 @@ namespace ZaBugrom.Controllers
         {
             return Json(HeaderImageManager.CurrentHeaderImage);
         }
-
     }
 }

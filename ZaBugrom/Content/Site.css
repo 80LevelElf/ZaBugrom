@@ -14,10 +14,12 @@ header, footer, nav, section {
 
 div.content 
 {
+    display: block;
     background-color: white;
     margin-left: 200px;
     margin-right: 200px;
     margin-top: 210px; /*200 + 10(just for style)*/
+    padding-bottom: 20px; /*for footer*/
 }
 
 *:focus {
@@ -371,7 +373,8 @@ div.left-div
     margin: 10px;
     padding: 4px;
     position: fixed;
-    left: 0; 
+    left: 0;
+    width: 180px;
 }
 
 div.filter-div 
@@ -385,7 +388,7 @@ div.filter-div p
     margin: 5px;
 }
 
-div.filter-div select 
+div.filter-div select, div.filter-div span.ui-spinner
 {
     width: 150px /*160-5*2*/;
 }

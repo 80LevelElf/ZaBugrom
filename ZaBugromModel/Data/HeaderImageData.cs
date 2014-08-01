@@ -2,9 +2,9 @@
 {
     public class HeaderImageData : Data
     {
-        public string FileName;
-        public string Title;
-        public int ShiftByX;
-        public int ShiftByY;
+        public string FileName { get; set; }
+        public string Title { get; set; }
+        public int ShiftByX { get; set; }
+        public int ShiftByY { get; set; }
     }
 }
