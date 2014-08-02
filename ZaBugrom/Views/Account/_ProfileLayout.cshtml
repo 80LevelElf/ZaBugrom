@@ -3,16 +3,16 @@
 }
 
 <div class="big-size">
-    <div class="profile-menu-div">
+    <div id="profile-menu-div">
         <a>Сообщения</a>
         <a>Настройки аккаунта</a>
         <a>Настройки контента</a>
     </div>
 
-    <div class="profile-data-div">
+    <div id="profile-data-div">
         @RenderBody()
     </div>
 </div>
 
-@Styles.Render("~/Pages/Shared/_ProfileLayout/css")
+@Styles.Render("~/Content/Account/_ProfileLayout")
 @Scripts.Render("~/bundles/Account/_ProfileLayout")

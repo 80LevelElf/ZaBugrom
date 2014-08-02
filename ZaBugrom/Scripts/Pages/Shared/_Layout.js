@@ -11,6 +11,6 @@
             "background-size" : "cover"
         });
 
-        $("label.city-name").text(headerImage.Title);
+        $("label#city-name").text(headerImage.Title);
     });
 })

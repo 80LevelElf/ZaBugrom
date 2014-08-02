@@ -9,11 +9,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>@ViewBag.Title</title>
-        @Styles.Render("~/Content/css",
-                        "~/Content/themes/base/css")
+        @Styles.Render("~/Content/site",
+                       "~/Content/themes/base")
         @Scripts.Render("~/bundles/jquery",
                         "~/bundles/jqueryui",
-                        "~/bundles/jqueryval",
                         "~/bundles/creater",
                         "~/bundles/preparer",
                         "~/bundles/mover",
@@ -23,27 +22,27 @@
     </head>
     <body>
         <header data-event='browser-to-main'>
-            <label class="city-name header-opacity"></label>
-            <div class="tool-bar header-opacity">
-                <div class="post-menu">
+            <label id="city-name" class="header-opacity"></label>
+            <div id="toolbar" class="header-opacity">
+                <div id="post-menu">
                     <a>Лента</a>
                     <a>Посты</a>
                     <a>Видеоблоги</a>
                 </div>
 
-                <div class="user-menu">
+                <div id="user-menu">
                     @{
                         if (WebSecurity.IsAuthenticated)
                         {
-                            <div class="user-div">
-                                <a class="user-button">@WebSecurity.CurrentUserName</a>
-                                <a class="inbox-button">3</a>
-                                <div class="user-quick-area">
-                                    <div class="user-quick-area-left">
-                                        <img alt="Аватар" class="avatar" runat="server" title="Ваш аватар" src="@userData.AvatarPath" />
-                                        <label class="rating" title="Ваш рейтинг">100</label>
+                            <div id="user-div">
+                                <a id="user-button">@WebSecurity.CurrentUserName</a>
+                                <a id="inbox-button">3</a>
+                                <div id="user-quick-area">
+                                    <div id="user-quick-area-left">
+                                        <img alt="Аватар" id="avatar" runat="server" title="Ваш аватар" src="@userData.AvatarPath" />
+                                        <label id="rating" title="Ваш рейтинг">100</label>
                                     </div>
-                                    <div class="user-quick-area-right">
+                                    <div id="user-quick-area-right">
                                         <a href="#myPosts">Мои посты</a>
                                         <a href="#myComments">Мои комментарии</a>
                                         <a href="@Url.Action("ProfileSettings", "Account")">Настройки</a>
@@ -52,7 +51,7 @@
                             </div>
                         }
                     }
-                    <a class="login-button" href="@Url.Action("Login", "Account")">
+                    <a id="login-button" href="@Url.Action("Login", "Account")">
                         @{
                             if (!WebSecurity.IsAuthenticated)
                             {
@@ -63,7 +62,7 @@
                 </div>
             </div>
         </header>
-        <div class="content">
+        <div id="content">
             @RenderBody()
         </div>
         

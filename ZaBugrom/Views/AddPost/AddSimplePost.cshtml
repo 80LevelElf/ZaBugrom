@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Добавить обычный пост";
-    Layout = "~/Views/Shared/_AddPostLayout.cshtml";
+    Layout = "~/Views/AddPost/_AddPostLayout.cshtml";
 }
 
 <form action="@Url.Action("AddSimplePost")" method="POST">
@@ -21,5 +21,5 @@
     <div data-create="dialog-buttons"></div>
 </form>
 
-@Styles.Render("~/Pages/AddPost/AddSimplePost/css")
-@Scripts.Render("~/bundles/AddPost/AddSimplePost")
+@Styles.Render("~/Content/AddPost/AddSimplePost")
+@Scripts.Render("~/Bundles/AddPost/AddSimplePost")

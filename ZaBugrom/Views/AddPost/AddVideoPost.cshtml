@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "AddVideoPost";
-    Layout = "~/Views/Shared/_AddPostLayout.cshtml";
+    Layout = "~/Views/AddPost/_AddPostLayout.cshtml";
 }
 
 <form action="@Url.Action("AddVideoPost")" method="POST">
@@ -21,5 +21,5 @@
     <div data-create="dialog-buttons"></div>
 </form>
 
-@Styles.Render("~/Pages/AddPost/AddVideoPost/css")
+@Styles.Render("~/Content/AddPost/AddVideoPost")
 @Scripts.Render("~/bundles/AddPost/AddVideoPost")

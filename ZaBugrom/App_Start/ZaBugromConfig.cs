@@ -1,9 +1,12 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.IO;
+using System.Web;
 using CommonDAL.SqlDAL;
 using WebMatrix.WebData;
 using ZaBugrom.Managers;
 
-namespace ZaBugrom.App_Start
+namespace ZaBugrom
 {
     public static class ZaBugromConfig
     {

@@ -4,7 +4,7 @@
 
 @{
     ViewBag.Title = "Настройки";
-    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+    Layout = "~/Views/Account/_ProfileLayout.cshtml";
 }
 
 
@@ -30,4 +30,5 @@
     <div data-create='dialog-save'></div>
 </form>
 
-@Scripts.Render("~/bundles/Account/Profile")
+@Scripts.Render("~/bundles/Account/ProfileSettings")
+@Styles.Render("~/Content/Account/ProfileSettings")

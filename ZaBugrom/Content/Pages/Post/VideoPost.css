@@ -1,0 +1,15 @@
+﻿div.post.video-post {
+    border-left: 3px solid red;
+}
+
+div.post.video-post iframe {
+    width: 100%;
+}
+
+div.post.video-post div.post-content {
+    background-color: black;
+}
+
+div.post.video-post div.post-header a:hover{
+    color: red;
+}

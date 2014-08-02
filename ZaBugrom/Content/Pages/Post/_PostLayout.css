@@ -1,0 +1,23 @@
+﻿div.post 
+{
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+div.post div.post-header {
+    background-color: #eee;
+    padding: 4px;
+    padding-left: 8px;
+}
+
+div.post div.post-content {
+    padding: 8px;
+    text-align: center;
+}
+
+div.post div.post-header a{
+    color: black;
+}
+
+div.post div.post-header a:hover {
+    border-bottom: 0;
+}

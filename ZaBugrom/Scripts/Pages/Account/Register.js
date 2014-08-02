@@ -3,7 +3,8 @@
 
     var setMessage = function(message) {
         messageElement.hide(200);
-        messageElement.text(message);
+        messageElement.empty();
+        messageElement.append(message);
         messageElement.show(200);
     };
 

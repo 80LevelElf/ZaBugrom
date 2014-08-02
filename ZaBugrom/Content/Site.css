@@ -12,7 +12,7 @@ header, footer, nav, section {
     min-width: 1000px;
 }
 
-div.content 
+div#content 
 {
     display: block;
     background-color: white;
@@ -183,39 +183,39 @@ header .header-opacity
     opacity: 0.85;
 }
 
-header label.city-name {
+header label#city-name {
     font-size: 18px;
     position: absolute;
     left: 0;
     top: 0;
 }
 
-header div.tool-bar {
+header div#toolbar {
     height: 30px;
     margin-top: 170px; /*200-30*/
     width: 100%;
     cursor: default;
 }
 
-header div.tool-bar div.post-menu {
+header div#toolbar div#post-menu {
     display: inline;
     margin-left: 200px;
 }
 
-header div.tool-bar div.post-menu a{
+header div#toolbar div#post-menu a{
     display: inline;
 }
 
-header div.tool-bar div.post-menu a:hover {
+header div#toolbar div#post-menu a:hover {
     border-bottom: 2px solid #00bfff;
 }
 
-header div.tool-bar div.user-menu {
+header div#toolbar div#user-menu {
     display: flex;
     float: right;
 }
 
-header div.tool-bar div.user-menu a:hover {
+header div#toolbar div#user-menu a:hover {
     border-bottom: 0;
 }
 
@@ -229,21 +229,21 @@ header a
     border-bottom: 2px solid transparent;
 }
 
-header a.settings-button {
+header a#settings-button {
     background: url("images/settings.png") no-repeat;
 }
 
-header a.settings-button:hover {
+header a#settings-button:hover {
     background: url("images/settings_hover.png") no-repeat;
 }
 
-header a.login-button 
+header a#login-button 
 {
     min-width: 20px;
     background: url("images/login.png") no-repeat;
 }
 
-header a.login-button label 
+header a#login-button label 
 {
     position: absolute;
     right: 25px;
@@ -251,20 +251,20 @@ header a.login-button label
     cursor: pointer;
 }
 
-header a.login-button label:hover, header a.login-button:hover label
+header a#login-button label:hover, header a#login-button:hover label
 {
     color: #00bfff;
 }
 
-header a.login-button:hover {
+header a#login-button:hover {
     background: url("images/login_hover.png") no-repeat;
 }
 
-header div.user-div {
+header div#user-div {
     display: flex;
 }
 
-header div.user-div div.user-quick-area 
+header div#user-div div#user-quick-area 
 {
     display: none;
     position: absolute;
@@ -274,13 +274,14 @@ header div.user-div div.user-quick-area
     height: 100px;
     border: 1px solid #aaa;
     cursor: default;
+    z-index: 2;
 }
 
-header div.user-div:hover div.user-quick-area {
+header div#user-div:hover div#user-quick-area {
     display: flex;
 }
 
-header div.user-div div.user-quick-area a 
+header div#user-div div#user-quick-area a 
 {
     font-size: 0.8em;
     text-align: center;
@@ -288,32 +289,32 @@ header div.user-div div.user-quick-area a
     text-align: left;
 }
 
-header div.user-div div.user-quick-area a:hover 
+header div#user-div div#user-quick-area a:hover 
 {
     border-bottom: 1px solid #00bfff;
 }
 
-header div.user-div div.user-quick-area div.user-quick-area-left 
+header div#user-div div#user-quick-area div#user-quick-area-left 
 {
     padding: 5px;
     width: 85px;
     float: left;
 }
 
-header div.user-div div.user-quick-area div.user-quick-area-right
+header div#user-div div#user-quick-area div#user-quick-area-right
 {
     float: right;
     width: 155px; /*240 - 85*/
 }
 
-header div.user-div div.user-quick-area .avatar 
+header div#user-div div#user-quick-area #avatar 
 {
     display: block;
     width: 75px;
     height: 75px;
 }
 
-header a.inbox-button, header a.user-button {
+header a#inbox-button, header a#user-button {
     font-weight: bold;
     background-color: #ccc;
     text-align: center;
@@ -323,18 +324,18 @@ header a.inbox-button, header a.user-button {
     padding-right: 3px;
 }
 
-header a.inbox-button {
+header a#inbox-button {
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 0;
 }
 
-header a.user-button {
+header a#user-button {
     margin-right: 0;
     border-right: 1px solid black;
 }
 
-header a.inbox-button:hover, header a.user-button:hover 
+header a#inbox-button:hover, header a.user-button:hover 
 {
     background-color: #888;
     color: white;
@@ -364,71 +365,4 @@ footer a {
 
 footer a:hover {
     border-bottom: 2px solid #00bfff;
-}
-
-/* Left div
------------------------------------------------------------*/
-div.left-div 
-{
-    margin: 10px;
-    padding: 4px;
-    position: fixed;
-    left: 0;
-    width: 180px;
-}
-
-div.filter-div 
-{
-    padding: 5px;
-    border: 1px solid #aaaaaa;
-}
-
-div.filter-div p 
-{
-    margin: 5px;
-}
-
-div.filter-div select, div.filter-div span.ui-spinner
-{
-    width: 150px /*160-5*2*/;
-}
-
-div.post-tools-div {
-    border-bottom: 1px solid #aaa;
-    border-left: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 5px;
-    display: flex;
-}
-
-div.post-tools-div input, div.post-tools-div a
-{
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0;
-}
-
-div.post-tools-div input.refresh 
-{
-    background: url("images/refresh.png") no-repeat;
-}
-
-div.post-tools-div input.refresh:hover
-{
-    background: url("images/refresh_hover.png") no-repeat;
-}
-
-div.post-tools-div a.add-new-post 
-{
-    background: url("images/add_new_post.png") no-repeat;
-}
-
-div.post-tools-div a.add-new-post:hover
-{
-    background: url("images/add_new_post_hover.png") no-repeat;
 }

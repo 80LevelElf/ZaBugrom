@@ -2,8 +2,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="left-div">
-    <div class="filter-div">
+<div id="left-div">
+    <div id="filter-div">
         <p>
             Страны:
         </p>
@@ -30,9 +30,9 @@
         </p>
     </div>
     
-    <div class="post-tools-div">
-        <input class="refresh" type="submit" value="" title="Обновить посты, используя фильтры"/>
-        <a class="add-new-post" title="Добавить новый пост" href="@Url.Action("Index", "AddPost")"></a>
+    <div id="post-tools-div">
+        <input id="refresh" type="submit" value="" title="Обновить посты, используя фильтры"/>
+        <a id="add-new-post" title="Добавить новый пост" href="@Url.Action("Index", "AddPost")"></a>
     </div>
 </div>
 
@@ -40,4 +40,5 @@
     @RenderBody()
 </div>
 
-@Scripts.Render("~/bundles/Shared/_PostListLayout")
+@Scripts.Render("~/bundles/Home/_PostListLayout")
+@Styles.Render("~/Content/Home/_PostListLayout")

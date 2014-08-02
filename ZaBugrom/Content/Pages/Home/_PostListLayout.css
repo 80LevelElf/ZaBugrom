@@ -1,0 +1,69 @@
+﻿div#left-div 
+{
+    margin: 10px;
+    padding: 4px;
+    position: absolute;
+    left: 0;
+    width: 180px;
+}
+
+div#filter-div 
+{
+    padding: 5px;
+    border: 1px solid #aaaaaa;
+}
+
+div#filter-div p 
+{
+    margin: 5px;
+}
+
+div#filter-div select, div#filter-div span.ui-spinner
+{
+    width: 150px /*160-5*2*/;
+}
+
+div#post-tools-div {
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 5px;
+    display: flex;
+}
+
+div#post-tools-div input, div#post-tools-div a
+{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+}
+
+div#post-tools-div input#refresh 
+{
+    background: url("../../images/refresh.png") no-repeat;
+}
+
+div#post-tools-div input#refresh:hover
+{
+    background: url("../../images/refresh_hover.png") no-repeat;
+}
+
+div#post-tools-div a#add-new-post 
+{
+    background: url("../../images/add_new_post.png") no-repeat;
+}
+
+div#post-tools-div a#add-new-post:hover
+{
+    background: url("../../images/add_new_post_hover.png") no-repeat;
+}
+
+div#post-list-div {
+    margin-left: 50px;
+    margin-right: 50px;
+}

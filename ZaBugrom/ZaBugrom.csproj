@@ -187,13 +187,15 @@
     <Content Include="Content\images\UserAvatars\813ae7cf-2901-4c1c-a038-4f9ee18b7f8e.jpg" />
     <Content Include="Content\images\UserAvatars\dd1dac70-773c-4558-9f3f-68e5e474c9e4.jpg" />
     <Content Include="Content\images\UserAvatars\f2d1c45a-4c9f-4f83-ba05-33aef7345592.jpg" />
-    <Content Include="Content\Pages\Account\Profile.css" />
+    <Content Include="Content\Pages\Account\ProfileSettings.css" />
     <Content Include="Content\Pages\Account\Register.css" />
     <Content Include="Content\Pages\AddPost\AddSimplePost.css" />
     <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
-    <Content Include="Content\Pages\AddPost\Default.css" />
-    <Content Include="Content\Pages\Shared\_PostLayout.css" />
-    <Content Include="Content\Pages\Shared\_ProfileLayout.css" />
+    <Content Include="Content\Pages\AddPost\_AddPostLayout.css" />
+    <Content Include="Content\Pages\Home\_PostListLayout.css" />
+    <Content Include="Content\Pages\Post\VideoPost.css" />
+    <Content Include="Content\Pages\Post\_PostLayout.css" />
+    <Content Include="Content\Pages\Account\_ProfileLayout.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -241,15 +243,15 @@
     <Content Include="Scripts\knockout-3.1.0.debug.js" />
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\ZaBugrom\Account\Profile.js" />
-    <Content Include="Scripts\ZaBugrom\Account\Register.js" />
-    <Content Include="Scripts\ZaBugrom\AddPost\AddSimplePost.js" />
-    <Content Include="Scripts\ZaBugrom\AddPost\AddVideoPost.js" />
-    <Content Include="Scripts\ZaBugrom\ElementCreater.js" />
-    <Content Include="Scripts\ZaBugrom\JQueryUIPreparer.js" />
-    <Content Include="Scripts\ZaBugrom\Mover.js" />
-    <Content Include="Scripts\ZaBugrom\Shared\_Layout.js" />
-    <Content Include="Scripts\ZaBugrom\Shared\_PostListLayout.js" />
+    <Content Include="Scripts\Pages\Account\ProfileSettings.js" />
+    <Content Include="Scripts\Pages\Account\Register.js" />
+    <Content Include="Scripts\Pages\AddPost\AddSimplePost.js" />
+    <Content Include="Scripts\Pages\AddPost\AddVideoPost.js" />
+    <Content Include="Scripts\Utils\ElementCreater.js" />
+    <Content Include="Scripts\Utils\JQueryUIPreparer.js" />
+    <Content Include="Scripts\Utils\Mover.js" />
+    <Content Include="Scripts\Pages\Shared\_Layout.js" />
+    <Content Include="Scripts\Pages\Home\_PostListLayout.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -270,7 +272,7 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Content\Pages\Post\" />
+    <Folder Include="Content\Pages\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -297,11 +299,11 @@
   <ItemGroup>
     <None Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Shared\_PostListLayout.cshtml" />
-    <Content Include="Views\Shared\_ProfileLayout.cshtml" />
+    <Content Include="Views\Home\_PostListLayout.cshtml" />
+    <Content Include="Views\Account\_ProfileLayout.cshtml" />
     <Content Include="Views\Account\ProfileSettings.cshtml" />
-    <Content Include="Views\Shared\_PostLayout.cshtml" />
-    <Content Include="Views\Shared\_AddPostLayout.cshtml" />
+    <Content Include="Views\Post\_PostLayout.cshtml" />
+    <Content Include="Views\AddPost\_AddPostLayout.cshtml" />
     <Content Include="Views\AddPost\AddSimplePost.cshtml" />
     <Content Include="Views\AddPost\AddVideoPost.cshtml" />
     <Content Include="Views\Post\SimplePost.cshtml" />

@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "VideoPost";
-    Layout = "~/Views/Shared/_PostLayout.cshtml";
+    Layout = "~/Views/Post/_PostLayout.cshtml";
 }
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/@Model.Source" frameborder="0" allowfullscreen>
 </iframe>
 
-
+@Styles.Render("~/Content/Post/VideoPost")

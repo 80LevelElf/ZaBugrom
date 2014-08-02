@@ -1,0 +1,10 @@
+﻿@model Models.Data.PostData
+
+<div class="post video-post">
+    <div class="post-header"><a href="#">@Model.Title</a></div>
+    <div class="post-content">
+        @RenderBody()
+    </div>
+</div>
+
+@Styles.Render("~/Content/Post/_PostLayout")
