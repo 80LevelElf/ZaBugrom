@@ -6,11 +6,25 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using Models.Data.Enums;
 
 namespace ZaBugrom.Extensions
 {
     public static class ElementExstensions
     {
+        public static MvcHtmlString GetPostClassByType(this HtmlHelper helper,PostType type)
+        {
+            switch (type)
+            {
+                case PostType.SimplePost:
+                    return new MvcHtmlString("simple-post");
+                case PostType.VideoPost:
+                    return new MvcHtmlString("video-post");
+                default:
+                    throw new InvalidEnumArgumentException("Unknown post type!");
+            }
+        }
+
         public static MvcHtmlString EnumDropDownListFor<TModel, TEnum>(
                     this HtmlHelper<TModel> htmlHelper,
                     Expression<Func<TModel, TEnum>> expression)

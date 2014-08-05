@@ -80,16 +80,16 @@ textarea {
 -----------------------------------------------------------*/
 a {
     text-decoration:none;
-    color: #00bfff;
+    color: #1e90ff;
     cursor: pointer;
     border-bottom: 1px solid transparent;
 }
 
 a:hover {
-    border-bottom: 1px solid #00bfff;
+    border-bottom: 1px solid #1e90ff;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], textarea {
     background-color: white;
     border: 1px solid #aaa;
     min-height: 23px;
@@ -97,9 +97,14 @@ input[type="text"], input[type="password"], input[type="email"] {
     box-sizing: border-box; /*To not increase element over 100%*/
 }
 
-input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover,
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
-    outline: 1px solid #00bfff;
+input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover,
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: 1px solid #1e90ff;
+}
+
+textarea {
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 /* Fix JQuiery UI
@@ -151,9 +156,9 @@ form.big-size    input[type="text"], form.big-size    input[type="password"], fo
     width: 100%;
 }
 
-.separate 
+.group-header 
 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -179,8 +184,7 @@ header label {
 
 header .header-opacity 
 {
-    background-color: white;
-    opacity: 0.85;
+    background-color: rgba(256,256,256, 0.8);
 }
 
 header label#city-name {
@@ -207,7 +211,7 @@ header div#toolbar div#post-menu a{
 }
 
 header div#toolbar div#post-menu a:hover {
-    border-bottom: 2px solid #00bfff;
+    border-bottom: 2px solid #1e90ff;
 }
 
 header div#toolbar div#user-menu {
@@ -253,7 +257,7 @@ header a#login-button label
 
 header a#login-button label:hover, header a#login-button:hover label
 {
-    color: #00bfff;
+    color: #1e90ff;
 }
 
 header a#login-button:hover {
@@ -268,13 +272,13 @@ header div#user-div div#user-quick-area
 {
     display: none;
     position: absolute;
-    right: 55px;
-    top: 200px;
+    right: 58px;
+    top: 196px;
     width: 240px;
     height: 100px;
     border: 1px solid #aaa;
     cursor: default;
-    z-index: 2;
+    background-color: white;
 }
 
 header div#user-div:hover div#user-quick-area {
@@ -291,7 +295,7 @@ header div#user-div div#user-quick-area a
 
 header div#user-div div#user-quick-area a:hover 
 {
-    border-bottom: 1px solid #00bfff;
+    border-bottom: 1px solid #1e90ff;
 }
 
 header div#user-div div#user-quick-area div#user-quick-area-left 
@@ -314,14 +318,26 @@ header div#user-div div#user-quick-area #avatar
     height: 75px;
 }
 
+div#user-div:hover a#user-button
+{
+    background-color: white;
+    z-index: 2;
+    
+    border-top: 1px solid #aaa;
+    border-right: 1px solid #aaa; 
+    border-left: 1px solid #aaa;     
+}
+
 header a#inbox-button, header a#user-button {
     font-weight: bold;
-    background-color: #ccc;
     text-align: center;
     border-bottom: 0;
-    height: 22px;
+    height: 25px;
     padding-left: 3px;
     padding-right: 3px;
+    border: 1px solid transparent;
+    margin-top: 2px;
+    margin-bottom: 1px;
 }
 
 header a#inbox-button {
@@ -331,7 +347,8 @@ header a#inbox-button {
 }
 
 header a#user-button {
-    margin-right: 0;
+    margin-right: 2px;
+    margin-left: 2px;
     border-right: 1px solid black;
 }
 
@@ -364,5 +381,5 @@ footer a {
 }
 
 footer a:hover {
-    border-bottom: 2px solid #00bfff;
+    border-bottom: 2px solid #1e90ff;
 }

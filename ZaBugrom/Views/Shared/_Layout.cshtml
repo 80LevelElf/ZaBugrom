@@ -36,7 +36,6 @@
                         {
                             <div id="user-div">
                                 <a id="user-button">@WebSecurity.CurrentUserName</a>
-                                <a id="inbox-button">3</a>
                                 <div id="user-quick-area">
                                     <div id="user-quick-area-left">
                                         <img alt="Аватар" id="avatar" runat="server" title="Ваш аватар" src="@userData.AvatarPath" />
@@ -47,8 +46,9 @@
                                         <a href="#myComments">Мои комментарии</a>
                                         <a href="@Url.Action("ProfileSettings", "Account")">Настройки</a>
                                     </div>
-                                    </div>
+                                </div>
                             </div>
+                        <a id="inbox-button">3</a>
                         }
                     }
                     <a id="login-button" href="@Url.Action("Login", "Account")">

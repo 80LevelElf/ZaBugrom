@@ -13,7 +13,7 @@ div#profile-menu-div a {
 
 div#profile-menu-div a.selected 
 {
-    border-bottom: 1px solid #00bfff;
+    border-bottom: 1px solid #1e90ff;
     font-weight: bold;
 }
 

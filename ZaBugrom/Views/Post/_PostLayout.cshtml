@@ -1,6 +1,7 @@
-﻿@model Models.Data.PostData
+﻿@using ZaBugrom.Extensions
+@model Models.Data.PostData
 
-<div class="post video-post">
+<div class="post @Html.GetPostClassByType(Model.PostType)">
     <div class="post-header"><a href="#">@Model.Title</a></div>
     <div class="post-content">
         @RenderBody()

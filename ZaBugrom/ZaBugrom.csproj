@@ -193,6 +193,7 @@
     <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
     <Content Include="Content\Pages\AddPost\_AddPostLayout.css" />
     <Content Include="Content\Pages\Home\_PostListLayout.css" />
+    <Content Include="Content\Pages\Post\SimplePost.css" />
     <Content Include="Content\Pages\Post\VideoPost.css" />
     <Content Include="Content\Pages\Post\_PostLayout.css" />
     <Content Include="Content\Pages\Account\_ProfileLayout.css" />
@@ -249,6 +250,7 @@
     <Content Include="Scripts\Pages\AddPost\AddVideoPost.js" />
     <Content Include="Scripts\Utils\ElementCreater.js" />
     <Content Include="Scripts\Utils\JQueryUIPreparer.js" />
+    <Content Include="Scripts\Utils\Messager.js" />
     <Content Include="Scripts\Utils\Mover.js" />
     <Content Include="Scripts\Pages\Shared\_Layout.js" />
     <Content Include="Scripts\Pages\Home\_PostListLayout.js" />

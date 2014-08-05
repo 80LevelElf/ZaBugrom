@@ -2,6 +2,10 @@
     width: 100%;
 }
 
-div#content-div p input[type="text"] {
+div#content-div p input[type="text"], div#content-div p textarea {
     width: 100%;
+}
+
+div#content-div p textarea {
+    height: 200px;
 }

@@ -63,7 +63,13 @@ div#post-tools-div a#add-new-post:hover
     background: url("../../images/add_new_post_hover.png") no-repeat;
 }
 
-div#post-list-div {
+div#post-list-div 
+{
+    padding-top: 13px;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+div.post {
+    margin-bottom: 30px;
 }

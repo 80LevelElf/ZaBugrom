@@ -25,10 +25,11 @@ namespace ZaBugrom
                         "~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
 
-            //My scripts
+            //Utils
             bundles.Add(new ScriptBundle("~/bundles/creater").Include("~/Scripts/Utils/ElementCreater.js"));
             bundles.Add(new ScriptBundle("~/bundles/preparer").Include("~/Scripts/Utils/JQueryUIPreparer.js"));
             bundles.Add(new ScriptBundle("~/bundles/mover").Include("~/Scripts/Utils/Mover.js"));
+            bundles.Add(new ScriptBundle("~/bundles/messager").Include("~/Scripts/Utils/Messager.js"));
 
             //---CSS
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));

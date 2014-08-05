@@ -1,25 +1,12 @@
 ﻿$(function () {
     var messageElement = $("p#message");
 
-    var setMessage = function(message) {
-        messageElement.hide(200);
-        messageElement.empty();
-        messageElement.append(message);
-        messageElement.show(200);
-    };
+    AddMessageHandler($("input#Email"), messageElement, "Укажите, пожалуйста, свой реальный адрес электронной почты,"
+        + " чтобы на него пришло письмо подтверждения(без этого невозможно будет пользоваться сайтом).");
 
-    $("input#Email").bind("focusin", function () {
-        setMessage("Укажите, пожалуйста, свой реальный адрес электронной почты,"
-                    + " чтобы на него пришло письмо подтверждения(без этого невозможно будет пользоваться сайтом).");
-    });
+    AddMessageHandler($("input#Name"), messageElement, "Это имя, под которым вас будут видеть другие пользователи."
+        + " В будущем вы сможете сменить его.");
 
-    $("input#Name").bind("focusin", function () {
-        setMessage("Это имя, под которым вас будут видеть другие пользователи."
-                    + " В будущем вы сможете сменить его.");
-    });
-
-    $("input#Password").bind("focusin", function () {
-        setMessage("Мы не накладываем никаких ограничений на ваш пароль, он может быть любым."
+    AddMessageHandler($("input#Password"), messageElement, "Мы не накладываем никаких ограничений на ваш пароль, он может быть любым."
                     + " Всего лишь помните, что чем сложнее пароль, тем сложнее злоумышленнику будет взломать его.");
-    });
 })

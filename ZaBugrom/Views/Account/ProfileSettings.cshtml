@@ -10,19 +10,19 @@
 
 <form class="big-size" method="POST" action="@Url.Action("ProfileSettings")" enctype="multipart/form-data">
     <p>@Html.ValidationSummary()</p>
-    <p class="separate">Основные настройки</p>
+    <p class="group-header">Основные настройки</p>
     <p>Логин (при изменении логина нужно будет осуществить повторный вход с новым логином):</p>
     <p>@Html.EditorFor(i => i.Name)</p>
     <p>Email:</p>
     <p>@Html.EditorFor(i => i.Email)</p>
     <p>Пол:</p>
     <p>@Html.EnumDropDownListFor(i => i.Gender)</p>
-    <p class="separate">Сменить пароль</p>
+    <p class="group-header">Сменить пароль</p>
     <p>Старый пароль:</p>
     <p>@Html.EditorFor(i => i.OldPassword)</p>
     <p>Новый пароль:</p>
     <p>@Html.EditorFor(i => i.NewPassword)</p>
-    <p class="separate">Аватар</p>
+    <p class="group-header">Аватар</p>
     <p>Выберите новый аватар из файла на компьютере
         (формат - png или jpg, аватар автоматически приведеться к стандартному размеру):</p>
     <input type="file" name="AvatarPostedFile" id="AvatarPostedFile">
