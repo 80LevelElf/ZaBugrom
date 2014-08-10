@@ -24,7 +24,7 @@ namespace CommonDAL.SqlDAL
         {
             if (CommonDbManager == null)
             {
-                throw new NullReferenceException("Please, initialize DbManager before using of AbstractSqlRepository.");
+                throw new NullReferenceException("Please, initialize DbManager before using AbstractSqlRepository.");
             }
 
             _sqlQuery = new SqlQuery<T>(CommonDbManager);

@@ -171,14 +171,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\add_new_post.png" />
-    <Content Include="Content\images\add_new_post_hover.png" />
+    <Content Include="Content\Pages\Home\images\add_new_post.png" />
+    <Content Include="Content\Pages\Home\images\add_new_post_hover.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\HeaderImages\1.jpg" />
     <Content Include="Content\images\login.png" />
     <Content Include="Content\images\login_hover.png" />
-    <Content Include="Content\images\refresh.png" />
-    <Content Include="Content\images\refresh_hover.png" />
+    <Content Include="Content\Pages\Home\images\refresh.png" />
+    <Content Include="Content\Pages\Home\images\refresh_hover.png" />
     <Content Include="Content\images\settings.png" />
     <Content Include="Content\images\settings_hover.png" />
     <Content Include="Content\images\UserAvatars\393f0646-39b8-453f-a147-bf4eb04ebc92.jpg" />
@@ -263,6 +263,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />

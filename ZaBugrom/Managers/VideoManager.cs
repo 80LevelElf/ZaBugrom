@@ -13,9 +13,10 @@ namespace ZaBugrom.Managers
                 return null;
             }
 
-            int count = url.Length - start - 3/*length of ?v=*/;
+            const int lengthOfPrefix = 3; /*length of ?v=*/
+            int count = url.Length - start - lengthOfPrefix;
 
-            return url.Substring(start, count);
+            return url.Substring(start + lengthOfPrefix, count);
         }
     }
 }

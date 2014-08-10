@@ -1,5 +1,8 @@
 ﻿$(function () {
 
+    //For somee.com
+    $("a[href='http://somee.com']").hide();
+
     //Try to load header image (we do it to get better performance)
     $.post(ActionPath("CurrentHeaderImage", "Helper"), function (headerImage) {
         var header = $("header");

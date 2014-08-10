@@ -9,9 +9,9 @@ namespace ZaBugrom.Managers
     public static class HeaderImageManager
     {
         private static List<HeaderImageData> _headerImageList;
-        private static readonly HeaderImageRepository _repository = TypeAccessor<HeaderImageRepository>.CreateInstance();
         private static HeaderImageData _currentHeaderImage;
         private static DateTime _lastCheckTime;
+        private static readonly HeaderImageRepository _repository = TypeAccessor<HeaderImageRepository>.CreateInstance();
 
         public static HeaderImageData CurrentHeaderImage
         {
@@ -40,7 +40,7 @@ namespace ZaBugrom.Managers
             {
                 if (_headerImageList.Count == 0)
                 {
-                    throw new IndexOutOfRangeException("There is no loaded header images!");
+                    return null;
                 }
 
                 return _headerImageList[0];

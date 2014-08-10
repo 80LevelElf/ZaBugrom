@@ -35,9 +35,8 @@ namespace ZaBugrom
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));
 
             //JQuiry
-            bundles.Add(new StyleBundle("~/Content/themes/base").Include(
+            bundles.Add(new StyleBundle("~/Content/themes/baseTeame").Include(
                         "~/Content/themes/base/jquery-ui.css",
-                        "~/Content/themes/base/jquery-ui.structure.css",
                         "~/Content/themes/base/jquery-ui.theme.css"));
 
             //Pages scripts bundles
@@ -51,6 +50,8 @@ namespace ZaBugrom
             {
                 bundles.Add(bundle);
             }
+
+            BundleTable.EnableOptimizations = false;
         }
 
         /// <summary>
@@ -93,10 +94,10 @@ namespace ZaBugrom
                 switch (bundleType)
                 {
                     case BundleType.Script:
-                        bundle = new ScriptBundle(prefix + RemoveExtension(fileNameWithRightSlash));
+                        bundle = new ScriptBundle("~" + directoryWithRightSlash.Replace("Scripts", "bundles") + RemoveExtension(fileNameWithRightSlash));
                         break;
                     case BundleType.Style:
-                        bundle = new StyleBundle(prefix + RemoveExtension(fileNameWithRightSlash));
+                        bundle = new StyleBundle("~" + directoryWithRightSlash + RemoveExtension(fileNameWithRightSlash));
                         break;
                     default:
                         throw new ArgumentOutOfRangeException("bundleType");

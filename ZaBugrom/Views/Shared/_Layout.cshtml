@@ -1,6 +1,7 @@
 ﻿@using ZaBugrom.Managers
 @{
     var userData = UserManager.GetCurrentUser();
+    ViewBag.Title = "За бугром. ком";
 }
 
 <!DOCTYPE html>
@@ -10,13 +11,13 @@
         <meta name="viewport" content="width=device-width" />
         <title>@ViewBag.Title</title>
         @Styles.Render("~/Content/site",
-                       "~/Content/themes/base")
+                        "~/Content/themes/baseTeame")
         @Scripts.Render("~/bundles/jquery",
                         "~/bundles/jqueryui",
                         "~/bundles/creater",
                         "~/bundles/preparer",
                         "~/bundles/mover",
-                        "~/bundles/Shared/_Layout")
+                        "~/bundles/Pages/Shared/_Layout")
 
     <link rel="SHORTCUT ICON" href="~/Content/images/favicon.ico"/>
     </head>
@@ -32,7 +33,7 @@
 
                 <div id="user-menu">
                     @{
-                        if (WebSecurity.IsAuthenticated)
+                        if (userData != null)
                         {
                             <div id="user-div">
                                 <a id="user-button">@WebSecurity.CurrentUserName</a>
@@ -53,7 +54,7 @@
                     }
                     <a id="login-button" href="@Url.Action("Login", "Account")">
                         @{
-                            if (!WebSecurity.IsAuthenticated)
+                            if (userData == null)
                             {
                                 <label>Вход</label>
                             }

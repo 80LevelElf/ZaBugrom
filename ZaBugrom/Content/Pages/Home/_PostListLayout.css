@@ -45,22 +45,22 @@ div#post-tools-div input, div#post-tools-div a
 
 div#post-tools-div input#refresh 
 {
-    background: url("../../images/refresh.png") no-repeat;
+    background: url("images/refresh.png") no-repeat;
 }
 
 div#post-tools-div input#refresh:hover
 {
-    background: url("../../images/refresh_hover.png") no-repeat;
+    background: url("images/refresh_hover.png") no-repeat;
 }
 
 div#post-tools-div a#add-new-post 
 {
-    background: url("../../images/add_new_post.png") no-repeat;
+    background: url("images/add_new_post.png") no-repeat;
 }
 
 div#post-tools-div a#add-new-post:hover
 {
-    background: url("../../images/add_new_post_hover.png") no-repeat;
+    background: url("images/add_new_post_hover.png") no-repeat;
 }
 
 div#post-list-div 

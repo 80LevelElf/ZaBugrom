@@ -1,8 +1,6 @@
-﻿using System;
-using System.Configuration;
-using System.IO;
-using System.Web;
+﻿using System.Configuration;
 using CommonDAL.SqlDAL;
+using Models.Data;
 using WebMatrix.WebData;
 using ZaBugrom.Managers;
 
@@ -15,6 +13,8 @@ namespace ZaBugrom
             PrepareSimpleMembershipProvider();
             PrepareBlToolKit();
             PrepareHeaderImageManager();
+
+            FirstInicialization();
         }
 
         private static void PrepareSimpleMembershipProvider()
@@ -24,13 +24,29 @@ namespace ZaBugrom
 
         private static void PrepareBlToolKit()
         {
-            //Set connection string
             AbstractSqlRepository.SetDataBaseConfig(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         }
 
         private static void PrepareHeaderImageManager()
         {
             HeaderImageManager.Load();
+        }
+
+        private static void FirstInicialization()
+        {
+            //Get first header image, if there is no such images
+            if (HeaderImageManager.CurrentHeaderImage == null)
+            {
+                RepositoryManager.HeaderImageRepository.Insert(new HeaderImageData
+                {
+                    FileName = "1.jpg",
+                    ShiftByX = 0,
+                    ShiftByY = 200,
+                    Title = "Токио"
+                });
+
+                HeaderImageManager.Load();
+            }
         }
     }
 }
