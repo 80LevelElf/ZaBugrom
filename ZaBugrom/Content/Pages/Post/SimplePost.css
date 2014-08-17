@@ -5,3 +5,6 @@
 div.post.simple-post div.post-header a:hover{
     color: #1e90ff;
 }
+div.post.simple-post div.post-foorer a:hover {
+    color: #1e90ff;
+}

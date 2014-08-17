@@ -11,8 +11,8 @@
         switch (postData.PostType)
         {
             case PostType.SimplePost:
-                @Html.Action("SimplePost", "Post", new {id = postData.Id})
-                break;
+                @Html.Action("SimplePost", "Post", new { id = postData.Id })
+           break;
             case PostType.VideoPost:
                 @Html.Action("VideoPost", "Post", new { id = postData.Id })
                 break;

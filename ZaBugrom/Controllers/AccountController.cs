@@ -189,8 +189,8 @@ namespace ZaBugrom.Controllers
                     //Save image as real hard disk path (as C:/MyFolder/image)
                     image.Save(newAvatarPath);
 
-                    //Save avatar path by virtual path (as ~/Content/image)
-                    userData.AvatarPath = Path.Combine(ContentPathManager.UserAvatarFolder, newAvatarName);
+                    //Save avatar path by virtual image name
+                    userData.AvatarName = newAvatarName;
                 }
             }
 

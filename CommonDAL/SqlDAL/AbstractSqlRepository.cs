@@ -8,71 +8,99 @@ namespace CommonDAL.SqlDAL
 {
     public abstract class AbstractSqlRepository : DataAccessor
     {
-        protected static DbManager CommonDbManager { get; set; }
+        protected static string ConnectionString { get; set; }
+
+        public static DbManager GetNewDbManager()
+        {
+            return new DbManager(new SqlDataProvider(), ConnectionString);
+        }
 
         public static void SetDataBaseConfig(string connectionString)
         {
-            CommonDbManager = new DbManager(new SqlDataProvider(), connectionString);
+            ConnectionString = connectionString;
         }
     }
 
     public abstract class AbstractSqlRepository<T> : AbstractSqlRepository, IRepository<T>
     {
-        private readonly SqlQuery<T> _sqlQuery;
-
         protected AbstractSqlRepository()
         {
-            if (CommonDbManager == null)
+            if (ConnectionString == null)
             {
                 throw new NullReferenceException("Please, initialize DbManager before using AbstractSqlRepository.");
             }
-
-            _sqlQuery = new SqlQuery<T>(CommonDbManager);
         }
 
         public T GetById(int id)
         {
-            return _sqlQuery.SelectByKey(id);
+            using (var dbManager = GetNewDbManager())
+            {
+                return new SqlQuery<T>(dbManager).SelectByKey(id);
+            }
         }
 
         public List<T> GetList()
         {
-            return _sqlQuery.SelectAll();
+            using (var dbManager = GetNewDbManager())
+            {
+                return new SqlQuery<T>(dbManager).SelectAll();
+            }
         }
 
         public int Insert(T instance)
         {
-            return _sqlQuery.Insert(instance);
+            using (var dbManager = GetNewDbManager())
+            {
+                return new SqlQuery<T>(dbManager).Insert(instance);
+            }
         }
 
         public int Insert(IEnumerable<T> instanceList)
         {
-            return _sqlQuery.Insert(instanceList);
+            using (var dbManager = GetNewDbManager())
+            {
+                return new SqlQuery<T>(dbManager).Insert(instanceList);
+            }
         }
 
         public void Update(T instance)
         {
-            _sqlQuery.Update(instance);
+            using (var dbManager = GetNewDbManager())
+            {
+                new SqlQuery<T>(dbManager).Update(instance);
+            }
         }
 
         public void Update(IEnumerable<T> instanceList)
         {
-            _sqlQuery.Update(instanceList);
+            using (var dbManager = GetNewDbManager())
+            {
+                new SqlQuery<T>(dbManager).Update(instanceList);
+            }
         }
 
         public void Delete(int id)
         {
-            _sqlQuery.DeleteByKey(id);
+            using (var dbManager = GetNewDbManager())
+            {
+                new SqlQuery<T>(dbManager).DeleteByKey(id);
+            }
         }
 
         public void Delete(T instance)
         {
-            _sqlQuery.Delete(instance);
+            using (var dbManager = GetNewDbManager())
+            {
+                new SqlQuery<T>(dbManager).Delete(instance);
+            }
         }
 
         public void Delete(IEnumerable<T> instanceList)
         {
-            _sqlQuery.Delete(instanceList);
+            using (var dbManager = GetNewDbManager())
+            {
+                new SqlQuery<T>(dbManager).Delete(instanceList);
+            }
         }
     }
 }

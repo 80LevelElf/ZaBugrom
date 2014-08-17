@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Enums\Gender.cs" />
+    <Compile Include="Data\Enums\MessageType.cs" />
     <Compile Include="Data\Enums\PostType.cs" />
     <Compile Include="Data\HeaderImageData.cs" />
     <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\MessageData.cs" />
     <Compile Include="Data\PostData.cs" />
     <Compile Include="Data\UserData.cs" />
     <Compile Include="InputModels\Account\LoginInputModel.cs" />

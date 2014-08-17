@@ -283,6 +283,7 @@ header div#user-div div#user-quick-area
 
 header div#user-div:hover div#user-quick-area {
     display: flex;
+    box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.3);
 }
 
 header div#user-div div#user-quick-area a 
@@ -325,7 +326,7 @@ div#user-div:hover a#user-button
     
     border-top: 1px solid #aaa;
     border-right: 1px solid #aaa; 
-    border-left: 1px solid #aaa;     
+    border-left: 1px solid #aaa;  
 }
 
 header a#inbox-button, header a#user-button {
@@ -349,13 +350,12 @@ header a#inbox-button {
 header a#user-button {
     margin-right: 2px;
     margin-left: 2px;
-    border-right: 1px solid black;
 }
 
 header a#inbox-button:hover, header a.user-button:hover 
 {
-    background-color: #888;
-    color: white;
+    background-color: white;
+    border: 1px solid #aaa;
 }
 
 /* Footer

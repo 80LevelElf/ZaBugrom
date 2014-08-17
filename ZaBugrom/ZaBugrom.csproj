@@ -169,6 +169,7 @@
     <Compile Include="Managers\SettingsManager.cs" />
     <Compile Include="Managers\VideoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shells\ServerSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Pages\Home\images\add_new_post.png" />
@@ -193,6 +194,12 @@
     <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
     <Content Include="Content\Pages\AddPost\_AddPostLayout.css" />
     <Content Include="Content\Pages\Home\_PostListLayout.css" />
+    <Content Include="Content\Pages\Post\images\complain-hover.png" />
+    <Content Include="Content\Pages\Post\images\complain.png" />
+    <Content Include="Content\Pages\Post\images\post-rating-down-hover.png" />
+    <Content Include="Content\Pages\Post\images\post-rating-down.png" />
+    <Content Include="Content\Pages\Post\images\post-rating-up-hover.png" />
+    <Content Include="Content\Pages\Post\images\post-rating-up.png" />
     <Content Include="Content\Pages\Post\SimplePost.css" />
     <Content Include="Content\Pages\Post\VideoPost.css" />
     <Content Include="Content\Pages\Post\_PostLayout.css" />

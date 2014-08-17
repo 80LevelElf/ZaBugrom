@@ -1,7 +1,7 @@
 ﻿@using ZaBugrom.Managers
 @{
     var userData = UserManager.GetCurrentUser();
-    ViewBag.Title = "За бугром. ком";
+    ViewBag.Title = "За бугром.ком";
 }
 
 <!DOCTYPE html>
@@ -33,13 +33,13 @@
 
                 <div id="user-menu">
                     @{
-                        if (userData != null)
+                        if (WebSecurity.HasUserId)
                         {
                             <div id="user-div">
                                 <a id="user-button">@WebSecurity.CurrentUserName</a>
                                 <div id="user-quick-area">
                                     <div id="user-quick-area-left">
-                                        <img alt="Аватар" id="avatar" runat="server" title="Ваш аватар" src="@userData.AvatarPath" />
+                                        <img alt="Аватар" id="avatar" runat="server" title="Ваш аватар" src="/Content/images/UserAvatars/@userData.AvatarName" />
                                         <label id="rating" title="Ваш рейтинг">100</label>
                                     </div>
                                     <div id="user-quick-area-right">
@@ -49,12 +49,12 @@
                                     </div>
                                 </div>
                             </div>
-                        <a id="inbox-button">3</a>
+                        <a id="inbox-button">@userData.MessageCount</a>
                         }
                     }
                     <a id="login-button" href="@Url.Action("Login", "Account")">
                         @{
-                            if (userData == null)
+                            if (!WebSecurity.HasUserId)
                             {
                                 <label>Вход</label>
                             }

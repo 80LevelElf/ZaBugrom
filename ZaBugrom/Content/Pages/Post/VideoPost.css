@@ -2,14 +2,24 @@
     border-left: 3px solid red;
 }
 
-div.post.video-post iframe {
-    width: 100%;
+div.post.video-post div.post-content {
+    align: center;
+}
+
+div.post.video-post iframe 
+{
+    display: block;
+    margin: 0 auto;
 }
 
 div.post.video-post div.post-content {
-    background-color: black;
+    background-color: #1b1b1b;
 }
 
 div.post.video-post div.post-header a:hover{
+    color: red;
+}
+
+div.post.video-post div.post-foorer a:hover {
     color: red;
 }

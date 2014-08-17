@@ -5,9 +5,10 @@ CREATE TABLE [dbo].[UserData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](100) NOT NULL,
 	[Email] [nvarchar](100) NOT NULL,
-	[AvatarPath] [nvarchar](100) NULL,
-	[Gender] [int] NULL,
-	[Rating] [int] NULL,
+	[AvatarName] [nvarchar](100) NULL,
+	[Gender] [int] NOT NULL,
+	[Rating] [int] NOT NULL,
+	[MessageCount] [int] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -20,6 +21,17 @@ UNIQUE NONCLUSTERED
 
 GO
 
+ALTER TABLE [dbo].[UserData] ADD  CONSTRAINT [DF_UserData_Gender]  DEFAULT ((1)) FOR [Gender]
+GO
+
+ALTER TABLE [dbo].[UserData] ADD  CONSTRAINT [DF_UserData_Rating]  DEFAULT ((0)) FOR [Rating]
+GO
+
+ALTER TABLE [dbo].[UserData] ADD  CONSTRAINT [DF_UserData_MessageCount]  DEFAULT ((0)) FOR [MessageCount]
+GO
+
+ALTER TABLE [dbo].[UserData] ADD  CONSTRAINT [DF_UserData_AvatarName]  DEFAULT (N'default.png') FOR [AvatarName]
+GO
 -------------------------------------------------------------------
 -------- Header images
 -------------------------------------------------------------------
@@ -46,6 +58,8 @@ CREATE TABLE [dbo].[PostData](
 	[Source] [nvarchar](max) NOT NULL,
 	[PostType] [int] NOT NULL,
 	[AuthorId] [int] NOT NULL,
+	[AuthorName] [nvarchar](100) NOT NULL,
+	[Rating] [int] NOT NULL
  CONSTRAINT [PK_PostData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -54,9 +68,45 @@ CREATE TABLE [dbo].[PostData](
 
 GO
 
+ALTER TABLE [dbo].[PostData] ADD  CONSTRAINT [DF_PostData_Rating]  DEFAULT ((0)) FOR [Rating]
+GO
+
 ALTER TABLE [dbo].[PostData]  WITH CHECK ADD  CONSTRAINT [FK_PostData_UserData] FOREIGN KEY([AuthorId])
 REFERENCES [dbo].[UserData] ([Id])
 GO
 
 ALTER TABLE [dbo].[PostData] CHECK CONSTRAINT [FK_PostData_UserData]
+GO
+
+-------------------------------------------------------------------
+-------- Messages
+-------------------------------------------------------------------
+CREATE TABLE [dbo].[MessageData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserFromId] [int] NOT NULL,
+	[UserToId] [int] NOT NULL,
+	[Title] [nvarchar](100) NOT NULL,
+	[MessageType] [int] NOT NULL,
+	[Message] [varchar](100) NOT NULL,
+	[IsReaded] [bit] NOT NULL,
+ CONSTRAINT [PK_MessageData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[MessageData]  WITH CHECK ADD  CONSTRAINT [FK_MessageData_UserData] FOREIGN KEY([UserToId])
+REFERENCES [dbo].[UserData] ([Id])
+GO
+
+ALTER TABLE [dbo].[MessageData] CHECK CONSTRAINT [FK_MessageData_UserData]
+GO
+
+ALTER TABLE [dbo].[MessageData]  WITH CHECK ADD  CONSTRAINT [FK_MessageData_UserData1] FOREIGN KEY([UserFromId])
+REFERENCES [dbo].[UserData] ([Id])
 GO
