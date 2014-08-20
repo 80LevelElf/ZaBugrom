@@ -24,6 +24,7 @@ namespace ZaBugrom
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery.autosize").Include("~/Scripts/jquery.autosize.js"));
 
             //Utils
             bundles.Add(new ScriptBundle("~/bundles/creater").Include("~/Scripts/Utils/ElementCreater.js"));
@@ -66,20 +67,6 @@ namespace ZaBugrom
             if (!directory.EndsWith("\\"))
             {
                 directory += "\\";
-            }
-
-            //Normolize prefix
-            string prefix;
-            switch (bundleType)
-            {
-                case BundleType.Script:
-                    prefix = "~/bundles/";
-                    break;
-                case BundleType.Style:
-                    prefix = "~/Content/";
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("bundleType");
             }
 
             var fullPath = HttpContext.Current.Server.MapPath("~" + directory);

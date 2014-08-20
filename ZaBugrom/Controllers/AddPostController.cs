@@ -15,7 +15,7 @@ namespace ZaBugrom.Controllers
 
         [Authorize]
         [HttpGet]
-        public ActionResult AddSimplePost()
+        public ViewResult AddSimplePost()
         {
             return View();
         }

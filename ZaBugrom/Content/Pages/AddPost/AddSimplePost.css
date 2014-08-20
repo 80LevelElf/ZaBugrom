@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-div#content-div p input[type="text"], div#content-div p textarea {
+div#content-div p input[type="text"], div#content-div .post-editor-area {
     width: 100%;
 }
 

@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity.Infrastructure;
 using BLToolkit.Reflection;
 using CommonDAL.SqlDAL;
-using ZaBugrom.Shells;
 
 namespace ZaBugrom.Managers
 {

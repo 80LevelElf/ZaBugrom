@@ -107,6 +107,10 @@ textarea {
     padding-bottom: 8px;
 }
 
+.box-shadow {
+    box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.3);
+}
+
 /* Fix JQuiery UI
 -----------------------------------------------------------*/
 .ui-widget

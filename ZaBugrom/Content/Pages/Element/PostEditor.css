@@ -1,0 +1,76 @@
+﻿div.post-editor-area textarea {
+    width: 100%;
+    min-height: 150px;
+    margin: 0;
+    display: block;
+}
+
+div.post-editor-area div.tool-area {
+    width: 100%;
+    background-color: #eee;
+    padding-left: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+div.post-editor-area div.tool-area a 
+{
+    color: black;
+    border-bottom: 0;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    background-repeat: no-repeat;
+    align-content: center;
+}
+
+div.post-editor-area div.tool-area a:hover {
+    background-color: rgba(30,144,255,0.5);
+}
+
+div.tool-area a.underline {
+    text-decoration: underline;
+}
+
+div.post-editor-area {
+    box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.3);
+}
+
+div.post-editor-area div.tool-area a.bold {
+        background-image: url("images/bold.png");
+}
+
+div.post-editor-area div.tool-area a.italic {
+        background-image: url("images/italic.png");
+}
+
+div.post-editor-area div.tool-area a.image {
+        background-image: url("images/image.png");
+}
+
+div.post-editor-area div.tool-area a.link {
+        background-image: url("images/link.png");
+}
+
+div.post-editor-area div.tool-area a.link {
+        background-image: url("images/link.png");
+}
+
+div.post-editor-area div.tool-area a.quote {
+        background-image: url("images/quote.png");
+}
+
+div.post-editor-area div.tool-area a.youtube {
+        background-image: url("images/youtube.png");
+}
+
+div.post-editor-area div.tool-area a.user {
+        background-image: url("images/user.png");
+}
+
+div.post-editor-area div.tool-area a.end-group {
+    margin-right: 15px;
+}
