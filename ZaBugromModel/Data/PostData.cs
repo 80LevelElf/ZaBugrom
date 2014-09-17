@@ -1,10 +1,11 @@
-﻿using Models.Data.Enums;
+﻿using System;
+using Models.Data.Enums;
 
 namespace Models.Data
 {
-    public class PostData : Data
+    public class PostData : BigData
     {
-        public int AuthorId { get; set; }
+        public Int64 AuthorId { get; set; }
         public int AuthorName { get; set; }
         public PostType PostType { get; set; }
         public string Title { get; set; }

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BigData.cs" />
     <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="Data\Enums\MessageType.cs" />
     <Compile Include="Data\Enums\PostType.cs" />

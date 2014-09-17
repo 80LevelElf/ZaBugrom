@@ -5,8 +5,10 @@
     Layout = "~/Views/Post/_PostLayout.cshtml";
 }
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/@Model.Source" align="middle"
+<div class="post-content">
+    <iframe width="560" height="315" src="//www.youtube.com/embed/@Model.Source" align="middle"
     frameborder="0" allowfullscreen wmode="opaque">
 </iframe>
+</div>
 
 @Styles.Render("~/Content/Pages/Post/VideoPost")

@@ -53,7 +53,7 @@ GO
 -------- Posts
 -------------------------------------------------------------------
 CREATE TABLE [dbo].[PostData](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](200) NOT NULL,
 	[Source] [nvarchar](max) NOT NULL,
 	[PostType] [int] NOT NULL,
@@ -82,7 +82,7 @@ GO
 -------- Messages
 -------------------------------------------------------------------
 CREATE TABLE [dbo].[MessageData](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[UserFromId] [int] NOT NULL,
 	[UserToId] [int] NOT NULL,
 	[Title] [nvarchar](100) NOT NULL,
