@@ -18,11 +18,11 @@ namespace ZaBugrom
         public static void RegisterBundles(BundleCollection bundles)
         {
             //---Scripts
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery.zabugrom.js"));
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include("~/Scripts/jquery-ui-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/jquery.autosize").Include("~/Scripts/jquery.autosize.js"));
 
@@ -32,6 +32,7 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/mover").Include("~/Scripts/Utils/Mover.js"));
             bundles.Add(new ScriptBundle("~/bundles/messager").Include("~/Scripts/Utils/Messager.js"));
             bundles.Add(new ScriptBundle("~/bundles/postManager").Include("~/Scripts/Utils/PostManager.js"));
+            bundles.Add(new ScriptBundle("~/bundles/videoManager").Include("~/Scripts/Utils/VideoManager.js"));
 
             //---CSS
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));

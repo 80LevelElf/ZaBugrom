@@ -3,7 +3,7 @@
     $("div#filter-div input[type='number']").spinner();
 
     //Create posts
-    $("div.post-content").each(function () {
-        $(this).html(GetPostData($(this).html()));
+    $("div.post.simple-post div.post-content").each(function () {
+        SetPostData(this);
     });
 })

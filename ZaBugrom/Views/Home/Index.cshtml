@@ -1,5 +1,4 @@
-﻿@using Models.Data.Enums
-@using ZaBugrom.Managers
+﻿@using ZaBugrom.Managers
 @{
     ViewBag.Title = "За бугром.ком";
     Layout = "~/Views/Home/_PostListLayout.cshtml";
@@ -8,14 +7,6 @@
 @{
     foreach (var postData in RepositoryManager.PostRepository.GetList())
     {
-        switch (postData.PostType)
-        {
-            case PostType.SimplePost:
-                @Html.Action("SimplePost", "Post", new { id = postData.Id })
-           break;
-            case PostType.VideoPost:
-                @Html.Action("VideoPost", "Post", new { id = postData.Id })
-                break;
-        }
+        @Html.Action("Post", "Post", new {postData})
     }
 }

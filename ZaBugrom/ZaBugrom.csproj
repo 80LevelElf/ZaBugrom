@@ -196,6 +196,8 @@
     <Content Include="Content\Pages\AddPost\AddSimplePost.css" />
     <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
     <Content Include="Content\Pages\AddPost\_AddPostLayout.css" />
+    <Content Include="Content\Pages\Home\images\search.png" />
+    <Content Include="Content\Pages\Home\images\search_hover.png" />
     <Content Include="Content\Pages\Home\_PostListLayout.css" />
     <Content Include="Content\Pages\Post\images\complain-hover.png" />
     <Content Include="Content\Pages\Post\images\complain.png" />
@@ -243,6 +245,7 @@
     <Content Include="Scripts\jquery-ui-1.11.0.js" />
     <Content Include="Scripts\jquery.autosize.js" />
     <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.zabugrom.js" />
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Pages\Account\ProfileSettings.js" />
@@ -257,6 +260,7 @@
     <Content Include="Scripts\Pages\Shared\_Layout.js" />
     <Content Include="Scripts\Pages\Home\_PostListLayout.js" />
     <Content Include="Scripts\Utils\PostManager.js" />
+    <Content Include="Scripts\Utils\VideoManager.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -306,13 +310,19 @@
     <Content Include="Views\Home\_PostListLayout.cshtml" />
     <Content Include="Views\Account\_ProfileLayout.cshtml" />
     <Content Include="Views\Account\ProfileSettings.cshtml" />
-    <Content Include="Views\Post\_PostLayout.cshtml" />
+    <Content Include="Views\Post\_RichPostLayout.cshtml" />
     <Content Include="Views\AddPost\_AddPostLayout.cshtml" />
     <Content Include="Views\AddPost\AddSimplePost.cshtml" />
     <Content Include="Views\AddPost\AddVideoPost.cshtml" />
     <Content Include="Views\Post\SimplePost.cshtml" />
     <Content Include="Views\Post\VideoPost.cshtml" />
     <Content Include="Views\Element\PostEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Post\DetailPost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Post\_PostLayout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

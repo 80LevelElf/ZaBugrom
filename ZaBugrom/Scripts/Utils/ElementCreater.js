@@ -14,8 +14,8 @@ $(function() {
     //dialog-buttons
     $("div[data-create='dialog-buttons']")
         .addClass("dialog-buttons-div")
-        .append("<input type='submit' value='OK' />")
-        .append("<button data-event='browser-back'>Назад</button>");
+        .append("<input class='ok-button' type='submit' value='OK' />")
+        .append("<button class='cancel-button' data-event='browser-back'>Назад</button>");
 
     //refresh-button
     $("div[data-create='dialog-save']")

@@ -7,7 +7,7 @@
     width: 180px;
 }
 
-div#filter-div 
+div#filter-div, div#search-div
 {
     padding: 5px;
     border: 1px solid #aaaaaa;
@@ -68,6 +68,37 @@ div#post-list-div
     padding-top: 13px;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+div#post-list-div input {
+    float: left;
+}
+
+/*Search*/
+div#search-div {
+    border-bottom: 0;
+    padding-bottom: 10px;
+    height: 25px;
+}
+
+div#search-div input#search-input {
+    float: left;
+    width: 140px;
+}
+
+div#search-div a#search-button
+{
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: right;
+    background: url("images/search.png") no-repeat;
+    border-bottom: 0;
+}
+
+div#search-div a#search-button:hover
+{
+    background: url("images/search_hover.png") no-repeat;
 }
 
 div.post {

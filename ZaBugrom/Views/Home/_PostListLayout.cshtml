@@ -3,6 +3,10 @@
 }
 
 <div id="left-div">
+    <div id="search-div">
+        <input id="search-input" type="text" placeholder="Поиск"/>
+        <a id="search-button" title="Искать!"></a>
+    </div>
     <div id="filter-div">
         <p>
             Страны:
@@ -40,5 +44,5 @@
     @RenderBody()
 </div>
 
-@Scripts.Render("~/bundles/Pages/Home/_PostListLayout", "~/bundles/postManager")
+@Scripts.Render("~/bundles/Pages/Home/_PostListLayout", "~/bundles/postManager", "~/bundles/videoManager")
 @Styles.Render("~/Content/Pages/Home/_PostListLayout")

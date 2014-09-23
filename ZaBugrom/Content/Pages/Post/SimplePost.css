@@ -9,6 +9,10 @@ div.post.simple-post div.post-foorer a:hover {
     color: #1e90ff;
 }
 
+div.post.simple-post div.post-content {
+    padding: 16px;
+}
+
 div.post.simple-post div.post-content div.quote 
 {
     display: block;

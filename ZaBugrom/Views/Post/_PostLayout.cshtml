@@ -1,24 +1,11 @@
-﻿@using ZaBugrom.Extensions
-@model Models.Data.PostData
+﻿@model Models.Data.PostData
 
-<div class="post-area">
-    <div class="post-left-area">
-        <a class="post-rating-up"></a>
-        <label>@Model.Rating</label>
-        <a class="post-rating-down"></a>
-    </div>
-    <div class="post @Html.GetPostClassByType(Model.PostType)">
-        <div class="post-header">
-            <a href="#">@Model.Title</a>
-        </div>
-        @RenderBody()
-        <div class="post-foorer">
-            <a href="#" title="Перейти к комментариям">Комментарии</a>
-            <div class="right-footer-area">
-                <a class="complain" title="Пожаловаться на контент"></a>
-            </div>
-        </div>
-    </div>
-</div>
+@{
+    if (ViewBag.IsRichView)
+    {
+        Layout = "~/Views/Post/_RichPostLayout.cshtml";   
+    }
+}
 
-@Styles.Render("~/Content/Pages/Post/_PostLayout")
+@RenderBody()
+

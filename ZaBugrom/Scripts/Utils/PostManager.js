@@ -21,7 +21,7 @@ function EscapeHtml(text) {
 }
 
 //Return data of item with some attribute
-//For example: GetAtrrData("[link src="text"]", "src") = "text"
+//For example: GetAtrrData("[link src="text"]", "src") = text
 function GetAtrrData(text, attr) {
     var exp = AttrRegex(attr);
     var firstMatch = text.match(exp); //is attr="attrValue"
@@ -33,49 +33,90 @@ function GetAtrrData(text, attr) {
         return "";
 }
 
-function ReplaceOpenItem(item) {
-    //[tag] -> <tag>
-    item = item.replace('[', '<').replace(']', '>');
-
-    //[link src=""]
-    if (item.indexOf("link") > -1)
-        item = (item.replace("link", "a").replace("src", "href") + GetAtrrData(item, "title") + "</a>")
-        .replace(AttrRegex("title"), "");
-
-    //[video src=""]
-    if (item.indexOf("video") > -1)
-        item = item.replace("video", "iframe") + "</iframe>";
-
-    //[img src=""]
-    //There is no needed conversion
-
-    //[quote] - just open tag
-    if (item.indexOf("quote") > -1)
-        item = item.replace("quote", "div class=\"quote\"");
-
-    return item;
+function SetAttrData(text, attr, data) {
+    return text.replace(AttrRegex(attr), attr + "=" + "'" + data + "'");
 }
 
-function ReplaceCloseItem(item) {
-    //[/tag] -> </tag>
-    item = item.replace('[', '<').replace(']', '>');
+//<link src="" title=""> -> <a href="">title</a>
+function ProceedTags(text) {
 
-    //[/quote] - just close tag
-    if (item.indexOf("quote") > -1)
-        item = item.replace("quote", "div");
+    //[link src="" title=""]
+    text.find("link").each(function () {
+        var currentElement = $(this);
+        var title = currentElement.attr("title");
+        var source = currentElement.attr("src");
 
-    return item;
+        var newElement = $("<a>" + title +"</a>");
+        newElement.attr("href", source);
+
+        currentElement.replaceWith(newElement);
+    });
+
+    //[video src=""]
+    text.find("video").each(function () {
+        var currentElement = $(this);
+        var source = currentElement.attr("src");
+
+        var newElement = $("<iframe></iframe>");
+        newElement.attr("width", "560");
+        newElement.attr("height", "315");
+        newElement.attr("src", "//www.youtube.com/embed/" + source);
+
+        currentElement.replaceWith(newElement);
+    });
+
+    //[quote src=""]
+    text.find("quote").each(function () {
+        var currentElement = $(this);
+        var html = currentElement.html();
+
+        var newElement = $("<div></div>");
+        newElement.addClass("quote");
+        newElement.html(html);
+
+        currentElement.replaceWith(newElement);
+    });
 }
 
 //Get post markup by plain text
-function GetPostData(text) {
-    //To escape not provided tags
-    text = EscapeHtml(text);
+function SetPostData(postContent) {
+    postContent = $(postContent);
 
-    //Change our tags to html tags
-    text = text.replace(/\[[^\/].*?\]/g, ReplaceOpenItem).replace(/\[\/.*?\]/g, ReplaceCloseItem);
+    //Remove extra spaces
+    var postText = postContent.html();
+    postText = $.trim(postText);
+
+    //To escape not provided tags
+    postText = EscapeHtml(postText);
+
+    //[tag] -> <tag>
+    postText = postText.replace(/\[/g, '<').replace(/\]/g, '>');
 
     //And create string breaking
-    text = text.replace(/\n/g, "</br>");
+    postText = postText.replace(/\n/g, "</br>");
+
+    postContent.html(postText);
+
+    ProceedTags(postContent);
+
+    return postContent;
+}
+
+//When user want to add his post we need to use function to prepare data for it. For example to get youtube video id
+//instead of full link to video.
+function PrepareNewPostForAdding(text) {
+    //Remove extra spaces
+    text = $.trim(text);
+
+    //Get youtube video id instead of full link
+    text = text.replace(/\[[^\/].*?\]/g, function(item) {
+        if (item.indexOf("video") > -1) {
+            var attrData = GetYoutubeVideoId(GetAtrrData(item, "src"));
+            item = SetAttrData(item, "src", attrData);
+        }
+
+        return item;
+    });
+
     return text;
 }
