@@ -215,5 +215,12 @@ namespace ZaBugrom.Controllers
 
             return View(model); //If username have changed - redirect to Login and then to settings again
         }
+
+        public ActionResult Messages()
+        {
+            var model = RepositoryManager.MessageRepository.GetList(UserManager.UserId,
+                0, 10, true, true, true);
+            return View(model);
+        }
     }
 }

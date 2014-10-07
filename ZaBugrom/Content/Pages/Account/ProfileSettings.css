@@ -1,1 +1,7 @@
-﻿
+﻿div#profile-data-div {
+    font-size: 0.9em;
+}
+
+div#profile-data-div {
+    padding-bottom: 10px;
+}

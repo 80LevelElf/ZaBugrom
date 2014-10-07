@@ -17,5 +17,10 @@ namespace ZaBugrom.Managers
         {
             return RepositoryManager.UserRepository.GetById(WebSecurity.CurrentUserId);
         }
+
+        public static int UserId
+        {
+            get { return WebSecurity.CurrentUserId; }
+        }
     }
 }

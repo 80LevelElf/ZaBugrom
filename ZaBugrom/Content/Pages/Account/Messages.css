@@ -1,0 +1,97 @@
+﻿div#filter-div 
+{
+    margin-bottom: 10px;
+    cursor: pointer;
+    
+    padding-left: 10px;
+    padding-right: 10px;  
+}
+
+div#filter-div label.slash {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+div#filter-div label {
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+div#filter-div label:not(.slash):hover {
+    border-bottom: 1px solid #1e90ff;
+}
+
+div#filter-div label.selected {
+    border-bottom: 1px solid #1e90ff;
+    font-weight: bold;
+}
+
+/*Message*/
+div.message{
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+
+    margin-top: -1px; /*to collapse top border*/
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div.message.new-content {
+    border-left: 3px solid #1e90ff;
+}
+
+div.message.notification {
+    border-left: 3px solid #ffa500;
+}
+
+div.message.user-mail {
+    border-left: 3px solid #008000;
+}
+
+div.message-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*Type mark label*/
+label.mark 
+{
+    padding: 3px;
+    color: white;
+    font-size: 0.9em;
+}
+
+div.message-title label.new-content 
+{
+    background-color: #1e90ff;
+}
+
+div.message-title label.notification
+{
+    background-color: #ffa500;
+    color: black;
+}
+
+div.message-title label.user-mail
+{
+    background-color: #008000;
+}
+
+/*Is readed signal*/
+div.message-title label.is-readed-signal {
+    float: right;
+    padding: 3px;
+    background-color: #eee;
+    font-size: 0.8em;
+}
+
+div.message-title label.is-readed-signal.readed {
+    display: none;
+}
+
+/**/
+label.data {
+    font-size: 0.9em;
+}

@@ -223,10 +223,6 @@ header div#toolbar div#user-menu {
     float: right;
 }
 
-header div#toolbar div#user-menu a:hover {
-    border-bottom: 0;
-}
-
 header a 
 {
     color: black;

@@ -83,11 +83,10 @@ GO
 -------------------------------------------------------------------
 CREATE TABLE [dbo].[MessageData](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[UserFromId] [int] NOT NULL,
+	[UserFromId] [int] NULL,
 	[UserToId] [int] NOT NULL,
-	[Title] [nvarchar](100) NOT NULL,
 	[MessageType] [int] NOT NULL,
-	[Message] [varchar](100) NOT NULL,
+	[Message] [nvarchar](MAX) NOT NULL,
 	[IsReaded] [bit] NOT NULL,
  CONSTRAINT [PK_MessageData] PRIMARY KEY CLUSTERED 
 (

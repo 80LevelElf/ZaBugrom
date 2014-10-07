@@ -1,10 +1,14 @@
-﻿namespace Models.Data.Enums
+﻿using System.ComponentModel;
+
+namespace Models.Data.Enums
 {
     public enum MessageType
     {
-        NewContent,
-        Notification,
-        SystemAlert,
-        UserMail
+        [Description("Новый контент")]
+        NewContent = 0,
+        [Description("Уведомление")]
+        Notification = 1,
+        [Description("Сообщение от пользователя")]
+        UserMail = 2
     }
 }

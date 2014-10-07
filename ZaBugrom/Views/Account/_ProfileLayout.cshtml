@@ -2,10 +2,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="big-size">
+<div>
     <div id="profile-menu-div">
-        <a>Сообщения</a>
-        <a>Настройки аккаунта</a>
+        <a href="@Url.Action("Messages", "Account")">Сообщения</a>
+        <a href="@Url.Action("ProfileSettings", "Account")">Настройки аккаунта</a>
         <a>Настройки контента</a>
     </div>
 

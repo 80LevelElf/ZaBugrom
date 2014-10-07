@@ -9,12 +9,14 @@ namespace ZaBugrom.Managers
         public static UserRepository UserRepository { get; private set; }
         public static PostRepository PostRepository { get; private set; }
         public static HeaderImageRepository HeaderImageRepository { get; private set; }
+        public static MessageRepository MessageRepository { get; private set; }
 
         static RepositoryManager()
         {
             UserRepository = TypeAccessor<UserRepository>.CreateInstance();
             PostRepository = TypeAccessor<PostRepository>.CreateInstance();
             HeaderImageRepository = TypeAccessor<HeaderImageRepository>.CreateInstance();
+            MessageRepository = TypeAccessor<MessageRepository>.CreateInstance();
         }
     }
 }

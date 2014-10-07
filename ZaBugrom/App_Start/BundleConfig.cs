@@ -21,7 +21,8 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery.zabugrom.js"));
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include("~/Scripts/jquery-ui-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui")
+                .Include("~/Scripts/jquery-ui-{version}.js", new CssRewriteUrlTransform()));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/jquery.autosize").Include("~/Scripts/jquery.autosize.js"));
@@ -53,8 +54,6 @@ namespace ZaBugrom
             {
                 bundles.Add(bundle);
             }
-
-            BundleTable.EnableOptimizations = false;
         }
 
         /// <summary>

@@ -1,0 +1,39 @@
+﻿@using Models.Data.Enums
+@using ZaBugrom.Extensions
+@model List<Models.Data.MessageData>
+
+@{
+    ViewBag.Title = "Messages";
+    Layout = "~/Views/Account/_ProfileLayout.cshtml";
+}
+
+<div id="message-area-div">
+    <div id="filter-div">
+        <label id="new-content-filter" class="selected">Новый контент</label>
+        <label class="slash">/</label>
+        <label id="nofication-filter">Уведомления</label>
+        <label class="slash">/</label>
+        <label id="user-mail-filter">Сообщения от пользователей</label>
+    </div>
+    <div id="list-div">
+        @{
+            foreach (var message in Model)
+            {
+                <div class="message @Html.GetMesageMarkClassByType(message.MessageType)">
+                    <div class="message-title">
+                        <label class="mark @Html.GetMesageMarkClassByType(message.MessageType)">
+                            @EnumExtension.GetEnumDescription(message.MessageType)
+                        </label>
+                        <label class="is-readed-signal @BoolExtension.GetMessageIsReadClass(message.IsReaded)">
+                            @BoolExtension.GetMessageIsReadTextClass(message.IsReaded)
+                        </label>
+                    </div>
+                    <label class="data">@message.Message</label>
+                    </div>
+            }
+        }
+    </div>
+</div>
+
+@Styles.Render("~/Content/Pages/Account/Messages")
+@Scripts.Render("~/bundles/Pages/Account/Messages")

@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <a id="inbox-button">@userData.MessageCount</a>
+                            <a id="inbox-button" href="@Url.Action("Messages", "Account")">@userData.MessageCount</a>
                         }
                     }
                     <a id="login-button" href="@Url.Action("Login", "Account")">
