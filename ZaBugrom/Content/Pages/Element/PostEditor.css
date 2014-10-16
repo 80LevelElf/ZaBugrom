@@ -39,36 +39,53 @@ div.post-editor-area {
     box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.3);
 }
 
-div.post-editor-area div.tool-area a.bold {
-        background-image: url("images/bold.png");
+div.post-editor-area div.tool-area a.bold 
+{
+    background-image: url("images/bold.png");
 }
 
-div.post-editor-area div.tool-area a.italic {
-        background-image: url("images/italic.png");
+div.post-editor-area div.tool-area a.italic 
+{
+    background-image: url("images/italic.png");
 }
 
-div.post-editor-area div.tool-area a.image {
-        background-image: url("images/image.png");
+div.post-editor-area div.tool-area a.image 
+{
+    background-image: url("images/image.png");
 }
 
-div.post-editor-area div.tool-area a.link {
-        background-image: url("images/link.png");
+div.post-editor-area div.tool-area a.link 
+{
+    background-image: url("images/link.png");
 }
 
-div.post-editor-area div.tool-area a.link {
-        background-image: url("images/link.png");
+div.post-editor-area div.tool-area a.link 
+{
+    background-image: url("images/link.png");
 }
 
-div.post-editor-area div.tool-area a.quote {
-        background-image: url("images/quote.png");
+div.post-editor-area div.tool-area a.quote 
+{
+    background-image: url("images/quote.png");
 }
 
-div.post-editor-area div.tool-area a.youtube {
-        background-image: url("images/youtube.png");
+div.post-editor-area div.tool-area a.youtube 
+{
+    background-image: url("images/youtube.png");
 }
 
-div.post-editor-area div.tool-area a.user {
-        background-image: url("images/user.png");
+div.post-editor-area div.tool-area select.header {
+    width: 60px;
+}
+
+div.post-editor-area div.tool-area span.ui-selectmenu-button {
+    background: white;
+    height: 25px;
+}
+
+div.post-editor-area div.tool-area a.user 
+{
+    background-image: url("images/user.png");
 }
 
 div.post-editor-area div.tool-area a.end-group {

@@ -262,6 +262,7 @@ header a#login-button label:hover, header a#login-button:hover label
 
 header a#login-button:hover {
     background: url("images/login_hover.png") no-repeat;
+    border-bottom: 0;
 }
 
 header div#user-div {

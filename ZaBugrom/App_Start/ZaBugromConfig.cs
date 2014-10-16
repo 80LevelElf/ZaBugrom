@@ -40,8 +40,7 @@ namespace ZaBugrom
                 RepositoryManager.HeaderImageRepository.Insert(new HeaderImageData
                 {
                     FileName = "1.jpg",
-                    ShiftByX = 0,
-                    ShiftByY = 200,
+                    ShiftByTop = 30,
                     Title = "Токио"
                 });
 

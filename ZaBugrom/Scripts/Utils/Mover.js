@@ -9,3 +9,12 @@ function ActionPath(action, controller) {
 
     return "http://" + host + "/" + controller + "/" + action;
 }
+
+function ActionPathByUrl(url) {
+    var host = window.location.host;
+
+    if (url.charAt(0) != '/')
+        url = '/' + url;
+
+    return "http://" + host + url;
+}

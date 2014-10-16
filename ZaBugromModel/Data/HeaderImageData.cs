@@ -4,7 +4,6 @@
     {
         public string FileName { get; set; }
         public string Title { get; set; }
-        public int ShiftByX { get; set; }
-        public int ShiftByY { get; set; }
+        public int ShiftByTop { get; set; }
     }
 }

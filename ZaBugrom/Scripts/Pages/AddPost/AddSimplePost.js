@@ -40,8 +40,8 @@
                 Title: title,
                 Source: source
             }),
-            success: function () {
-                alert("Successfully updated your cart!");
+            success: function (data) {
+                window.location.href = ActionPathByUrl(data);
             },
             contentType: 'application/json'
         });

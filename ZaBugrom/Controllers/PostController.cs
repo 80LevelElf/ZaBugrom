@@ -8,18 +8,21 @@ namespace ZaBugrom.Controllers
 {
     public class PostController : Controller
     {
+        [HttpGet]
         public ActionResult SimplePost(PostData postData, bool isRichView = true)
         {
             ViewBag.IsRichView = isRichView;
             return View("SimplePost", postData);
         }
 
+        [HttpGet]
         public ActionResult VideoPost(PostData postData, bool isRichView = true)
         {
             ViewBag.IsRichView = isRichView;
             return View("VideoPost", postData);
         }
 
+        [HttpGet]
         public ActionResult Post(PostData postData, bool isRichView = true)
         {
             if (postData == null)
@@ -38,9 +41,10 @@ namespace ZaBugrom.Controllers
             } 
         }
 
-        public ActionResult DetailPost(int id)
+        [HttpGet]
+        public ActionResult DetailPost(int postId)
         {
-            var postData = RepositoryManager.PostRepository.GetById(id);
+            var postData = RepositoryManager.PostRepository.GetById(postId);
 
             if (postData == null)
             {

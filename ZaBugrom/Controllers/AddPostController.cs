@@ -46,9 +46,8 @@ namespace ZaBugrom.Controllers
                 Title = model.Title
             };
 
-            RepositoryManager.PostRepository.Insert(post);
-            //TODO redirect to new post
-            return RedirectToAction("Index", "Home");
+            var id = RepositoryManager.PostRepository.Insert(post);
+            return Content(Url.Action("DetailPost", "Post", new {postId = id}));
         }
 
         [Authorize]
@@ -70,9 +69,8 @@ namespace ZaBugrom.Controllers
                 Title = model.Title
             };
 
-            RepositoryManager.PostRepository.Insert(post);
-            //TODO redirect to new post
-            return RedirectToAction("Index", "Home");
+            var id = RepositoryManager.PostRepository.Insert(post);
+            return Content(Url.Action("DetailPost", "Post", new {postId = id}));
         }
     }
 }

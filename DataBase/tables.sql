@@ -39,14 +39,16 @@ CREATE TABLE [dbo].[HeaderImageData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[FileName] [nvarchar](100) NOT NULL,
-	[ShiftByX] [int] NOT NULL,
-	[ShiftByY] [int] NOT NULL,
+	[ShiftByTop] [int] NOT NULL,
  CONSTRAINT [PK_HeaderImageData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+
+ALTER TABLE [dbo].[HeaderImageData] ADD  CONSTRAINT [DF_HeaderImageData_ShiftByTop]  DEFAULT ((0)) FOR [ShiftByTop]
 GO
 
 -------------------------------------------------------------------

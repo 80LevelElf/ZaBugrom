@@ -9,7 +9,7 @@
     </div>
     <div class="post @Html.GetPostClassByType(Model.PostType)">
         <div class="post-header">
-            <a href="#">@Model.Title</a>
+            <a href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
         </div>
         @RenderBody()
         <div class="post-foorer">

@@ -257,6 +257,7 @@
     <Content Include="Scripts\Pages\AddPost\AddSimplePost.js" />
     <Content Include="Scripts\Pages\AddPost\AddVideoPost.js" />
     <Content Include="Scripts\Pages\Element\PostEditor.js" />
+    <Content Include="Scripts\Pages\Post\DetailPost.js" />
     <Content Include="Scripts\Utils\ElementCreater.js" />
     <Content Include="Scripts\Utils\JQueryUIPreparer.js" />
     <Content Include="Scripts\Utils\Messager.js" />
