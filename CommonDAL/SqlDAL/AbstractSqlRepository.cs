@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BLToolkit.Data;
 using BLToolkit.Data.DataProvider;
+using BLToolkit.Data.Linq;
 using BLToolkit.DataAccess;
 
 namespace CommonDAL.SqlDAL

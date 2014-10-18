@@ -15,7 +15,8 @@ div.post-editor-area div.tool-area {
     display: flex;
 }
 
-div.post-editor-area div.tool-area a 
+div.post-editor-area div.tool-area a,
+div.post-editor-area div.tool-area label
 {
     color: black;
     border-bottom: 0;
@@ -27,7 +28,8 @@ div.post-editor-area div.tool-area a
     align-content: center;
 }
 
-div.post-editor-area div.tool-area a:hover {
+div.post-editor-area div.tool-area a:hover,
+div.post-editor-area div.tool-area label:hover {
     background-color: rgba(30,144,255,0.5);
 }
 
@@ -74,8 +76,9 @@ div.post-editor-area div.tool-area a.youtube
     background-image: url("images/youtube.png");
 }
 
-div.post-editor-area div.tool-area select.header {
-    width: 60px;
+div.post-editor-area div.tool-area label.header 
+{
+    background-image: url("images/header.png");
 }
 
 div.post-editor-area div.tool-area span.ui-selectmenu-button {
@@ -90,4 +93,25 @@ div.post-editor-area div.tool-area a.user
 
 div.post-editor-area div.tool-area a.end-group {
     margin-right: 15px;
+}
+
+/*Header choose*/
+div.post-editor-area div.tool-area label.header div.header-choose 
+{
+    display: none;
+    position: relative;
+    bottom: 98px;
+    background-color: #eee;
+    width: 34px;
+    left: -5px;
+}
+
+div.post-editor-area div.tool-area label.header:hover div.header-choose {
+    display: block;
+}
+
+div.post-editor-area div.tool-area label.header div.header-choose a {
+    width: 100%;
+    text-align: center;
+    padding: 0;
 }

@@ -41,6 +41,7 @@ namespace ZaBugrom.Controllers
             var post = new PostData
             {
                 AuthorId = userData.Id,
+                AuthorName = userData.Name,
                 Source = model.Source,
                 PostType = PostType.SimplePost,
                 Title = model.Title

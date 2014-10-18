@@ -5,10 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <div id="content">
-        @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
+<div id="post-area">
+    <div id="post-title">
+        @Model.Title
     </div>
+    <div></div>
+    @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
 </div>
 
 @Scripts.Render("~/bundles/Pages/Post/DetailPost", "~/bundles/postManager")
+@Styles.Render("~/Content/Pages/Post/DetailPost")

@@ -177,6 +177,7 @@
     <Content Include="Content\images\UserAvatars\default.png" />
     <Content Include="Content\Pages\Account\Messages.css" />
     <Content Include="Content\Pages\Element\images\bold.png" />
+    <Content Include="Content\Pages\Element\images\header.png" />
     <Content Include="Content\Pages\Element\images\image.png" />
     <Content Include="Content\Pages\Element\images\italic.png" />
     <Content Include="Content\Pages\Element\images\link.png" />
@@ -202,6 +203,7 @@
     <Content Include="Content\Pages\Home\images\search.png" />
     <Content Include="Content\Pages\Home\images\search_hover.png" />
     <Content Include="Content\Pages\Home\_PostListLayout.css" />
+    <Content Include="Content\Pages\Post\DetailPost.css" />
     <Content Include="Content\Pages\Post\images\complain-hover.png" />
     <Content Include="Content\Pages\Post\images\complain.png" />
     <Content Include="Content\Pages\Post\images\post-rating-down-hover.png" />

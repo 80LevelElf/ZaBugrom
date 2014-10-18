@@ -1,0 +1,12 @@
+﻿div#post-area {
+    margin-left: 100px;
+    margin-right: 100px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 5px;
+}
+
+div#post-title {
+    font-size: 1.3em;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 5px;
+}
