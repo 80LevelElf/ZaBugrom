@@ -25,16 +25,15 @@ div.post div.post-header a:hover {
 div.post-left-area {
     float: left;
     height: 100px;
-    width: 36px;
+    margin-left: 5px;
 }
 
 div.post-left-area a
 {
-    margin-left: 6px;
+    margin-left: 3px;
     display: inline-block;
     width: 24px;
     height: 24px;
-    border-bottom: 1px solid transparent;
 }
 
 div.post-left-area a:hover {
@@ -62,6 +61,7 @@ div.post-left-area a.post-rating-down:hover {
 div.post-left-area label 
 {
     margin-bottom: 3px;
+    margin-top: -4px;
     text-align: center;
     display: block;
     font-size: 1.2em;
@@ -98,4 +98,14 @@ div.right-footer-area a.complain {
 
 div.right-footer-area a.complain:hover {
     background: url("images/complain-hover.png") no-repeat;
+}
+
+/*Content*/
+div.post-content h1,
+div.post-content h2,
+div.post-content h3,
+div.post-content h4 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
 }

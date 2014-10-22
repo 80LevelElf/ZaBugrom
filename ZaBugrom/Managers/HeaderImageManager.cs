@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using BLToolkit.Reflection;
 using CommonDAL.SqlDAL;
 using Models.Data;
 
@@ -11,7 +10,6 @@ namespace ZaBugrom.Managers
         private static List<HeaderImageData> _headerImageList;
         private static HeaderImageData _currentHeaderImage;
         private static DateTime _lastCheckTime;
-        private static readonly HeaderImageRepository _repository = TypeAccessor<HeaderImageRepository>.CreateInstance();
 
         public static HeaderImageData CurrentHeaderImage
         {
@@ -31,7 +29,7 @@ namespace ZaBugrom.Managers
 
         public static void Load()
         {
-            _headerImageList = _repository.GetList();
+            _headerImageList = RepositoryManager.HeaderImageRepository.GetList();
         }
 
         private static HeaderImageData GetNewHeaderImage()

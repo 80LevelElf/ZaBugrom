@@ -2,7 +2,7 @@
 
 namespace CommonDAL.SqlDAL
 {
-    public class PostRepository : AbstractSqlRepository<PostData>
+    public class PostRepository : BigSqlRepository<PostData>
     {
     }
 }

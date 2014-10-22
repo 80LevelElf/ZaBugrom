@@ -1,6 +1,4 @@
-﻿using System.Data.Entity.Infrastructure;
-using BLToolkit.Reflection;
-using CommonDAL.SqlDAL;
+﻿using CommonDAL.SqlDAL;
 
 namespace ZaBugrom.Managers
 {
@@ -13,10 +11,10 @@ namespace ZaBugrom.Managers
 
         static RepositoryManager()
         {
-            UserRepository = TypeAccessor<UserRepository>.CreateInstance();
-            PostRepository = TypeAccessor<PostRepository>.CreateInstance();
-            HeaderImageRepository = TypeAccessor<HeaderImageRepository>.CreateInstance();
-            MessageRepository = TypeAccessor<MessageRepository>.CreateInstance();
+            UserRepository = new UserRepository();
+            PostRepository = new PostRepository();
+            HeaderImageRepository = new HeaderImageRepository();
+            MessageRepository = new MessageRepository();
         }
     }
 }

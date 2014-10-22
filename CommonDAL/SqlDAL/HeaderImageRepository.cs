@@ -2,7 +2,7 @@
 
 namespace CommonDAL.SqlDAL
 {
-    public class HeaderImageRepository : AbstractSqlRepository<HeaderImageData>
+    public class HeaderImageRepository : SqlRepository<HeaderImageData>
     {
     }
 }

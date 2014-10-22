@@ -1,4 +1,4 @@
-﻿using BLToolkit.DataAccess;
+﻿using LinqToDB.Mapping;
 
 namespace Models.Data
 {
@@ -6,7 +6,6 @@ namespace Models.Data
     {
         [PrimaryKey]
         [Identity]
-        [NonUpdatable]
         public long Id { get; set; }
     }
 }

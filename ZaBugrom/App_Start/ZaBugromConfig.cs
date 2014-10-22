@@ -11,7 +11,6 @@ namespace ZaBugrom
         public static void Prepare()
         {
             PrepareSimpleMembershipProvider();
-            PrepareBlToolKit();
             PrepareHeaderImageManager();
 
             FirstInicialization();
@@ -20,11 +19,6 @@ namespace ZaBugrom
         private static void PrepareSimpleMembershipProvider()
         {
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserData", "Id", "Name", true);
-        }
-
-        private static void PrepareBlToolKit()
-        {
-            AbstractSqlRepository.SetDataBaseConfig(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         }
 
         private static void PrepareHeaderImageManager()

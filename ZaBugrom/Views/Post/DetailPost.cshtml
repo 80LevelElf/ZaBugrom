@@ -12,6 +12,22 @@
     <div></div>
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
 </div>
+<div id="comment-area">
+    <div class="comment">
+        <div class="comment-title">
+            <div class="rating-area">
+                <label class="raring" title="Рейтинг поста">+5</label>
+                <a class="comment-rating-up" title="Неистово плюсую">+</a>
+                <a class="comment-rating-down" title="Сударь, позвольте вам возразить">-</a>
+            </div>
+            <a class="comment-title-author">ruzik</a>
+            <label class="comment-write-label"> написал:</label>
+        </div>
+        <div class="comment-source">
+           Просто какой-то текст для заполнения пространства
+        </div>
+    </div>
+</div>
 
 @Scripts.Render("~/bundles/Pages/Post/DetailPost", "~/bundles/postManager")
 @Styles.Render("~/Content/Pages/Post/DetailPost")

@@ -2,8 +2,6 @@
 using System.IO;
 using System.Web.Helpers;
 using System.Web.Mvc;
-using BLToolkit.Reflection;
-using CommonDAL.SqlDAL;
 using EmitMapper;
 using Models.Data;
 using Models.InputModels.Account;
@@ -219,7 +217,7 @@ namespace ZaBugrom.Controllers
         public ActionResult Messages()
         {
             var model = RepositoryManager.MessageRepository.GetList(UserManager.UserId,
-                0, 10, true, true, true);
+                1, 10, true, true, true);
             return View(model);
         }
     }

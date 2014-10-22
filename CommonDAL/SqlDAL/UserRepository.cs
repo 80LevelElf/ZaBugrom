@@ -1,15 +1,24 @@
-﻿using BLToolkit.Data;
-using BLToolkit.DataAccess;
+﻿using System.Linq;
 using Models.Data;
 
 namespace CommonDAL.SqlDAL
 {
-    public abstract class UserRepository:AbstractSqlRepository<UserData>
+    public class UserRepository : SqlRepository<UserData>
     {
-        [SprocName("spUserGetEmail")]
-        public abstract string GetEmail(int id);
+        public string GetEmail(int id)
+        {
+            using (var db = new DataBase())
+            {
+                return db.UserTable.Where(i => i.Id == id).Select(i => i.Email).FirstOrDefault();
+            }
+        }
 
-        [SprocName("spUserIsEmailExist"), ScalarSource(ScalarSourceType.ReturnValue)]
-        public abstract bool IsEmailExist(string email);
+        public bool IsEmailExist(string email)
+        {
+            using (var db = new DataBase())
+            {
+                return db.UserTable.Count(i => i.Email == email) != 0;
+            }
+        }
     }
 }
