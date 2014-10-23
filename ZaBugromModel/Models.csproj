@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BigData.cs" />
-    <Compile Include="Data\Comment.cs" />
+    <Compile Include="Data\CommentData.cs" />
     <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="Data\Enums\MessageType.cs" />
     <Compile Include="Data\Enums\PostType.cs" />

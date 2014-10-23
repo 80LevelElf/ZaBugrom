@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.Data
 {
-    public class CommentData : Data
+    public class CommentData : BigData
     {
         public CommentData()
         {
@@ -14,7 +14,8 @@ namespace Models.Data
         public int AuthorId { get; set; }
         public string AuthorName { get; set; }
         public int Rating { get; set; }
-        public Int64 ParentCommentId { get; set; }
+        public Int64? ParentCommentId { get; set; }
+        public Int64 PostId { get; set; }
         public List<CommentData> SubComments { get; set; }
     }
 }

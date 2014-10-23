@@ -1,0 +1,28 @@
+﻿@model List<Models.Data.CommentData>
+
+
+@foreach (var comment in Model)
+ {
+     <div class="comment">
+         <div class="comment-title">
+             <div class="rating-area">
+                 <label class="raring" title="Рейтинг поста">@comment.Rating</label>
+                 <a class="comment-rating-up" title="Неистово плюсую">+</a>
+                 <a class="comment-rating-down" title="Сударь, позвольте вам возразить">-</a>
+             </div>
+             <a class="comment-title-author">@comment.AuthorName</a>
+             <label class="comment-write-label"> написал:</label>
+         </div>
+         <div class="comment-source">
+             @comment.Source
+         </div>
+     </div>
+    if (comment.SubComments.Count != 0)
+    {
+        <div class="comment-shift-area @((comment.SubComments.Count != 1)?"comment-shift-area-border":"")">
+            @Html.Action("CommentArea", new { commentList = comment.SubComments })
+        </div>
+    }
+ }
+
+@Styles.Render("~/Content/Pages/Element/CommentArea")

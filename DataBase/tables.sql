@@ -111,3 +111,43 @@ GO
 ALTER TABLE [dbo].[MessageData]  WITH CHECK ADD  CONSTRAINT [FK_MessageData_UserData1] FOREIGN KEY([UserFromId])
 REFERENCES [dbo].[UserData] ([Id])
 GO
+
+-------------------------------------------------------------------
+-------- Comments
+-------------------------------------------------------------------
+CREATE TABLE [dbo].[CommentData](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Source] [nvarchar](max) NOT NULL,
+	[AuthorId] [int] NOT NULL,
+	[AuthorName] [nvarchar](max) NOT NULL,
+	[Rating] [int] NOT NULL,
+	[ParentCommentId] [bigint] NULL,
+	[PostId] [bigint] NOT NULL,
+ CONSTRAINT [PK_CommentData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[CommentData]  WITH CHECK ADD  CONSTRAINT [FK_CommentData_CommentData] FOREIGN KEY([ParentCommentId])
+REFERENCES [dbo].[CommentData] ([Id])
+GO
+
+ALTER TABLE [dbo].[CommentData] CHECK CONSTRAINT [FK_CommentData_CommentData]
+GO
+
+ALTER TABLE [dbo].[CommentData]  WITH CHECK ADD  CONSTRAINT [FK_CommentData_PostData] FOREIGN KEY([PostId])
+REFERENCES [dbo].[PostData] ([Id])
+GO
+
+ALTER TABLE [dbo].[CommentData] CHECK CONSTRAINT [FK_CommentData_PostData]
+GO
+
+ALTER TABLE [dbo].[CommentData]  WITH CHECK ADD  CONSTRAINT [FK_CommentData_UserData] FOREIGN KEY([AuthorId])
+REFERENCES [dbo].[UserData] ([Id])
+GO
+
+ALTER TABLE [dbo].[CommentData] CHECK CONSTRAINT [FK_CommentData_UserData]
+GO

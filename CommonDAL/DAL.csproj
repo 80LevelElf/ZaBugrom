@@ -46,6 +46,7 @@
     <Compile Include="BaseSqlRepository.cs" />
     <Compile Include="BigSqlRepository.cs" />
     <Compile Include="DataBase.cs" />
+    <Compile Include="SqlDAL\CommentRepository.cs" />
     <Compile Include="SqlDAL\HeaderImageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlDAL\MessageRepository.cs" />
