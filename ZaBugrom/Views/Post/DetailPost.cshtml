@@ -12,7 +12,10 @@
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
     <div id="post-footer">
         <label>Добавлено @Model.AddTime.ToLongDateString() @Model.AddTime.ToLongTimeString()</label>
-        <a id="reply">Ответить</a>
+        @if (WebSecurity.HasUserId)
+        {
+            <a id="reply">Ответить</a>   
+        }
     </div>
 </div>
 <div id="comment-area">
@@ -26,5 +29,8 @@
     </div>
 </div>
 
-@Scripts.Render("~/bundles/Pages/Post/DetailPost", "~/bundles/postManager", "~/bundles/mover")
-@Styles.Render("~/Content/Pages/Post/DetailPost")
+@Scripts.Render("~/bundles/Pages/Post/DetailPost",
+    "~/bundles/postManager",
+    "~/bundles/mover",
+    "~/bundles/videoManager")
+@Styles.Render("~/Content/Pages/Post/DetailPost", "~/Content/parseData")

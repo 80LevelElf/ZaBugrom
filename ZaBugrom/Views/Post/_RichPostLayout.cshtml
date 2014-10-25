@@ -2,22 +2,16 @@
 @model Models.Data.PostData
 
 <div class="post-area">
-    <div class="post-left-area">
-        <a class="post-rating-up"></a>
-        <label>@Model.Rating</label>
-        <a class="post-rating-down"></a>
-    </div>
     <div class="post @Html.GetPostClassByType(Model.PostType)">
         <div class="post-header">
-            <a href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
+            <a class="title" href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
+            <div class="raiting-area">
+                 <label class="raring" title="Рейтинг поста">@Model.Rating</label>
+                 <a class="comment-rating-up" title="Неистово плюсую">+</a>
+                 <a class="comment-rating-down" title="Сударь, позвольте вам возразить">-</a>
+             </div>
         </div>
         @RenderBody()
-        <div class="post-foorer">
-            <a href="#" title="Перейти к комментариям">Комментарии</a>
-            <div class="right-footer-area">
-
-            </div>
-        </div>
     </div>
 </div>
 

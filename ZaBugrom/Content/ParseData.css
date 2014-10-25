@@ -1,0 +1,13 @@
+﻿div.parse-data h1,
+div.parse-data h2,
+div.parse-data h3,
+div.parse-data h4 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+img.flow {
+    float: left;
+    padding: 5px;
+}

@@ -4,6 +4,11 @@
         SetPostData(this);
     });
 
+    //Create comments
+    $("div.comment-source").each(function () {
+        SetPostData(this);
+    });
+
     var editor = $("div#editor");
 
     //Comment post
@@ -48,6 +53,7 @@
         }
 
         var source = editor.find("textarea[name='Source']").val().trim();
+        source = PrepareNewPostForAdding(source);
         editor.find("textarea[name='Source']").val("");
 
         //Clear editor
@@ -86,11 +92,12 @@
                     }
                 }
 
-                newComment.bind("click", commentAnotherCommentFunction);
+                newComment.find("a.reply").bind("click", commentAnotherCommentFunction);
+                SetPostData(newComment.find(".comment-source"));
 
                 //Animate title of new comment to show it cool
                 newComment.addClass("just-added");
-                newComment.find(".comment-title").animate(
+                newComment.find("div.comment-title").animate(
                 {
                     backgroundColor: "#f5f5f5"
                 }, 1000);

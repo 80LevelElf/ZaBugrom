@@ -37,6 +37,7 @@ namespace ZaBugrom
 
             //---CSS
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/parseData").Include("~/Content/ParseData.css"));
 
             //JQuiry
             bundles.Add(new StyleBundle("~/Content/themes/baseTeame").Include(

@@ -76,6 +76,31 @@ function ProceedTags(text) {
 
         currentElement.replaceWith(newElement);
     });
+
+    //[img src="" flow="yes/no"]
+    text.find("img").each(function () {
+        var currentElement = $(this);
+        var html = currentElement.html();
+
+        var src = currentElement.attr("src");
+        var flow = currentElement.attr("flow");
+        if (flow == undefined) {
+            flow = "no";
+        }
+
+        var isFlow = (flow == "yes") ? true : false;
+
+        var newElement = $("<img>");
+        newElement.attr("src", src);
+
+        if (isFlow) {
+            newElement.addClass("flow");
+        }
+
+        newElement.html(html);
+
+        currentElement.replaceWith(newElement);
+    });
 }
 
 //Get post markup by plain text

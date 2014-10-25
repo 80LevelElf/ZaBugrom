@@ -1,13 +1,12 @@
 ﻿div.post 
 {
     box-shadow: 0 0 5px rgba(0,0,0,0.4);
-    margin-left: 45px;
 }
 
 div.post div.post-header {
-    background-color: #eee;
     padding: 4px;
     padding-left: 8px;
+    font-size: 16px;
 }
 
 div.post div.post-content {
@@ -18,53 +17,8 @@ div.post div.post-header a{
     color: black;
 }
 
-div.post div.post-header a:hover {
+div.post div.post-header a.title:hover {
     border-bottom: 0;
-}
-
-div.post-left-area {
-    float: left;
-    height: 100px;
-    margin-left: 5px;
-}
-
-div.post-left-area a
-{
-    margin-left: 3px;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-}
-
-div.post-left-area a:hover {
-    border-bottom: 1px solid transparent;
-}
-
-div.post-left-area a.post-rating-up 
-{
-    background: url("images/post-rating-up.png") no-repeat;
-}
-
-div.post-left-area a.post-rating-up:hover {
-    background: url("images/post-rating-up-hover.png") no-repeat;
-}
-
-div.post-left-area a.post-rating-down 
-{
-    background: url("images/post-rating-down.png") no-repeat;
-}
-
-div.post-left-area a.post-rating-down:hover {
-    background: url("images/post-rating-down-hover.png") no-repeat;
-}
-
-div.post-left-area label 
-{
-    margin-bottom: 3px;
-    margin-top: -4px;
-    text-align: center;
-    display: block;
-    font-size: 1.2em;
 }
 
 div.post div.post-foorer
@@ -98,14 +52,4 @@ div.right-footer-area a.complain {
 
 div.right-footer-area a.complain:hover {
     background: url("images/complain-hover.png") no-repeat;
-}
-
-/*Content*/
-div.post-content h1,
-div.post-content h2,
-div.post-content h3,
-div.post-content h4 {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    display: inline-block;
 }

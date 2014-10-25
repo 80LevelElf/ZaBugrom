@@ -13,12 +13,12 @@
              <a class="comment-title-author">@comment.AuthorName</a>
              <label class="comment-write-label"> написал:</label>
          </div>
-         <div class="comment-source">
+         <div class="comment-source parse-data">
              @comment.Source
          </div>
          <div class="comment-footer">
-             <label class="send-time">Отправлено 22 октября 2014 в 21.14.</label>
-             @if (comment.CommentLevel != CommentData.MaxCommentLevel)
+             <label class="send-time">Добавлено @comment.AddTime.ToLongDateString() @comment.AddTime.ToLongTimeString()</label>
+             @if (comment.CommentLevel != CommentData.MaxCommentLevel && WebSecurity.HasUserId)
              {
                  <a class="reply">Ответить</a>
              }
