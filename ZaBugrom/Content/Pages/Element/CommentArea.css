@@ -4,13 +4,18 @@
     border-left: 2px solid #1e90ff;
     min-width: 300px;
     margin-bottom: 15px;
+    margin-left: -1px; /*to collapse borders*/
+}
+
+div.comment.just-added div.comment-title {
+    background: rgba(0, 255, 0, 0.2);
 }
 
 div.comment-title {
     padding-left: 4px;
     padding-bottom: 2px;
     padding-top: 2px;
-    background: rgb(245, 245, 245);
+    background: #f5f5f5;
 }
 
 div.comment-source {
@@ -18,14 +23,14 @@ div.comment-source {
     min-width: 20px;
 }
 
-div.rating-area {
+div.raiting-area {
     display: inline-block;
     padding-right: 3px;
     float: right;
 }
 
-div.rating-area a.comment-rating-up,
-div.rating-area a.comment-rating-down {
+div.raiting-area a.comment-rating-up,
+div.raiting-area a.comment-rating-down {
     color: black;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -34,11 +39,11 @@ div.rating-area a.comment-rating-down {
     display: inline-block;
 }
 
-div.rating-area a.comment-rating-up:hover {
+div.raiting-area a.comment-rating-up:hover {
     background: rgba(0, 255, 0, 0.2);
 }
 
-div.rating-area a.comment-rating-down:hover {
+div.raiting-area a.comment-rating-down:hover {
     background: rgba(255, 0, 0, 0.2);
 }
 
@@ -52,4 +57,18 @@ div.comment-shift-area {
 
 div.comment-shift-area.comment-shift-area-border {
     border-left: 1px dashed #aaa;
+}
+
+div.comment-footer {
+    display: block;
+    font-size: 0.7em;
+    padding-left: 6px;
+}
+
+div.comment-footer label.send-time {
+    font-style: italic;
+}
+
+div.comment-footer a.reply {
+    float: right;
 }

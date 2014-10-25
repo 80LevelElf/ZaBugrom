@@ -17,5 +17,12 @@ namespace Models.Data
         public Int64? ParentCommentId { get; set; }
         public Int64 PostId { get; set; }
         public List<CommentData> SubComments { get; set; }
+        public DateTime AddTime { get; set; }
+        public int CommentLevel { get; set; }
+
+        public static int MaxCommentLevel
+        {
+            get { return 7; }
+        }
     }
 }

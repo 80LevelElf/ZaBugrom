@@ -7,7 +7,7 @@ namespace CommonDAL
 {
     public class BaseSqlRepository<T> where T : class
     {
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             using (var db = new DataBase())
             {
@@ -15,7 +15,7 @@ namespace CommonDAL
             }
         }
 
-        public List<T> GetList()
+        public virtual List<T> GetList()
         {
             using (var db = new DataBase())
             {
@@ -23,7 +23,7 @@ namespace CommonDAL
             }
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             using (var db = new DataBase())
             {

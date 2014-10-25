@@ -22,5 +22,10 @@ namespace ZaBugrom.Managers
         {
             get { return WebSecurity.CurrentUserId; }
         }
+
+        public static string UserName
+        {
+            get { return WebSecurity.CurrentUserName; }
+        }
     }
 }

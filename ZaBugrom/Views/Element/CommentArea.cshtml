@@ -1,11 +1,11 @@
-﻿@model List<Models.Data.CommentData>
-
+﻿@using Models.Data
+@model List<CommentData>
 
 @foreach (var comment in Model)
  {
-     <div class="comment">
+     <div class="comment" data-id="@comment.Id">
          <div class="comment-title">
-             <div class="rating-area">
+             <div class="raiting-area">
                  <label class="raring" title="Рейтинг поста">@comment.Rating</label>
                  <a class="comment-rating-up" title="Неистово плюсую">+</a>
                  <a class="comment-rating-down" title="Сударь, позвольте вам возразить">-</a>
@@ -15,6 +15,13 @@
          </div>
          <div class="comment-source">
              @comment.Source
+         </div>
+         <div class="comment-footer">
+             <label class="send-time">Отправлено 22 октября 2014 в 21.14.</label>
+             @if (comment.CommentLevel != CommentData.MaxCommentLevel)
+             {
+                 <a class="reply">Ответить</a>
+             }
          </div>
      </div>
     if (comment.SubComments.Count != 0)

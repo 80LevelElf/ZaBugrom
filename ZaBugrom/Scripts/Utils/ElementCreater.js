@@ -31,7 +31,7 @@ $(function() {
         event.preventDefault();
     });
 
-    $("*[data-event='browser-to-main']").bind("click", function () {
+    $("*[data-event='browser-to-main']").bind("click", function (event) {
         if (event.target == this) {
             MoveTo("Index", "Home");
         }

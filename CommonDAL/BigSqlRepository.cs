@@ -8,7 +8,7 @@ namespace CommonDAL
 {
     public class BigSqlRepository<T> : BaseSqlRepository<T> where T : BigData 
     {
-        public Int64 Insert(T entity)
+        public virtual Int64 Insert(T entity)
         {
             using (var db = new DataBase())
             {
@@ -16,7 +16,7 @@ namespace CommonDAL
             }
         }
 
-        public T GetById(long id)
+        public virtual T GetById(long id)
         {
             using (var db = new DataBase())
             {

@@ -33,5 +33,11 @@ namespace CommonDAL.SqlDAL
             //Take a comments which has not any parents
             return list.Where(i => !i.ParentCommentId.HasValue).ToList();
         }
+
+        public override Int64 Insert(CommentData instance)
+        {
+            instance.AddTime = DateTime.Now;
+            return base.Insert(instance);
+        }
     }
 }

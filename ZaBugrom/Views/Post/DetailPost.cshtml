@@ -9,12 +9,22 @@
     <div id="post-title">
         @Model.Title
     </div>
-    <div></div>
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
+    <div id="post-footer">
+        <label>Добавлено @Model.AddTime.ToLongDateString() @Model.AddTime.ToLongTimeString()</label>
+        <a id="reply">Ответить</a>
+    </div>
 </div>
 <div id="comment-area">
     @Html.Action("CommentAreaForPost", "Element", new { postId = @Model.Id })
 </div>
 
-@Scripts.Render("~/bundles/Pages/Post/DetailPost", "~/bundles/postManager")
+<div id="editor">
+    @Html.Action("PostEditor", "Element")
+    <div id="editor-footer">
+        <button id="send">Отослать</button>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/Pages/Post/DetailPost", "~/bundles/postManager", "~/bundles/mover")
 @Styles.Render("~/Content/Pages/Post/DetailPost")

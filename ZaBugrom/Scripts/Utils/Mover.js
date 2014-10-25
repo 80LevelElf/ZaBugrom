@@ -18,3 +18,18 @@ function ActionPathByUrl(url) {
 
     return "http://" + host + url;
 }
+
+function ParamValueOfAddress(paramName) {
+    var result = "Not found",
+        tmp = [];
+    location.search
+    //.replace ( "?", "" ) 
+    // this is better, there might be a question mark inside
+    .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === paramName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}

@@ -1,4 +1,5 @@
-﻿using Models.Data.Enums;
+﻿using System;
+using Models.Data.Enums;
 
 namespace Models.Data
 {
@@ -10,5 +11,6 @@ namespace Models.Data
         public Gender Gender { get; set; }
         public int Rating { get; set; }
         public int MessageCount { get; set; }
+        public DateTime AddTime { get; set; }
     }
 }

@@ -1,7 +1,4 @@
 ﻿div#post-area {
-    margin-left: 100px;
-    margin-right: 100px;
-    border-bottom: 1px solid #aaa;
     padding-bottom: 20px;
 }
 
@@ -13,12 +10,42 @@ div#post-title {
 
 div.post-content {
     padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*Footer*/
+div#post-footer 
+{
+    font-size: 14px;
+}
+
+div#post-footer a#reply {
+    float: right;
 }
 
 /*Comments*/
 div#comment-area {
     margin-top: 20px;
     margin-bottom: 160px;
-    margin-left: 100px;
-    margin-right: 100px;
+}
+
+/*Editor*/
+div#editor 
+{
+    padding-top: 5px;
+    padding-bottom: 15px;
+    display: none;
+}
+
+div#editor.showed {
+    display: block;
+}
+
+div#editor div#editor-footer {
+    padding-top: 6px;
+    padding-bottom: 20px;
+}
+
+div#editor div#editor-footer button {
+    float: right;
 }

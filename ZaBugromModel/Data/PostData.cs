@@ -11,5 +11,6 @@ namespace Models.Data
         public string Title { get; set; }
         public string Source { get; set; }
         public int Rating { get; set; }
+        public DateTime AddTime { get; set; }
     }
 }

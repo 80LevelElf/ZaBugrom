@@ -101,9 +101,10 @@ div.post-editor-area div.tool-area label.header div.header-choose
     display: none;
     position: relative;
     bottom: 98px;
-    background-color: #eee;
-    width: 34px;
-    left: -5px;
+    background-color: white;
+    border: 1px solid #aaa;
+    width: 40px;
+    left: -10px;
 }
 
 div.post-editor-area div.tool-area label.header:hover div.header-choose {
@@ -114,4 +115,11 @@ div.post-editor-area div.tool-area label.header div.header-choose a {
     width: 100%;
     text-align: center;
     padding: 0;
+    background-color: white;
+}
+
+div.post-editor-area div.tool-area label.header div.header-choose a:hover {
+    border: 1px solid #aaa;
+    border-left: 0;
+    font-weight: bold;
 }

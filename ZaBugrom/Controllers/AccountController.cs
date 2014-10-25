@@ -82,7 +82,11 @@ namespace ZaBugrom.Controllers
                 return View(model);
             }
 
-            WebSecurity.CreateUserAndAccount(model.Name, model.Password, new {Email = model.Email});
+            WebSecurity.CreateUserAndAccount(model.Name, model.Password, new 
+            {
+                Email = model.Email,
+                AddTime = DateTime.Now
+            });
             WebSecurity.Login(model.Name, model.Password, true);
 
             return RedirectToAction("Index", "Home");

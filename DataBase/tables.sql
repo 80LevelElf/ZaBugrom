@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[UserData](
 	[Gender] [int] NOT NULL,
 	[Rating] [int] NOT NULL,
 	[MessageCount] [int] NOT NULL,
+	[AddTime] [datetime] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -61,7 +62,8 @@ CREATE TABLE [dbo].[PostData](
 	[PostType] [int] NOT NULL,
 	[AuthorId] [int] NOT NULL,
 	[AuthorName] [nvarchar](100) NOT NULL,
-	[Rating] [int] NOT NULL
+	[Rating] [int] NOT NULL,
+	[AddTime] [datetime] NOT NULL,
  CONSTRAINT [PK_PostData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -90,6 +92,7 @@ CREATE TABLE [dbo].[MessageData](
 	[MessageType] [int] NOT NULL,
 	[Message] [nvarchar](MAX) NOT NULL,
 	[IsReaded] [bit] NOT NULL,
+	[AddTime] [datetime] NOT NULL,
  CONSTRAINT [PK_MessageData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -123,6 +126,8 @@ CREATE TABLE [dbo].[CommentData](
 	[Rating] [int] NOT NULL,
 	[ParentCommentId] [bigint] NULL,
 	[PostId] [bigint] NOT NULL,
+	[AddTime] [datetime] NOT NULL,
+	[CommentLevel] [int] NOT NULL,
  CONSTRAINT [PK_CommentData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

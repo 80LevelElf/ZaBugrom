@@ -8,7 +8,7 @@ namespace CommonDAL
 {
     public class SqlRepository<T> : BaseSqlRepository<T> where T : Data 
     {
-        public int Insert(T entity)
+        public virtual int Insert(T entity)
         {
             using (var db = new DataBase())
             {
@@ -16,7 +16,7 @@ namespace CommonDAL
             }
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             using (var db = new DataBase())
             {

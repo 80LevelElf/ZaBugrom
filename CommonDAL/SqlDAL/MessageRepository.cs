@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using LinqToDB;
 using Models.Data;
@@ -11,6 +12,7 @@ namespace CommonDAL.SqlDAL
     {
         public new long Insert(MessageData instance)
         {
+            instance.AddTime = DateTime.Now;
             using (var db = new DataBase())
             {
                 var id = (long) db.InsertWithIdentity(instance);

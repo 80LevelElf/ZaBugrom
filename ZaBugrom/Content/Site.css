@@ -19,7 +19,7 @@ div#content
     margin-left: 200px;
     margin-right: 200px;
     margin-top: 210px; /*200 + 10(just for style)*/
-    padding-bottom: 20px; /*for footer*/
+    padding-bottom: 10px;
 }
 
 *:focus {
@@ -357,30 +357,4 @@ header a#inbox-button:hover, header a.user-button:hover
 {
     background-color: white;
     border: 1px solid #aaa;
-}
-
-/* Footer
------------------------------------------------------------*/
-footer 
-{
-    bottom: 0;
-    position: fixed;
-    background-color: #eee;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 6px;
-}
-
-footer a, footer label 
-{
-    margin-left: 6px;
-    margin-right: 6px;    
-}
-
-footer a {
-    color: black;
-}
-
-footer a:hover {
-    border-bottom: 2px solid #1e90ff;
 }

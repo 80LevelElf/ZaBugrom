@@ -1,7 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Web.Mvc;
 using Models.Data;
 using Models.Data.Enums;
+using Models.InputModels.Post;
 using ZaBugrom.Managers;
 
 namespace ZaBugrom.Controllers
@@ -42,7 +45,7 @@ namespace ZaBugrom.Controllers
         }
 
         [HttpGet]
-        public ActionResult DetailPost(int postId)
+        public ActionResult DetailPost(Int64 postId)
         {
             var postData = RepositoryManager.PostRepository.GetById(postId);
 
@@ -52,6 +55,41 @@ namespace ZaBugrom.Controllers
             }
 
             return View(postData);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public PartialViewResult AddComment(AddingComment comment)
+        {
+            var commentToAdd = new CommentData()
+            {
+                AddTime = DateTime.Now,
+                AuthorId = UserManager.UserId,
+                AuthorName = UserManager.UserName,
+                ParentCommentId = comment.ParentCommentId,
+                PostId = comment.PostId,
+                Rating = 0,
+                Source = comment.Source,
+                CommentLevel = 1
+            };
+
+            //Check max level of comment
+            if (commentToAdd.ParentCommentId.HasValue)
+            {
+                var parentComment = RepositoryManager.CommentRepository.GetById(commentToAdd.ParentCommentId.Value);
+
+                if (parentComment.CommentLevel == CommentData.MaxCommentLevel)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                commentToAdd.CommentLevel = parentComment.CommentLevel + 1;
+            }
+
+            var id = RepositoryManager.CommentRepository.Insert(commentToAdd);
+            commentToAdd.Id = id;
+
+            return PartialView("~/Views/Element/CommentArea.cshtml", new List<CommentData> {commentToAdd});
         }
     }
 }

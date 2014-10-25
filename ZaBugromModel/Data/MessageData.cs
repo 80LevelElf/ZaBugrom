@@ -1,4 +1,5 @@
-﻿using Models.Data.Enums;
+﻿using System;
+using Models.Data.Enums;
 
 namespace Models.Data
 {
@@ -9,5 +10,6 @@ namespace Models.Data
         public MessageType MessageType { get; set; }
         public string Message { get; set; }
         public bool IsReaded { get; set; }
+        public DateTime AddTime { get; set; }
     }
 }
