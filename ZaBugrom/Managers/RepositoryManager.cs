@@ -9,6 +9,7 @@ namespace ZaBugrom.Managers
         public static HeaderImageRepository HeaderImageRepository { get; private set; }
         public static MessageRepository MessageRepository { get; private set; }
         public static CommentRepository CommentRepository { get; private set; }
+        public static PostVotingRepository PostVotingRepository { get; private set; }
 
         static RepositoryManager()
         {
@@ -17,6 +18,7 @@ namespace ZaBugrom.Managers
             HeaderImageRepository = new HeaderImageRepository();
             MessageRepository = new MessageRepository();
             CommentRepository = new CommentRepository();
+            PostVotingRepository = new PostVotingRepository();
         }
     }
 }

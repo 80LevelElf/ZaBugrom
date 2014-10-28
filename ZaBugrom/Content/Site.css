@@ -171,31 +171,6 @@ form.big-size    input[type="text"], form.big-size    input[type="password"], fo
     border-bottom: 1px solid #aaaaaa;
 }
 
-/*Rating area*/
-div.raiting-area {
-    display: inline-block;
-    padding-right: 3px;
-    float: right;
-}
-
-div.raiting-area a.comment-rating-up,
-div.raiting-area a.comment-rating-down {
-    color: black;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    width: 20px;
-    text-align: center;
-    display: inline-block;
-}
-
-div.raiting-area a.comment-rating-up:hover {
-    background: rgba(0, 255, 0, 0.2);
-}
-
-div.raiting-area a.comment-rating-down:hover {
-    background: rgba(255, 0, 0, 0.2);
-}
-
 /* Header
 -----------------------------------------------------------*/
 header {

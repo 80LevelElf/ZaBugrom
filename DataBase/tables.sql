@@ -156,3 +156,28 @@ GO
 
 ALTER TABLE [dbo].[CommentData] CHECK CONSTRAINT [FK_CommentData_UserData]
 GO
+
+-------------------------------------------------------------------
+-------- Post voting
+-------------------------------------------------------------------
+CREATE TABLE [dbo].[PostVotingData](
+	[PostId] [bigint] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[IsVoteUp] [bit] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[PostVotingData]  WITH CHECK ADD  CONSTRAINT [FK_PostVotingData_PostData] FOREIGN KEY([PostId])
+REFERENCES [dbo].[PostData] ([Id])
+GO
+
+ALTER TABLE [dbo].[PostVotingData] CHECK CONSTRAINT [FK_PostVotingData_PostData]
+GO
+
+ALTER TABLE [dbo].[PostVotingData]  WITH CHECK ADD  CONSTRAINT [FK_PostVotingData_UserData] FOREIGN KEY([UserId])
+REFERENCES [dbo].[UserData] ([Id])
+GO
+
+ALTER TABLE [dbo].[PostVotingData] CHECK CONSTRAINT [FK_PostVotingData_UserData]
+GO

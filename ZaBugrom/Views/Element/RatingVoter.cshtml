@@ -1,0 +1,10 @@
+﻿@model Int64
+
+<div class="raiting-area">
+    <label class="rating" title="Рейтинг поста">@Model</label>
+    <a class="rating-up" title="Неистово плюсую">+</a>
+    <a class="rating-down" title="Сударь, позвольте вам возразить">-</a>
+</div>
+
+@Styles.Render("~/Content/Pages/Element/RatingVoter")
+@Scripts.Render("~/bundles/Pages/Element/RatingVoter")

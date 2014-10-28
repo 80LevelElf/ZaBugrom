@@ -2,14 +2,10 @@
 @model Models.Data.PostData
 
 <div class="post-area">
-    <div class="post @Html.GetPostClassByType(Model.PostType)">
+    <div class="post @Html.GetPostClassByType(Model.PostType)" data-id="@Model.Id">
         <div class="post-header">
             <a class="title" href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
-            <div class="raiting-area">
-                 <label class="raring" title="Рейтинг поста">@Model.Rating</label>
-                 <a class="comment-rating-up" title="Неистово плюсую">+</a>
-                 <a class="comment-rating-down" title="Сударь, позвольте вам возразить">-</a>
-             </div>
+            @Html.Action("RatingVoter", "Element", new { rating = Model.Rating })
         </div>
         @RenderBody()
     </div>

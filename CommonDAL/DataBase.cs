@@ -19,5 +19,6 @@ namespace CommonDAL.SqlDAL
         public ITable<PostData> PostTable { get { return GetTable<PostData>(); } }
         public ITable<UserData> UserTable { get { return GetTable<UserData>(); } }
         public ITable<CommentData> CommentTable { get { return GetTable<CommentData>(); } }
+        public ITable<PostVotingData> PostVotingTable { get { return GetTable<PostVotingData>(); } }
     }
 }

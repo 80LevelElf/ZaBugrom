@@ -5,11 +5,7 @@
  {
      <div class="comment" data-id="@comment.Id">
          <div class="comment-title">
-             <div class="raiting-area">
-                 <label class="raring" title="Рейтинг поста">@comment.Rating</label>
-                 <a class="comment-rating-up" title="Неистово плюсую">+</a>
-                 <a class="comment-rating-down" title="Сударь, позвольте вам возразить">-</a>
-             </div>
+             @Html.Action("RatingVoter", "Element", new { comment.Rating })
              <a class="comment-title-author">@comment.AuthorName</a>
              <label class="comment-write-label"> написал:</label>
          </div>

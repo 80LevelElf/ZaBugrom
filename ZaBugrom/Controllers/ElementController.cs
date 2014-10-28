@@ -25,5 +25,10 @@ namespace ZaBugrom.Controllers
         {
             return PartialView(commentList);
         }
+
+        public PartialViewResult RatingVoter(Int64 rating)
+        {
+            return PartialView("RatingVoter", rating);
+        }
     }
 }

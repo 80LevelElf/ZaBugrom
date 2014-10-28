@@ -4,6 +4,7 @@ using System.IO;
 using System.Web.Mvc;
 using Models.Data;
 using Models.Data.Enums;
+using Models.HelpModels.Post;
 using Models.InputModels.Post;
 using ZaBugrom.Managers;
 
@@ -90,6 +91,22 @@ namespace ZaBugrom.Controllers
             commentToAdd.Id = id;
 
             return PartialView("~/Views/Element/CommentArea.cshtml", new List<CommentData> {commentToAdd});
+        }
+
+        [HttpPost]
+        [Authorize]
+        public JsonResult TryToVote(Int64 postId, bool isVoteUp)
+        {
+            var userId = UserManager.UserId;
+
+            var result = RepositoryManager.PostVotingRepository.TryToVote(new PostVotingData()
+            {
+                PostId = postId,
+                UserId = userId,
+                IsVoteUp = isVoteUp
+            });
+
+            return Json(new AddVoteResult() {Id = postId, Result = result});
         }
     }
 }

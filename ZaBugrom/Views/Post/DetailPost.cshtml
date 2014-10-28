@@ -8,6 +8,7 @@
 <div id="post-area">
     <div id="post-title">
         @Model.Title
+        @Html.Action("RatingVoter", "Element", new { rating = Model.Rating })
     </div>
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
     <div id="post-footer">

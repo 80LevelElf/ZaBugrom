@@ -6,4 +6,6 @@
     $("div.post.simple-post div.post-content").each(function () {
         SetPostData(this);
     });
+
+    AddBindings();
 })
