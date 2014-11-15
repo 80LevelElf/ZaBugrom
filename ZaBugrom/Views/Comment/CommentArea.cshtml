@@ -5,7 +5,7 @@
  {
      <div class="comment" data-id="@comment.Id">
          <div class="comment-title">
-             @Html.Action("RatingVoter", "Element", new { comment.Rating })
+             @Html.Action("RatingVoterForComment", "Element", new { comment })
              <a class="comment-title-author">@comment.AuthorName</a>
              <label class="comment-write-label"> написал:</label>
          </div>

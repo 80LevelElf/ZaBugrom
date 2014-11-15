@@ -5,7 +5,7 @@
 }
 
 @{
-    foreach (var postData in RepositoryManager.PostRepository.GetList())
+    foreach (var postData in RepositoryManager.PostRepository.GetList(UserManager.UserId))
     {
         @Html.Action("Post", "Post", new {postData})
     }

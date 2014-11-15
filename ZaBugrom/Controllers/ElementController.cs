@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Web.UI.WebControls.WebParts;
+﻿using System.Web.Mvc;
 using Models.Data;
-using ZaBugrom.Managers;
+using Models.HelpModels.Element;
 
 namespace ZaBugrom.Controllers
 {
@@ -14,21 +11,29 @@ namespace ZaBugrom.Controllers
             return PartialView();
         }
 
-        public PartialViewResult CommentAreaForPost(Int64 postId)
+        public PartialViewResult RatingVoterForComment(CommentData comment)
         {
-            var commentList = RepositoryManager.CommentRepository.GetList(postId);
-
-            return PartialView("CommentArea", commentList);
+            return PartialView("RatingVoter", new VoteRating()
+            {
+                IsVote = comment.IsVote,
+                IsVoteUp = comment.IsVoteUp,
+                Rating = comment.Rating
+            }); 
         }
 
-        public PartialViewResult CommentArea(List<CommentData> commentList)
+        public PartialViewResult RatingVoterForPost(PostData post)
         {
-            return PartialView(commentList);
+            return PartialView("RatingVoter", new VoteRating()
+            {
+                IsVote = post.IsVote,
+                IsVoteUp = post.IsVoteUp,
+                Rating = post.Rating
+            }); 
         }
 
-        public PartialViewResult RatingVoter(Int64 rating)
+        public PartialViewResult RatingVoter(VoteRating voteRating)
         {
-            return PartialView("RatingVoter", rating);
+            return PartialView("RatingVoter", voteRating);
         }
     }
 }

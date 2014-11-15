@@ -10,12 +10,26 @@ namespace CommonDAL.SqlDAL
         /// <summary>
         /// Get all comments of specified post as a tree 
         /// </summary>
-        public List<CommentData> GetList(Int64 postId)
+        public List<CommentData> GetList(Int64 postId, int userId)
         {
-            IEnumerable<CommentData> list;
+            List<CommentData> list;
             using (var db = new DataBase())
             {
-                list = db.CommentTable.Where(i => i.PostId == postId).ToList();
+                list = (from c in db.CommentTable.Where(i => i.PostId == postId)
+                         from cv in db.CommentVotingTable.Where(i => i.CommentId == c.Id && i.UserId == userId).DefaultIfEmpty()
+                         select new CommentData
+                         {
+                             AddTime = c.AddTime,
+                             AuthorId = c.AuthorId,
+                             AuthorName = c.AuthorName,
+                             Id = c.Id,
+                             Rating = c.Rating,
+                             Source = c.Source,
+                             IsVote = (cv.UserId != 0),
+                             IsVoteUp = cv.IsVoteUp,
+                             CommentLevel = c.CommentLevel,
+                             ParentCommentId = c.ParentCommentId
+                         }).ToList();
             }
 
             //Make a tree

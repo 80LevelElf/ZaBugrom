@@ -1,4 +1,5 @@
 ﻿using System;
+using LinqToDB.Mapping;
 using Models.Data.Enums;
 
 namespace Models.Data
@@ -12,5 +13,10 @@ namespace Models.Data
         public string Source { get; set; }
         public int Rating { get; set; }
         public DateTime AddTime { get; set; }
+
+        [NotColumn]
+        public bool IsVote { get; set; }
+        [NotColumn]
+        public bool IsVoteUp { get; set; }
     }
 }

@@ -14,10 +14,12 @@ div.raiting-area a.rating-down {
     display: inline-block;
 }
 
-div.raiting-area a.rating-up:hover {
-    background: rgba(0, 255, 0, 0.2);
+div.raiting-area a.rating-up:hover,
+div.raiting-area a.rating-up.selected {
+    background: rgba(0, 255, 0, 0.4);
 }
 
-div.raiting-area a.rating-down:hover {
-    background: rgba(255, 0, 0, 0.2);
+div.raiting-area a.rating-down:hover,
+div.raiting-area a.rating-down.selected {
+    background: rgba(255, 0, 0, 0.4);
 }

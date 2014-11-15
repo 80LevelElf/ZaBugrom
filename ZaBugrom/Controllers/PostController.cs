@@ -48,7 +48,7 @@ namespace ZaBugrom.Controllers
         [HttpGet]
         public ActionResult DetailPost(Int64 postId)
         {
-            var postData = RepositoryManager.PostRepository.GetById(postId);
+            var postData = RepositoryManager.PostRepository.GetById(postId, UserManager.UserId);
 
             if (postData == null)
             {
@@ -90,7 +90,7 @@ namespace ZaBugrom.Controllers
             var id = RepositoryManager.CommentRepository.Insert(commentToAdd);
             commentToAdd.Id = id;
 
-            return PartialView("~/Views/Element/CommentArea.cshtml", new List<CommentData> {commentToAdd});
+            return PartialView("~/Views/Comment/CommentArea.cshtml", new List<CommentData> {commentToAdd});
         }
 
         [HttpPost]

@@ -155,6 +155,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddPostController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ElementController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -343,7 +344,7 @@
     <Content Include="Views\Account\Messages.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Element\CommentArea.cshtml" />
+    <Content Include="Views\Comment\CommentArea.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Element\RatingVoter.cshtml" />

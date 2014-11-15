@@ -6,9 +6,9 @@
 }
 
 <div id="post-area">
-    <div id="post-title">
+    <div id="post-title" data-id="@Model.Id">
         @Model.Title
-        @Html.Action("RatingVoter", "Element", new { rating = Model.Rating })
+        @Html.Action("RatingVoterForPost", "Element", new { post = Model })
     </div>
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
     <div id="post-footer">
@@ -20,7 +20,7 @@
     </div>
 </div>
 <div id="comment-area">
-    @Html.Action("CommentAreaForPost", "Element", new { postId = @Model.Id })
+    @Html.Action("CommentAreaForPost", "Comment", new { postId = @Model.Id })
 </div>
 
 <div id="editor">

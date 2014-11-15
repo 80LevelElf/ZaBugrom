@@ -1,9 +1,9 @@
-﻿@model Int64
+﻿@model Models.HelpModels.Element.VoteRating
 
 <div class="raiting-area">
-    <label class="rating" title="Рейтинг поста">@Model</label>
-    <a class="rating-up" title="Неистово плюсую">+</a>
-    <a class="rating-down" title="Сударь, позвольте вам возразить">-</a>
+    <label class="rating" title="Рейтинг поста">@Model.Rating</label>
+    <a class="rating-up @((Model.IsVote && Model.IsVoteUp)?"selected":"")" title="Неистово плюсую">+</a>
+    <a class="rating-down  @((Model.IsVote && !Model.IsVoteUp)?"selected":"")" title="Сударь, позвольте вам возразить">-</a>
 </div>
 
 @Styles.Render("~/Content/Pages/Element/RatingVoter")

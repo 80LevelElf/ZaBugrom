@@ -1,4 +1,5 @@
 ﻿using System;
+using LinqToDB.Mapping;
 using Models.Data.Enums;
 
 namespace Models.Data

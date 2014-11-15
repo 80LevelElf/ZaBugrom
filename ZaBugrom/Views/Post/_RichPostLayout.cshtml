@@ -5,7 +5,7 @@
     <div class="post @Html.GetPostClassByType(Model.PostType)" data-id="@Model.Id">
         <div class="post-header">
             <a class="title" href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
-            @Html.Action("RatingVoter", "Element", new { rating = Model.Rating })
+            @Html.Action("RatingVoterForPost", "Element", new { post = Model })
         </div>
         @RenderBody()
     </div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using LinqToDB;
 using Models.Data;
@@ -10,17 +11,21 @@ namespace CommonDAL.SqlDAL
 {
     public class MessageRepository : BigSqlRepository<MessageData>
     {
-        public new long Insert(MessageData instance)
+        public override long Insert(MessageData instance)
         {
             instance.AddTime = DateTime.Now;
             using (var db = new DataBase())
             {
+                db.BeginTransaction();
+
                 var id = (long) db.InsertWithIdentity(instance);
 
                 db.UserTable
                     .Where(i => i.Id == instance.UserToId)
                     .Set(i => i.MessageCount, i => i.MessageCount + 1)
                     .Update();
+
+                db.CommitTransaction();
 
                 return id;
             }
@@ -31,7 +36,7 @@ namespace CommonDAL.SqlDAL
         {
             using (var db = new DataBase())
             {
-                return db.MessageTable
+               return db.MessageTable
                     .Where(i => i.UserToId == userId && (
                         (isNewContent && i.MessageType == MessageType.NewContent)
                         || (isNotification && i.MessageType == MessageType.Notification)

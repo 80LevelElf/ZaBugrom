@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LinqToDB.Mapping;
 
 namespace Models.Data
 {
@@ -19,6 +20,11 @@ namespace Models.Data
         public List<CommentData> SubComments { get; set; }
         public DateTime AddTime { get; set; }
         public int CommentLevel { get; set; }
+
+        [NotColumn]
+        public bool IsVote { get; set; }
+        [NotColumn]
+        public bool IsVoteUp { get; set; }
 
         public static int MaxCommentLevel
         {

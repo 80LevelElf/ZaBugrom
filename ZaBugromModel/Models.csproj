@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Data\BigData.cs" />
     <Compile Include="Data\CommentData.cs" />
+    <Compile Include="Data\CommentVotingData.cs" />
     <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="Data\Enums\MessageType.cs" />
     <Compile Include="Data\Enums\PostType.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Data\PostVotingData.cs" />
     <Compile Include="Data\Settings\MessageSettingsData.cs" />
     <Compile Include="Data\UserData.cs" />
+    <Compile Include="HelpModels\Element\VoteRating.cs" />
     <Compile Include="HelpModels\Post\AddVoteResult.cs" />
     <Compile Include="InputModels\Account\LoginInputModel.cs" />
     <Compile Include="InputModels\Account\ProfileSettingsInputModel.cs" />

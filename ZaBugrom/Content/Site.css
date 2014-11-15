@@ -188,7 +188,7 @@ header label {
 
 header .header-opacity 
 {
-    background-color: rgba(256,256,256, 0.8);
+    background-color: rgba(256,256,256, 0.85);
 }
 
 header label#city-name {
