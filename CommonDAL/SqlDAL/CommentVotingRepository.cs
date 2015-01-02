@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using LinqToDB;
 using Models.Data;
 
@@ -13,50 +12,37 @@ namespace CommonDAL.SqlDAL
             {
                 db.BeginTransaction();
 
-                //If there is no such vote or there is different signs
+                var comment = db.CommentTable.FirstOrDefault(i => i.Id == instance.CommentId);
+                if (comment == null)
+                    return false;
+
+                //Update vote
                 var copyVote = db.CommentVotingTable.FirstOrDefault(i => i.CommentId == instance.CommentId && i.UserId == instance.UserId);
-
-                if (copyVote == null || copyVote.IsVoteUp != instance.IsVoteUp)
+                if (copyVote != null)
                 {
-                    db.Insert(instance);
-
-                    //Update comment rating and remove old vote(if it's exists)
-                    var firstOrDefault = db.CommentTable.FirstOrDefault(i => i.Id == instance.CommentId);
-                    if (firstOrDefault != null)
+                    //Delete opposite vote
+                    if (copyVote.IsVoteUp != instance.IsVoteUp)
                     {
-                        //Get new rating
-                        var rating = firstOrDefault.Rating;
-                        if (instance.IsVoteUp)
-                            rating++;
-                        else
-                            rating--;
-
-                        //Remove copy
-                        if (copyVote != null)
-                        {
-                            //We can't use delete because in this way we need to close connection
-                            db.CommentVotingTable.Where(i =>
-                                i.CommentId == copyVote.CommentId &&
-                                i.IsVoteUp == copyVote.IsVoteUp &&
-                                i.UserId == copyVote.UserId).Delete();
-
-                            rating -= (copyVote.IsVoteUp) ? 1 : -1;
-                        }
-
-                        db.CommentTable.Where(i => i.Id == instance.CommentId).Set(i => i.Rating, rating).Update();
+                        db.CommentVotingTable.Where(i => i.CommentId == copyVote.CommentId && i.UserId == copyVote.UserId).Delete();
                     }
                     else
                     {
+                        //User already have such vote
                         db.CommitTransaction();
                         return false;
                     }
-
-                    db.CommitTransaction();
-                    return true;
+                }
+                else
+                {
+                    db.Insert(instance);
                 }
 
+                //Update post ratig
+                var commentRating = comment.Rating + (instance.IsVoteUp ? 1 : -1);
+                db.CommentTable.Where(i => i.Id == instance.CommentId).Set(i => i.Rating, commentRating).Update();
+
                 db.CommitTransaction();
-                return false;
+                return true;
             }
         }
     }

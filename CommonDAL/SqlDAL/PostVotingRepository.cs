@@ -12,50 +12,37 @@ namespace CommonDAL.SqlDAL
             {
                 db.BeginTransaction();
 
-                //If there is no such vote or there is different signs
+                var post = db.PostTable.FirstOrDefault(i => i.Id == instance.PostId);
+                if (post == null)
+                    return false;
+
+                //Update vote
                 var copyVote = db.PostVotingTable.FirstOrDefault(i => i.PostId == instance.PostId && i.UserId == instance.UserId);
-
-                if (copyVote == null || copyVote.IsVoteUp != instance.IsVoteUp)
+                if (copyVote != null)
                 {
-                    db.Insert(instance);
-                    
-                    //Update post rating and remove old vote(if it's exists)
-                    var firstOrDefault = db.PostTable.FirstOrDefault(i => i.Id == instance.PostId);
-                    if (firstOrDefault != null)
+                    //Delete opposite vote
+                    if (copyVote.IsVoteUp != instance.IsVoteUp)
                     {
-                        //Get new rating
-                        var rating = firstOrDefault.Rating;
-                        if (instance.IsVoteUp)
-                            rating++;
-                        else
-                            rating--;
-
-                        //Remove copy
-                        if (copyVote != null)
-                        {
-                            //We can't use delete because in this way we need to close connection
-                            db.PostVotingTable.Where(i =>
-                                i.PostId == copyVote.PostId &&
-                                i.IsVoteUp == copyVote.IsVoteUp &&
-                                i.UserId == copyVote.UserId).Delete();
-
-                            rating -= (copyVote.IsVoteUp) ? 1 : -1;
-                        }
-
-                        db.PostTable.Where(i => i.Id == instance.PostId).Set(i => i.Rating, rating).Update();
+                        db.PostVotingTable.Where(i => i.PostId == copyVote.PostId && i.UserId == copyVote.UserId).Delete();
                     }
                     else
                     {
+                        //User already have such vote
                         db.CommitTransaction();
                         return false;
                     }
-
-                    db.CommitTransaction();
-                    return true;
+                }
+                else
+                {
+                    db.Insert(instance);
                 }
 
+                //Update post ratig
+                var postRating = post.Rating + (instance.IsVoteUp ? 1 : -1);
+                db.PostTable.Where(i => i.Id == instance.PostId).Set(i => i.Rating, postRating).Update();
+
                 db.CommitTransaction();
-                return false;
+                return true;
             }
         }
     }

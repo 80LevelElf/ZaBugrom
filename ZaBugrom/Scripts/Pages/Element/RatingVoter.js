@@ -27,12 +27,7 @@ function AddBindings() {
 
 //Post
 function PostRatingUp() {
-    var postId = $(this).parent().parent().parent().attr("data-id");    
-
-    //If there is detail post
-    if (postId == undefined) {
-        postId = $(this).parent().parent().attr("data-id");
-    }
+    var postId = $(this).parent().parent().parent().attr("data-id");
 
     $.ajax({
         type: "POST",
@@ -45,19 +40,18 @@ function PostRatingUp() {
         success: function (data) {
             if (data.Result) {
                 var ratingLabel = $("div.post[data-id='" + data.Id + "'] label.rating");
-                var newRating = parseInt(ratingLabel.text()) + 1;
 
                 var upButton = ratingLabel.parent().find("a.rating-up");
-                upButton.addClass("selected");
+                var downButton = ratingLabel.parent().find("a.rating-down");
 
                 //If user already voted
-                var downButton = ratingLabel.parent().find("a.rating-down");
                 if (downButton.hasClass("selected")) {
                     downButton.removeClass("selected");
-                    newRating++;
+                } else {
+                    upButton.addClass("selected");
                 }
 
-                ratingLabel.text(newRating);
+                ratingLabel.text(parseInt(ratingLabel.text()) + 1);
             }
         }
     });
@@ -77,19 +71,18 @@ function PostRatingDown() {
         success: function (data) {
             if (data.Result) {
                 var ratingLabel = $("div.post[data-id='" + data.Id + "'] label.rating");
-                var newRating = parseInt(ratingLabel.text()) - 1;
 
+                var upButton = ratingLabel.parent().find("a.rating-up");
                 var downButton = ratingLabel.parent().find("a.rating-down");
-                downButton.addClass("selected");
 
                 //If user already voted
-                var upButton = ratingLabel.parent().find("a.rating-up");
                 if (upButton.hasClass("selected")) {
                     upButton.removeClass("selected");
-                    newRating--;
+                } else {
+                    downButton.addClass("selected");
                 }
 
-                ratingLabel.text(newRating);
+                ratingLabel.text(parseInt(ratingLabel.text()) - 1);
             }
         }
     });
@@ -110,19 +103,18 @@ function DetailPostRatingUp() {
         success: function (data) {
             if (data.Result) {
                 var ratingLabel = $("div#post-title[data-id='" + data.Id + "'] label.rating");
-                var newRating = parseInt(ratingLabel.text()) + 1;
 
                 var upButton = ratingLabel.parent().find("a.rating-up");
-                upButton.addClass("selected");
+                var downButton = ratingLabel.parent().find("a.rating-down");
 
                 //If user already voted
-                var downButton = ratingLabel.parent().find("a.rating-down");
                 if (downButton.hasClass("selected")) {
                     downButton.removeClass("selected");
-                    newRating++;
+                } else {
+                    upButton.addClass("selected");
                 }
 
-                ratingLabel.text(newRating);
+                ratingLabel.text(parseInt(ratingLabel.text()) + 1);
             }
         }
     });
@@ -142,19 +134,18 @@ function DetailPostRatingDown() {
         success: function (data) {
             if (data.Result) {
                 var ratingLabel = $("div#post-title[data-id='" + data.Id + "'] label.rating");
-                var newRating = parseInt(ratingLabel.text()) - 1;
 
+                var upButton = ratingLabel.parent().find("a.rating-up");
                 var downButton = ratingLabel.parent().find("a.rating-down");
-                downButton.addClass("selected");
 
                 //If user already voted
-                var upButton = ratingLabel.parent().find("a.rating-up");
                 if (upButton.hasClass("selected")) {
                     upButton.removeClass("selected");
-                    newRating--;
+                } else {
+                    downButton.addClass("selected");
                 }
 
-                ratingLabel.text(newRating);
+                ratingLabel.text(parseInt(ratingLabel.text()) - 1);
             }
         }
     });
@@ -175,19 +166,18 @@ function CommentRatingUp() {
         success: function (data) {
             if (data.Result) {
                 var ratingLabel = $("div.comment[data-id='" + data.Id + "'] label.rating");
-                var newRating = parseInt(ratingLabel.text()) + 1;
 
                 var upButton = ratingLabel.parent().find("a.rating-up");
-                upButton.addClass("selected");
+                var downButton = ratingLabel.parent().find("a.rating-down");
 
                 //If user already voted
-                var downButton = ratingLabel.parent().find("a.rating-down");
                 if (downButton.hasClass("selected")) {
                     downButton.removeClass("selected");
-                    newRating++;
+                } else {
+                    upButton.addClass("selected");
                 }
 
-                ratingLabel.text(newRating);
+                ratingLabel.text(parseInt(ratingLabel.text()) + 1);
             }
         }
     });
@@ -207,19 +197,18 @@ function CommentRatingDown() {
         success: function (data) {
             if (data.Result) {
                 var ratingLabel = $("div.comment[data-id='" + data.Id + "'] label.rating");
-                var newRating = parseInt(ratingLabel.text()) - 1;
 
+                var upButton = ratingLabel.parent().find("a.rating-up");
                 var downButton = ratingLabel.parent().find("a.rating-down");
-                downButton.addClass("selected");
 
                 //If user already voted
-                var upButton = ratingLabel.parent().find("a.rating-up");
                 if (upButton.hasClass("selected")) {
                     upButton.removeClass("selected");
-                    newRating--;
+                } else {
+                    downButton.addClass("selected");
                 }
 
-                ratingLabel.text(newRating);
+                ratingLabel.text(parseInt(ratingLabel.text()) - 1);
             }
         }
     });
