@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Models.Data;
 using Models.HelpModels.Element;
 
@@ -34,6 +35,11 @@ namespace ZaBugrom.Controllers
         public PartialViewResult RatingVoter(VoteRating voteRating)
         {
             return PartialView("RatingVoter", voteRating);
+        }
+
+        public PartialViewResult MessageList(List<MessageData> model)
+        {
+            return PartialView(model);
         }
     }
 }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using LinqToDB;
+﻿using LinqToDB;
 using Models.Data;
+using Models.Data.Settings;
 
 namespace CommonDAL.SqlDAL
 {
@@ -21,5 +18,6 @@ namespace CommonDAL.SqlDAL
         public ITable<CommentData> CommentTable { get { return GetTable<CommentData>(); } }
         public ITable<PostVotingData> PostVotingTable { get { return GetTable<PostVotingData>(); } }
         public ITable<CommentVotingData> CommentVotingTable { get { return GetTable<CommentVotingData>(); } }
+        public ITable<MessageSettingsData> MessageSettingsTable { get { return GetTable<MessageSettingsData>(); } }
     }
 }

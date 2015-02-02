@@ -16,7 +16,7 @@ div.post.video-post div.post-content {
     background-color: #1b1b1b;
 }
 
-div.post.video-post div.post-header a:hover{
+div.post.video-post div.post-header a.title:hover{
     color: red;
 }
 

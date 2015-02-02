@@ -206,3 +206,26 @@ GO
 
 ALTER TABLE [dbo].[CommentVotingData] CHECK CONSTRAINT [FK_CommentVotingData_UserData]
 GO
+
+-------------------------------------------------------------------
+-------- Message settings
+-------------------------------------------------------------------
+CREATE TABLE [dbo].[MessageSettingsData](
+	[UserId] [int] NOT NULL,
+	[IsNewContent] [bit] NOT NULL,
+	[IsNotification] [bit] NOT NULL,
+	[IsUserMail] [bit] NOT NULL,
+ CONSTRAINT [PK_MessageSettingsData] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[MessageSettingsData]  WITH CHECK ADD  CONSTRAINT [FK_MessageSettingsData_UserData] FOREIGN KEY([UserId])
+REFERENCES [dbo].[UserData] ([Id])
+GO
+
+ALTER TABLE [dbo].[MessageSettingsData] CHECK CONSTRAINT [FK_MessageSettingsData_UserData]
+GO

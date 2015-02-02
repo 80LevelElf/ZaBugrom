@@ -1,4 +1,6 @@
-﻿namespace Models.Data.Settings
+﻿using LinqToDB.Mapping;
+
+namespace Models.Data.Settings
 {
     public class MessageSettingsData
     {
@@ -20,6 +22,8 @@
         public bool IsNewContent { get; set; }
         public bool IsNotification { get; set; }
         public bool IsUserMail { get; set; }
+
+        [PrimaryKey]
         public int UserId { get; set; }
     }
 }

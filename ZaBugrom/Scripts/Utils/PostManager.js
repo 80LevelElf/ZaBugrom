@@ -58,9 +58,11 @@ function ProceedTags(text) {
         var source = currentElement.attr("src");
 
         var newElement = $("<iframe></iframe>");
-        newElement.attr("width", "560");
+        newElement.attr("width", "60%");
         newElement.attr("height", "315");
         newElement.attr("src", "//www.youtube.com/embed/" + source);
+        newElement.attr("allowfullscreen", "true");
+        newElement.attr("frameborder", "0");
 
         currentElement.replaceWith(newElement);
     });

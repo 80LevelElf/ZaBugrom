@@ -1,0 +1,19 @@
+﻿@using ZaBugrom.Extensions
+@model List<Models.Data.MessageData>
+
+@{
+    foreach (var message in Model)
+    {
+        <div class="message @Html.GetMesageMarkClassByType(message.MessageType)">
+            <div class="message-title">
+                <label class="mark @Html.GetMesageMarkClassByType(message.MessageType)">
+                    @EnumExtension.GetEnumDescription(message.MessageType)
+                </label>
+                <label class="is-readed-signal @BoolExtension.GetMessageIsReadClass(message.IsReaded)">
+                    @BoolExtension.GetMessageIsReadTextClass(message.IsReaded)
+                </label>
+            </div>
+            <label class="data">@message.Message</label>
+        </div>
+    }
+}

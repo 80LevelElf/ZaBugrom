@@ -1,4 +1,5 @@
-﻿@model Models.Data.PostData
+﻿@using ZaBugrom.Extensions
+@model Models.Data.PostData
 
 @{
     ViewBag.Title = "VideoPost";
@@ -6,9 +7,7 @@
 }
 
 <div class="post-content">
-    <iframe width="560" height="315" src="//www.youtube.com/embed/@Model.Source" align="middle"
-    frameborder="0" allowfullscreen wmode="opaque">
-</iframe>
+    @Html.VideoTag(@Model.Source)
 </div>
 
 @Styles.Render("~/Content/Pages/Post/VideoPost")

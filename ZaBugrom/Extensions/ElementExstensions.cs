@@ -23,5 +23,10 @@ namespace ZaBugrom.Extensions
             });
             return htmlHelper.DropDownListFor(expression, items);
         }
+
+        public static MvcHtmlString VideoTag<TModel>(this HtmlHelper<TModel> htmlHelper, string videoId)
+        {
+            return new MvcHtmlString(string.Format("[video src=\"{0}\"]", videoId));
+        }
     }
 }

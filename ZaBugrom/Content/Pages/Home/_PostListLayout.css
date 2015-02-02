@@ -20,7 +20,7 @@ div#filter-div p
 
 div#filter-div select, div#filter-div span.ui-spinner
 {
-    width: 150px /*160-5*2*/;
+    width: 160px;
 }
 
 div#post-tools-div {
@@ -82,10 +82,11 @@ div#search-div {
 }
 
 div#search-div input#search-input {
-    width: 144px;
+    width: 145px;
     height: 21px;
     margin-right: 0;
     vertical-align: middle;
+    border-right: 0;
 }
 
 div#search-div a#search-button
@@ -94,7 +95,7 @@ div#search-div a#search-button
     width: 21px;
     height: 21px;
     display: inline-block;
-    margin-left: -4px;
+    margin-left: -5px;
     border: 1px solid #aaa;
     border-left: 0;
     color: black;
@@ -106,6 +107,7 @@ div#search-div a#search-button
 div#search-div a#search-button:hover
 {
     color: #1e90ff;
+    font-weight: bold;
 }
 
 div.post {

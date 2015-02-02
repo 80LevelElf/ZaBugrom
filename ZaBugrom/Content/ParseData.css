@@ -2,12 +2,20 @@
 div.parse-data h2,
 div.parse-data h3,
 div.parse-data h4 {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     display: inline-block;
 }
 
 img.flow {
     float: left;
     padding: 5px;
+}
+
+iframe {
+    margin: 0 auto;
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: black;
 }

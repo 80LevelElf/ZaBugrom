@@ -27,5 +27,10 @@ namespace ZaBugrom.Managers
         {
             get { return WebSecurity.CurrentUserName; }
         }
+
+        public static bool IsThereUser
+        {
+            get { return WebSecurity.HasUserId; }
+        }
     }
 }

@@ -7,7 +7,7 @@
 
 <div id="post-area">
     <div id="post-title" data-id="@Model.Id">
-        @Model.Title
+        <label id="title">@Model.Title</label>
         @Html.Action("RatingVoterForPost", "Element", new { post = Model })
     </div>
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })

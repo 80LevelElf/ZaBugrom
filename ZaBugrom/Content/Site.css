@@ -134,6 +134,10 @@ div.separate-line {
     margin-bottom: 10px !important;
 }
 
+input.ok-button {
+    margin-right: 6px;
+}
+
 /* Pages-specific
 -----------------------------------------------------------*/
 .middle-size 

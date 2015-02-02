@@ -39,15 +39,15 @@ div.message{
 }
 
 div.message.new-content {
-    border-left: 3px solid #1e90ff;
+    border-left: 2px solid #1e90ff;
 }
 
 div.message.notification {
-    border-left: 3px solid #ffa500;
+    border-left: 2px solid #CF1DCF;
 }
 
 div.message.user-mail {
-    border-left: 3px solid #008000;
+    border-left: 2px solid #008000;
 }
 
 div.message-title {
@@ -70,8 +70,7 @@ div.message-title label.new-content
 
 div.message-title label.notification
 {
-    background-color: #ffa500;
-    color: black;
+    background-color: #CF1DCF;
 }
 
 div.message-title label.user-mail

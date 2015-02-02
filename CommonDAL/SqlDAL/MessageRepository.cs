@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using LinqToDB;
 using Models.Data;
@@ -31,29 +30,17 @@ namespace CommonDAL.SqlDAL
             }
         }
 
-        public List<MessageData> GetList(int userId, int page, int pageSize,
-            bool isNewContent, bool isNotification, bool isUserMail)
+        public List<MessageData> GetList(int userId, int page, int pageSize, MessageSettingsData settings)
         {
             using (var db = new DataBase())
-            {
-               return db.MessageTable
+            {                           
+                return db.MessageTable
                     .Where(i => i.UserToId == userId && (
-                        (isNewContent && i.MessageType == MessageType.NewContent)
-                        || (isNotification && i.MessageType == MessageType.Notification)
-                        || (isUserMail && i.MessageType == MessageType.UserMail)))
+                        (settings.IsNewContent && i.MessageType == MessageType.NewContent)
+                        || (settings.IsNotification && i.MessageType == MessageType.Notification)
+                        || (settings.IsUserMail && i.MessageType == MessageType.UserMail)))
                     .OrderByDescending(i => i.Id).Skip((page - 1)*pageSize).Take(pageSize).ToList();
             }
-        }
-
-        public List<MessageData> GetList(MessageSettingsData settings, int page, int pageCount)
-        {
-            return GetList(
-                settings.UserId,
-                page,
-                pageCount,
-                settings.IsNewContent,
-                settings.IsNotification,
-                settings.IsUserMail);
         }
     }
 }

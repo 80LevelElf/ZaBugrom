@@ -65,6 +65,7 @@ namespace ZaBugrom.Controllers
             var post = new PostData
             {
                 AuthorId = userData.Id,
+                AuthorName = userData.Name,
                 Source = VideoManager.GetYoutubeVideoId(model.Source),
                 PostType = PostType.VideoPost,
                 Title = model.Title

@@ -4,6 +4,7 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using EmitMapper;
 using Models.Data;
+using Models.Data.Settings;
 using Models.InputModels.Account;
 using WebMatrix.WebData;
 using ZaBugrom.Managers;
@@ -218,10 +219,12 @@ namespace ZaBugrom.Controllers
             return View(model); //If username have changed - redirect to Login and then to settings again
         }
 
+        [Authorize]
+        [HttpGet]
         public ActionResult Messages()
         {
-            var model = RepositoryManager.MessageRepository.GetList(UserManager.UserId,
-                1, 10, true, true, true);
+            MessageSettingsData messageSettings = RepositoryManager.MessageSettingsRepository.GetById(UserManager.UserId);
+            var model = RepositoryManager.MessageRepository.GetList(UserManager.UserId, 1, 10, messageSettings);
             return View(model);
         }
     }

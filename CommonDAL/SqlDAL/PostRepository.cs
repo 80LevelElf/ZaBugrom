@@ -39,7 +39,7 @@ namespace CommonDAL.SqlDAL
         {
             using (var db = new DataBase())
             {
-                return (from p in db.PostTable
+                return (from p in db.PostTable.Where(p => p.Id == id)
                         from pv in db.PostVotingTable.Where(i => i.PostId == p.Id && i.UserId == userId).DefaultIfEmpty()
                         select new PostData
                         {
