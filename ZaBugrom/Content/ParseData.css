@@ -7,6 +7,10 @@ div.parse-data h4 {
     display: inline-block;
 }
 
+img {
+    max-width: 100%;
+}
+
 img.flow {
     float: left;
     padding: 5px;

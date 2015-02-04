@@ -41,5 +41,10 @@ namespace ZaBugrom.Controllers
         {
             return PartialView(model);
         }
+
+        public PartialViewResult TagArea(List<TagData> tagList)
+        {
+            return PartialView(tagList);
+        }
     }
 }

@@ -188,6 +188,7 @@
     <Content Include="Content\Pages\Element\images\youtube.png" />
     <Content Include="Content\Pages\Element\PostEditor.css" />
     <Content Include="Content\Pages\Element\RatingVoter.css" />
+    <Content Include="Content\Pages\Element\TagArea.css" />
     <Content Include="Content\Pages\Home\images\add_new_post.png" />
     <Content Include="Content\Pages\Home\images\add_new_post_hover.png" />
     <Content Include="Content\images\favicon.ico" />
@@ -351,6 +352,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Element\MessageList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Element\TagArea.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

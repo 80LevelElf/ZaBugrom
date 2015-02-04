@@ -1,4 +1,5 @@
-﻿@using ZaBugrom.Extensions
+﻿@using Models.Data
+@using ZaBugrom.Extensions
 @model Models.Data.PostData
 
 <div class="post-area">
@@ -7,6 +8,7 @@
             <a class="title" href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
             @Html.Action("RatingVoterForPost", "Element", new { post = Model })
         </div>
+        @Html.Action("TagArea", "Element", new { tagList = new List<TagData>() })
         @RenderBody()
     </div>
 </div>

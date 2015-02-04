@@ -51,12 +51,14 @@
     <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="Data\Enums\MessageType.cs" />
     <Compile Include="Data\Enums\PostType.cs" />
+    <Compile Include="Data\Enums\TagType.cs" />
     <Compile Include="Data\HeaderImageData.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\MessageData.cs" />
     <Compile Include="Data\PostData.cs" />
     <Compile Include="Data\PostVotingData.cs" />
     <Compile Include="Data\Settings\MessageSettingsData.cs" />
+    <Compile Include="Data\TagData.cs" />
     <Compile Include="Data\UserData.cs" />
     <Compile Include="HelpModels\Element\VoteRating.cs" />
     <Compile Include="HelpModels\Post\AddVoteResult.cs" />
