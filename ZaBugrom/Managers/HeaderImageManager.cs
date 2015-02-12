@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using CommonDAL.SqlDAL;
 using Models.Data;
 
 namespace ZaBugrom.Managers
 {
     public static class HeaderImageManager
     {
+        private static object _locker = new object();
+
         private static List<HeaderImageData> _headerImageList;
         private static HeaderImageData _currentHeaderImage;
         private static DateTime _lastCheckTime;
@@ -15,12 +16,15 @@ namespace ZaBugrom.Managers
         {
             get
             {
-                var now = DateTime.Now;
-
-                if ((now - _lastCheckTime).TotalHours > 24 || _currentHeaderImage == null)
+                 lock (_locker)
                 {
-                    _lastCheckTime = now;
-                    _currentHeaderImage = GetNewHeaderImage();
+                    var now = DateTime.Now;
+
+                    if ((now - _lastCheckTime).TotalHours > 24 || _currentHeaderImage == null)
+                    {
+                        _lastCheckTime = now;
+                        _currentHeaderImage = GetNewHeaderImage();
+                    }
                 }
 
                 return _currentHeaderImage;

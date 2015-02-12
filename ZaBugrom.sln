@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "ZaBugromModel\Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "CommonDAL\DAL.csproj", "{9ECBF065-EC54-4733-B824-EC04D8A15D94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{F33C1003-C651-4636-A75C-13E1330B0FBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9ECBF065-EC54-4733-B824-EC04D8A15D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ECBF065-EC54-4733-B824-EC04D8A15D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ECBF065-EC54-4733-B824-EC04D8A15D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F33C1003-C651-4636-A75C-13E1330B0FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F33C1003-C651-4636-A75C-13E1330B0FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F33C1003-C651-4636-A75C-13E1330B0FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F33C1003-C651-4636-A75C-13E1330B0FBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

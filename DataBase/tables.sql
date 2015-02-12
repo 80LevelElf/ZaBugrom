@@ -237,10 +237,35 @@ CREATE TABLE [dbo].[TagData](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](64) NOT NULL,
 	[CountOfUsage] [int] NOT NULL,
+	[Type] [int] NOT NULL,
  CONSTRAINT [PK_TagData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+
+-------------------------------------------------------------------
+-------- TagPost
+-------------------------------------------------------------------
+CREATE TABLE [dbo].[TagPostData](
+	[TagId] [bigint] NOT NULL,
+	[PostId] [bigint] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TagPostData]  WITH CHECK ADD  CONSTRAINT [FK_TagPostData_PostData] FOREIGN KEY([PostId])
+REFERENCES [dbo].[PostData] ([Id])
+GO
+
+ALTER TABLE [dbo].[TagPostData] CHECK CONSTRAINT [FK_TagPostData_PostData]
+GO
+
+ALTER TABLE [dbo].[TagPostData]  WITH CHECK ADD  CONSTRAINT [FK_TagPostData_TagData] FOREIGN KEY([TagId])
+REFERENCES [dbo].[TagData] ([Id])
+GO
+
+ALTER TABLE [dbo].[TagPostData] CHECK CONSTRAINT [FK_TagPostData_TagData]
 GO

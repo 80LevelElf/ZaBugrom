@@ -12,6 +12,7 @@ namespace ZaBugrom.Managers
         public static PostVotingRepository PostVotingRepository { get; private set; }
         public static CommentVotingRepository CommentVotingRepository { get; private set; }
         public static MessageSettingsRepository MessageSettingsRepository { get; private set; }
+        public static TagRepository TagRepository { get; private set; }
 
         static RepositoryManager()
         {
@@ -23,6 +24,7 @@ namespace ZaBugrom.Managers
             PostVotingRepository = new PostVotingRepository();
             CommentVotingRepository = new CommentVotingRepository();
             MessageSettingsRepository = new MessageSettingsRepository();
+            TagRepository = new TagRepository();
         }
     }
 }

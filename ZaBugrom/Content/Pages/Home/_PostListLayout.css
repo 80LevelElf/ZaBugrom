@@ -1,13 +1,13 @@
-﻿div#left-div 
+﻿div#right-div 
 {
     margin: 10px;
     padding: 4px;
     position: absolute;
-    left: 0;
-    width: 180px;
+    right: 0;
+    width: 250px;
 }
 
-div#filter-div, div#search-div
+div#filter-div
 {
     padding: 5px;
     border: 1px solid #aaaaaa;
@@ -20,7 +20,7 @@ div#filter-div p
 
 div#filter-div select, div#filter-div span.ui-spinner
 {
-    width: 160px;
+    width: 220px;
 }
 
 div#post-tools-div {
@@ -66,48 +66,10 @@ div#post-tools-div a#add-new-post:hover
 div#post-list-div 
 {
     padding-top: 13px;
-    margin-left: 50px;
-    margin-right: 50px;
 }
 
 div#post-list-div input {
     float: left;
-}
-
-/*Search*/
-div#search-div {
-    border-bottom: 0;
-    padding-bottom: 10px;
-    height: 25px;
-}
-
-div#search-div input#search-input {
-    width: 145px;
-    height: 21px;
-    margin-right: 0;
-    vertical-align: middle;
-    border-right: 0;
-}
-
-div#search-div a#search-button
-{
-    font-size: 20px;
-    width: 21px;
-    height: 21px;
-    display: inline-block;
-    margin-left: -5px;
-    border: 1px solid #aaa;
-    border-left: 0;
-    color: black;
-    text-align: center;
-    line-height: 17px;
-    vertical-align: middle;
-}
-
-div#search-div a#search-button:hover
-{
-    color: #1e90ff;
-    font-weight: bold;
 }
 
 div.post {

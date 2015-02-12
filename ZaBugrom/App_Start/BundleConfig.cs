@@ -26,6 +26,7 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/jquery.autosize").Include("~/Scripts/jquery.autosize.js"));
+            bundles.Add(new ScriptBundle("~/bundles/tag-it").Include("~/Scripts/tag-it.js"));
 
             //Utils
             bundles.Add(new ScriptBundle("~/bundles/creater").Include("~/Scripts/Utils/ElementCreater.js"));
@@ -38,6 +39,7 @@ namespace ZaBugrom
             //---CSS
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/parseData").Include("~/Content/ParseData.css"));
+            bundles.Add(new StyleBundle("~/Content/tag-it").Include("~/Content/Tag-it.css"));
 
             //JQuiry
             bundles.Add(new StyleBundle("~/Content/themes/baseTeame").Include(
@@ -108,7 +110,7 @@ namespace ZaBugrom
 
                 if (startIndex == -1)
                 {
-                    throw new ArgumentException("FullPath don't content contentPath!", "contentPath");
+                    throw new ArgumentException("FullPath doen't content contentPath!", "contentPath");
                 }
 
                 startIndex += contentPath.Length;

@@ -166,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Managers\CacheManager.cs" />
     <Compile Include="Managers\ContentPathManager.cs" />
     <Compile Include="Managers\HeaderImageManager.cs" />
     <Compile Include="Managers\RepositoryManager.cs" />
@@ -222,6 +223,7 @@
     <Content Include="Content\Pages\Post\VideoPost.css" />
     <Content Include="Content\Pages\Post\_PostLayout.css" />
     <Content Include="Content\Pages\Account\_ProfileLayout.css" />
+    <Content Include="Content\tag-it.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -270,6 +272,7 @@
     <Content Include="Scripts\Pages\Element\PostEditor.js" />
     <Content Include="Scripts\Pages\Element\RatingVoter.js" />
     <Content Include="Scripts\Pages\Post\DetailPost.js" />
+    <Content Include="Scripts\tag-it.js" />
     <Content Include="Scripts\Utils\ElementCreater.js" />
     <Content Include="Scripts\Utils\JQueryUIPreparer.js" />
     <Content Include="Scripts\Utils\Messager.js" />
@@ -313,6 +316,10 @@
     <ProjectReference Include="..\CommonDAL\DAL.csproj">
       <Project>{9ECBF065-EC54-4733-B824-EC04D8A15D94}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{F33C1003-C651-4636-A75C-13E1330B0FBB}</Project>
+      <Name>Engine</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZaBugromModel\Models.csproj">
       <Project>{BBB5EAF4-B0A2-4052-8B27-EB35CB8102D6}</Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using LinqToDB.Mapping;
 using Models.Data.Enums;
 
@@ -18,5 +19,7 @@ namespace Models.Data
         public bool IsVote { get; set; }
         [NotColumn]
         public bool IsVoteUp { get; set; }
+        [NotColumn]
+        public List<TagData> TagList { get; set; }
     }
 }

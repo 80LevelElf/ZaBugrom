@@ -1,9 +1,12 @@
 ﻿@model List<Models.Data.TagData>
 
 <div class="tag-area">
-    <a>Япония</a>
-    <a>Медицина</a>
-    <a>Уровень жизни</a>
+    @{
+        foreach (var tag in Model)
+        {
+            <a>@tag.Name</a>
+        }
+    }
 </div>
 
 @Styles.Render("~/Content/Pages/Element/TagArea")

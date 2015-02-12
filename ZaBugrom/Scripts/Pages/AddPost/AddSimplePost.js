@@ -4,6 +4,13 @@
     var titleElement = $("input#Title");
     var sourceElement = $("textarea[name='Source']");
 
+    //Add tags
+    $("#Tags").tagit(
+    {
+        availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"],
+        allowSpaces: true
+    });
+
     //Add messager
     var messageElement = $("p#message");
 

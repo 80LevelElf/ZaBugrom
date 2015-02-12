@@ -16,8 +16,8 @@ div#content
 {
     display: block;
     background-color: white;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 100px;
+    margin-right: 300px;
     margin-top: 210px; /*200 + 10(just for style)*/
     padding-bottom: 10px;
 }
@@ -118,6 +118,14 @@ textarea {
     font-size: 80% !important;
 }
 
+.tagit-close:hover {
+    border-bottom: 0 !important;
+}
+
+.tagit-label {
+    cursor: default;
+}
+
 /* For additional elements(via element create)
 -----------------------------------------------------------*/
 div.dialog-buttons-div {
@@ -211,7 +219,7 @@ header div#toolbar {
 
 header div#toolbar div#post-menu {
     display: inline;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 header div#toolbar div#post-menu a{
@@ -225,6 +233,7 @@ header div#toolbar div#post-menu a:hover {
 header div#toolbar div#user-menu {
     display: flex;
     float: right;
+    margin-right: 10px;
 }
 
 header a 
@@ -277,13 +286,14 @@ header div#user-div div#user-quick-area
 {
     display: none;
     position: absolute;
-    right: 58px;
+    right: 68px;
     top: 196px;
     width: 240px;
     height: 100px;
     border: 1px solid #aaa;
     cursor: default;
     background-color: white;
+    z-index: 2;
 }
 
 header div#user-div:hover div#user-quick-area {

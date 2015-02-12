@@ -55,6 +55,7 @@
     <Compile Include="SqlDAL\MessageSettingsRepository.cs" />
     <Compile Include="SqlDAL\PostRepository.cs" />
     <Compile Include="SqlDAL\PostVotingRepository.cs" />
+    <Compile Include="SqlDAL\TagRepository.cs" />
     <Compile Include="SqlDAL\UserRepository.cs" />
     <Compile Include="SqlRepository.cs" />
   </ItemGroup>

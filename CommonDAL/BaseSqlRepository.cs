@@ -7,6 +7,14 @@ namespace CommonDAL
 {
     public class BaseSqlRepository<T> where T : class
     {
+        public virtual void InsertOrReplace(T entity)
+        {
+            using (var db = new DataBase())
+            {
+                db.InsertOrReplace(entity);
+            }
+        }
+
         public virtual void Update(T entity)
         {
             using (var db = new DataBase())
