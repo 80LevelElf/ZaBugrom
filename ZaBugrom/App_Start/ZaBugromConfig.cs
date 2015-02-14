@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using CommonDAL.SqlDAL;
-using Models.Data;
+﻿using Models.Data;
 using WebMatrix.WebData;
 using ZaBugrom.Managers;
 
@@ -40,6 +38,8 @@ namespace ZaBugrom
 
                 HeaderImageManager.Load();
             }
+
+            LinqToDB.Common.Configuration.Linq.AllowMultipleQuery = true;
         }
     }
 }

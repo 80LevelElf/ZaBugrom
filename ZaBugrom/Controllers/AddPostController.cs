@@ -44,7 +44,8 @@ namespace ZaBugrom.Controllers
                 AuthorName = userData.Name,
                 Source = model.Source,
                 PostType = PostType.SimplePost,
-                Title = model.Title
+                Title = model.Title,
+                TagList = RepositoryManager.TagRepository.GetTagList(model.TagList)
             };
 
             var id = RepositoryManager.PostRepository.Insert(post);
@@ -68,7 +69,8 @@ namespace ZaBugrom.Controllers
                 AuthorName = userData.Name,
                 Source = VideoManager.GetYoutubeVideoId(model.Source),
                 PostType = PostType.VideoPost,
-                Title = model.Title
+                Title = model.Title,
+                TagList = RepositoryManager.TagRepository.GetTagList(model.TagList)
             };
 
             var id = RepositoryManager.PostRepository.Insert(post);

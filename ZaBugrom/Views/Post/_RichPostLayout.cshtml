@@ -8,7 +8,7 @@
             <a class="title" href="@Url.Action("DetailPost", new { postId = Model.Id})">@Model.Title</a>
             @Html.Action("RatingVoterForPost", "Element", new { post = Model })
         </div>
-        @Html.Action("TagArea", "Element", new { tagList = new List<TagData>() })
+        @Html.Action("TagArea", "Element", new { tagList = @Model.TagList })
         @RenderBody()
     </div>
 </div>

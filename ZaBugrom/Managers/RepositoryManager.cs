@@ -1,4 +1,4 @@
-﻿using CommonDAL.SqlDAL;
+﻿using CommonDAL.DAL;
 
 namespace ZaBugrom.Managers
 {
@@ -13,6 +13,7 @@ namespace ZaBugrom.Managers
         public static CommentVotingRepository CommentVotingRepository { get; private set; }
         public static MessageSettingsRepository MessageSettingsRepository { get; private set; }
         public static TagRepository TagRepository { get; private set; }
+        public static TagPostRepository TagPostRepository { get; private set; }
 
         static RepositoryManager()
         {
@@ -25,6 +26,7 @@ namespace ZaBugrom.Managers
             CommentVotingRepository = new CommentVotingRepository();
             MessageSettingsRepository = new MessageSettingsRepository();
             TagRepository = new TagRepository();
+            TagPostRepository = new TagPostRepository();
         }
     }
 }

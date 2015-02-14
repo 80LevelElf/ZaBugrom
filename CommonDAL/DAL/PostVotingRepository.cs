@@ -2,9 +2,9 @@
 using LinqToDB;
 using Models.Data;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL.DAL
 {
-    public class PostVotingRepository : BaseSqlRepository<PostVotingData>
+    public class PostVotingRepository
     {
         public bool TryToVote(PostVotingData instance)
         {
@@ -28,7 +28,6 @@ namespace CommonDAL.SqlDAL
                     else
                     {
                         //User already have such vote
-                        db.CommitTransaction();
                         return false;
                     }
                 }
@@ -41,7 +40,6 @@ namespace CommonDAL.SqlDAL
                 var postRating = post.Rating + (instance.IsVoteUp ? 1 : -1);
                 db.PostTable.Where(i => i.Id == instance.PostId).Set(i => i.Rating, postRating).Update();
 
-                db.CommitTransaction();
                 return true;
             }
         }

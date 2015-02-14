@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Engine;
 using Models.Data;
 
 namespace ZaBugrom.Managers
@@ -10,19 +11,16 @@ namespace ZaBugrom.Managers
 
         private static List<HeaderImageData> _headerImageList;
         private static HeaderImageData _currentHeaderImage;
-        private static DateTime _lastCheckTime;
+        private static TimeChecker _timeChecker = TimeChecker.EveryDay;
 
         public static HeaderImageData CurrentHeaderImage
         {
             get
             {
-                 lock (_locker)
+                lock (_locker)
                 {
-                    var now = DateTime.Now;
-
-                    if ((now - _lastCheckTime).TotalHours > 24 || _currentHeaderImage == null)
+                    if (_timeChecker.Check() || _currentHeaderImage == null)
                     {
-                        _lastCheckTime = now;
                         _currentHeaderImage = GetNewHeaderImage();
                     }
                 }

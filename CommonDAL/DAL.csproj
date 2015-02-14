@@ -45,24 +45,32 @@
   <ItemGroup>
     <Compile Include="BaseSqlRepository.cs" />
     <Compile Include="BigSqlRepository.cs" />
+    <Compile Include="CacheEngine\CachedCollection.cs" />
+    <Compile Include="CacheEngine\CachedItem.cs" />
+    <Compile Include="CacheEngine\TagCacheCollection.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="DefaulValuesManager.cs" />
-    <Compile Include="SqlDAL\CommentRepository.cs" />
-    <Compile Include="SqlDAL\CommentVotingRepository.cs" />
-    <Compile Include="SqlDAL\HeaderImageRepository.cs" />
+    <Compile Include="DAL\CommentRepository.cs" />
+    <Compile Include="DAL\CommentVotingRepository.cs" />
+    <Compile Include="DAL\HeaderImageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlDAL\MessageRepository.cs" />
-    <Compile Include="SqlDAL\MessageSettingsRepository.cs" />
-    <Compile Include="SqlDAL\PostRepository.cs" />
-    <Compile Include="SqlDAL\PostVotingRepository.cs" />
-    <Compile Include="SqlDAL\TagRepository.cs" />
-    <Compile Include="SqlDAL\UserRepository.cs" />
+    <Compile Include="DAL\MessageRepository.cs" />
+    <Compile Include="DAL\MessageSettingsRepository.cs" />
+    <Compile Include="DAL\PostRepository.cs" />
+    <Compile Include="DAL\PostVotingRepository.cs" />
+    <Compile Include="DAL\TagPostRepository.cs" />
+    <Compile Include="DAL\TagRepository.cs" />
+    <Compile Include="DAL\UserRepository.cs" />
     <Compile Include="SqlRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{F33C1003-C651-4636-A75C-13E1330B0FBB}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZaBugromModel\Models.csproj">
       <Project>{BBB5EAF4-B0A2-4052-8B27-EB35CB8102D6}</Project>
       <Name>Models</Name>

@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using Engine;
 
-namespace Engine.CacheEngine
+namespace CommonDAL.CacheEngine
 {
-    public class CachedCollection<T, TKEy> : IEnumerable<T> where T:class 
+    public abstract class CachedCollection<T, TKEy> : IEnumerable<T> where T:class 
     {
         protected ConcurrentDictionary<TKEy, CachedItem<T>> DataDict { get; set; }
 
         public Func<T, TKEy> KeyFunc { get; set; }
+        public TimeChecker TimeChecker { get; set; }
 
-        public CachedCollection(IEnumerable<T> initialCollection, Func<T, TKEy> keyFunc)
+        protected CachedCollection(IEnumerable<T> initialCollection, Func<T, TKEy> keyFunc, TimeChecker timeChecker)
         {
             KeyFunc = keyFunc;
+            TimeChecker = timeChecker;
             DataDict = new ConcurrentDictionary<TKEy, CachedItem<T>>(initialCollection.Select(i =>
                 new KeyValuePair<TKEy, CachedItem<T>>(KeyFunc(i), new CachedItem<T>(i))));
         }
@@ -28,5 +31,7 @@ namespace Engine.CacheEngine
         {
             return GetEnumerator();
         }
+
+        protected abstract void TryToUpate();
     }
 }

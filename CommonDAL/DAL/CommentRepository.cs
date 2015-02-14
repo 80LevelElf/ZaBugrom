@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Models.Data;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL.DAL
 {
     public class CommentRepository : BigSqlRepository<CommentData>
     {

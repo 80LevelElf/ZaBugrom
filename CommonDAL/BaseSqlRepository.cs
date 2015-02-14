@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CommonDAL.SqlDAL;
 using LinqToDB;
 
 namespace CommonDAL

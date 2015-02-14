@@ -9,4 +9,11 @@
 
     AddMessageHandler($("input#Source"), messageElement, "Ссылка на видео, которые вы хотите показать. Пока поддерживается только Youtube. "
         + "Если вы не уверены как правильно вычислить ссылку, <a>посмотрите это</a>.");
+
+    //Add tags
+    $("#Tags").tagit(
+    {
+        availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"],
+        allowSpaces: true
+    });
 })

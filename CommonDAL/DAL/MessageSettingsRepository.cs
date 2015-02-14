@@ -2,7 +2,7 @@
 using LinqToDB;
 using Models.Data.Settings;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL.DAL
 {
     public class MessageSettingsRepository : BaseSqlRepository<MessageSettingsData>
     {

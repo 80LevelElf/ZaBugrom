@@ -166,7 +166,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Managers\CacheManager.cs" />
     <Compile Include="Managers\ContentPathManager.cs" />
     <Compile Include="Managers\HeaderImageManager.cs" />
     <Compile Include="Managers\RepositoryManager.cs" />
@@ -177,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\UserAvatars\default.png" />
+    <Content Include="Content\Pages\Account\Login.css" />
     <Content Include="Content\Pages\Account\Messages.css" />
     <Content Include="Content\Pages\Element\CommentArea.css" />
     <Content Include="Content\Pages\Element\images\bold.png" />

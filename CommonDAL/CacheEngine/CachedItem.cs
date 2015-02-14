@@ -1,4 +1,4 @@
-﻿namespace Engine.CacheEngine
+﻿namespace CommonDAL.CacheEngine
 {
     public class CachedItem<T>
     {
@@ -8,6 +8,6 @@
         }
 
         public T Item { get; set; }
-        public bool IsChanged { get; set; }
+        public bool IsUpdated { get; set; }
     }
 }

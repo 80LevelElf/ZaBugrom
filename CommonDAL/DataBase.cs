@@ -2,7 +2,7 @@
 using Models.Data;
 using Models.Data.Settings;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL
 {
     public class DataBase : LinqToDB.Data.DataConnection
     {

@@ -6,7 +6,7 @@ using Models.Data;
 using Models.Data.Enums;
 using Models.Data.Settings;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL.DAL
 {
     public class MessageRepository : BigSqlRepository<MessageData>
     {

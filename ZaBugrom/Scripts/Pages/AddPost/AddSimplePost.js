@@ -3,6 +3,7 @@
 
     var titleElement = $("input#Title");
     var sourceElement = $("textarea[name='Source']");
+    var tagsElement = $("ul#Tags");
 
     //Add tags
     $("#Tags").tagit(
@@ -24,8 +25,14 @@
     $("input.ok-button").bind("click", function (event) {
         event.preventDefault();
 
+        var a = tagsElement.find("li span.tagit-label");
+
         var title = titleElement.val().trim();
         var source = sourceElement.val().trim();
+        var tagList = [];
+        $.each(tagsElement.find("li span.tagit-label"), function (i, val) {
+            tagList.push(val.innerText);
+        });
 
         if (title == '') {
             SetMessage(messageElement, "Введите заголовок(первое поле)!");
@@ -45,7 +52,8 @@
             data: JSON.stringify(
             {
                 Title: title,
-                Source: source
+                Source: source,
+                TagList: tagList
             }),
             success: function (data) {
                 window.location.href = ActionPathByUrl(data);

@@ -4,6 +4,9 @@ ul.tagit {
     margin-left: inherit; /* usually we don't want the regular ul margins. */
     margin-right: inherit;
 }
+ul.tagit:hover{
+    border: 1px solid #1e90ff;
+}
 ul.tagit li {
     display: block;
     float: left;

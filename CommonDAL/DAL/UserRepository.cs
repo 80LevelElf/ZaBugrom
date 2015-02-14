@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Models.Data;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL.DAL
 {
     public class UserRepository : SqlRepository<UserData>
     {

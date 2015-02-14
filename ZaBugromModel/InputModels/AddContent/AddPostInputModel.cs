@@ -8,6 +8,6 @@ namespace Models.InputModels.AddContent
         [Required]
         public string Title { get; set; }
 
-        public List<string> Tags { get; set; }
+        public List<string> TagList { get; set; }
     }
 }

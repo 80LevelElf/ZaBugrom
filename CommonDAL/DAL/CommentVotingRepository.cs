@@ -2,9 +2,9 @@
 using LinqToDB;
 using Models.Data;
 
-namespace CommonDAL.SqlDAL
+namespace CommonDAL.DAL
 {
-    public class CommentVotingRepository : BaseSqlRepository<CommentVotingData>
+    public class CommentVotingRepository
     {
         public bool TryToVote(CommentVotingData instance)
         {
