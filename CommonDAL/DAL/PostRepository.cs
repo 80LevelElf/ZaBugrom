@@ -14,8 +14,7 @@ namespace CommonDAL.DAL
             var id = base.Insert(instance);
 
             //Add tag's ids
-            var tagPostRepository = new TagPostRepository();
-            tagPostRepository.AddTagsToPost(id, instance.TagList);
+            RepositoryManager.TagPostRepository.AddTagsToPost(id, instance.TagList);
 
             return id;
         }
