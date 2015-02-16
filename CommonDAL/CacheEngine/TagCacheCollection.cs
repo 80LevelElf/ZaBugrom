@@ -18,7 +18,8 @@ namespace CommonDAL.CacheEngine
             : base(initialCollection, keyFunc, TimeChecker.Every6Hours)
         {
             Repository = repository;
-            DataDictById = new ConcurrentDictionary<Int64, TagData>(initialCollection.Select(i =>
+            
+            DataDictById = new ConcurrentDictionary<Int64, TagData>(initialCollection.ToList().Select(i =>
                 new KeyValuePair<Int64, TagData>(i.Id, i)));
         }
 

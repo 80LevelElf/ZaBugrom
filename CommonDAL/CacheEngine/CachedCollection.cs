@@ -18,7 +18,7 @@ namespace CommonDAL.CacheEngine
         {
             KeyFunc = keyFunc;
             TimeChecker = timeChecker;
-            DataDict = new ConcurrentDictionary<TKEy, CachedItem<T>>(initialCollection.Select(i =>
+            DataDict = new ConcurrentDictionary<TKEy, CachedItem<T>>(initialCollection.ToList().Select(i =>
                 new KeyValuePair<TKEy, CachedItem<T>>(KeyFunc(i), new CachedItem<T>(i))));
         }
 

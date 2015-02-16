@@ -53,6 +53,7 @@
     <Compile Include="DAL\CommentRepository.cs" />
     <Compile Include="DAL\CommentVotingRepository.cs" />
     <Compile Include="DAL\HeaderImageRepository.cs" />
+    <Compile Include="Managers\RepositoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\MessageRepository.cs" />
     <Compile Include="DAL\MessageSettingsRepository.cs" />

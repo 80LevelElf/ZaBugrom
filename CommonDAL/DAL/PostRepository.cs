@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CommonDAL.Managers;
 using Models.Data;
 
 namespace CommonDAL.DAL
@@ -21,8 +22,6 @@ namespace CommonDAL.DAL
 
         public List<PostData> GetList(int userId)
         {
-            var tagRepository = new TagRepository();
-
             using (var db = new DataBase())
             {
                 return (from p in db.PostTable
@@ -40,15 +39,13 @@ namespace CommonDAL.DAL
                         IsVote = (pv.UserId != 0),
                         IsVoteUp = pv.IsVoteUp,
                         TagList = (db.TagPostTable.Where(i => i.PostId == p.Id)
-                                .Select(i => tagRepository.GetById(i.TagId))).ToList()
+                                .Select(i => RepositoryManager.TagRepository.GetById(i.TagId))).ToList()
                     }).OrderByDescending(i => i.Id).ToList();
             }
         }
 
         public PostData GetById(long id, int userId)
         {
-            var tagRepository = new TagRepository();
-
             using (var db = new DataBase())
             {
                 return (from p in db.PostTable.Where(p => p.Id == id)
@@ -66,7 +63,7 @@ namespace CommonDAL.DAL
                             IsVote = (pv.UserId != 0),
                             IsVoteUp = pv.IsVoteUp,
                             TagList = (db.TagPostTable.Where(i => i.PostId == p.Id)
-                                    .Select(i => tagRepository.GetById(i.TagId))).ToList()
+                                    .Select(i => RepositoryManager.TagRepository.GetById(i.TagId))).ToList()
                         }).First();
             }
         }
