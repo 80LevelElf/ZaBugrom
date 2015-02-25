@@ -10,6 +10,7 @@
         <label id="title">@Model.Title</label>
         @Html.Action("RatingVoterForPost", "Element", new { post = Model })
     </div>
+    @Html.Action("TagArea", "Element", new { tagList = @Model.TagList })
     @Html.Action("Post", "Post", new { postData = Model, isRichView = false })
     <div id="post-footer">
         <label>Добавлено @Model.AddTime.ToLongDateString() @Model.AddTime.ToLongTimeString()</label>

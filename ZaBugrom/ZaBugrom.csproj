@@ -168,7 +168,6 @@
     </Compile>
     <Compile Include="Managers\ContentPathManager.cs" />
     <Compile Include="Managers\HeaderImageManager.cs" />
-    <Compile Include="Managers\RepositoryManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Managers\SettingsManager.cs" />
     <Compile Include="Managers\VideoManager.cs" />
@@ -223,7 +222,15 @@
     <Content Include="Content\Pages\Post\VideoPost.css" />
     <Content Include="Content\Pages\Post\_PostLayout.css" />
     <Content Include="Content\Pages\Account\_ProfileLayout.css" />
-    <Content Include="Content\tag-it.css" />
+    <Content Include="Content\textext\arrow.png" />
+    <Content Include="Content\textext\close.png" />
+    <Content Include="Content\textext\textext.core.css" />
+    <Content Include="Content\textext\textext.plugin.arrow.css" />
+    <Content Include="Content\textext\textext.plugin.autocomplete.css" />
+    <Content Include="Content\textext\textext.plugin.clear.css" />
+    <Content Include="Content\textext\textext.plugin.focus.css" />
+    <Content Include="Content\textext\textext.plugin.prompt.css" />
+    <Content Include="Content\textext\textext.plugin.tags.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -260,6 +267,7 @@
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-ui-1.11.0.js" />
     <Content Include="Scripts\jquery.autosize.js" />
+    <Content Include="Scripts\jquery.tagedit.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.zabugrom.js" />
     <Content Include="Scripts\knockout-3.1.0.js" />
@@ -272,7 +280,16 @@
     <Content Include="Scripts\Pages\Element\PostEditor.js" />
     <Content Include="Scripts\Pages\Element\RatingVoter.js" />
     <Content Include="Scripts\Pages\Post\DetailPost.js" />
-    <Content Include="Scripts\tag-it.js" />
+    <Content Include="Scripts\textext\textext.core.js" />
+    <Content Include="Scripts\textext\textext.plugin.ajax.js" />
+    <Content Include="Scripts\textext\textext.plugin.arrow.js" />
+    <Content Include="Scripts\textext\textext.plugin.autocomplete.js" />
+    <Content Include="Scripts\textext\textext.plugin.clear.js" />
+    <Content Include="Scripts\textext\textext.plugin.filter.js" />
+    <Content Include="Scripts\textext\textext.plugin.focus.js" />
+    <Content Include="Scripts\textext\textext.plugin.prompt.js" />
+    <Content Include="Scripts\textext\textext.plugin.suggestions.js" />
+    <Content Include="Scripts\textext\textext.plugin.tags.js" />
     <Content Include="Scripts\Utils\ElementCreater.js" />
     <Content Include="Scripts\Utils\JQueryUIPreparer.js" />
     <Content Include="Scripts\Utils\Messager.js" />

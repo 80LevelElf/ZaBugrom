@@ -11,9 +11,9 @@
         + "Если вы не уверены как правильно вычислить ссылку, <a>посмотрите это</a>.");
 
     //Add tags
-    $("#Tags").tagit(
+    $("input#Tags").textext(
     {
-        availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"],
-        allowSpaces: true
+        enabled: true,
+        plugins: 'tags'
     });
 })

@@ -15,7 +15,7 @@ namespace CommonDAL.Managers
         public static TagRepository TagRepository { get; private set; }
         public static TagPostRepository TagPostRepository { get; private set; }
 
-        static RepositoryManager()
+        public static void Initialize()
         {
             UserRepository = new UserRepository();
             PostRepository = new PostRepository();

@@ -1,4 +1,5 @@
 ﻿using System.Web.Security;
+using CommonDAL.Managers;
 using Models.Data;
 using WebMatrix.WebData;
 

@@ -1,6 +1,6 @@
 ﻿@using Models.Data
 @using ZaBugrom.Extensions
-@model Models.Data.PostData
+@model PostData
 
 <div class="post-area">
     <div class="post @Html.GetPostClassByType(Model.PostType)" data-id="@Model.Id">
@@ -12,5 +12,3 @@
         @RenderBody()
     </div>
 </div>
-
-@Styles.Render("~/Content/Pages/Post/_PostLayout")

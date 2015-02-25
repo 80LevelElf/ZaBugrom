@@ -3,13 +3,12 @@
 
     var titleElement = $("input#Title");
     var sourceElement = $("textarea[name='Source']");
-    var tagsElement = $("ul#Tags");
 
     //Add tags
-    $("#Tags").tagit(
+    $("input#Tags").textext(
     {
-        availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"],
-        allowSpaces: true
+        enabled: true,
+        plugins: 'tags'
     });
 
     //Add messager
@@ -25,14 +24,14 @@
     $("input.ok-button").bind("click", function (event) {
         event.preventDefault();
 
-        var a = tagsElement.find("li span.tagit-label");
-
         var title = titleElement.val().trim();
         var source = sourceElement.val().trim();
-        var tagList = [];
-        $.each(tagsElement.find("li span.tagit-label"), function (i, val) {
-            tagList.push(val.innerText);
-        });
+
+        var separators = [',', '\\[', '\\]', '"'].join('|');
+        var tagList = $("input[name='Tags'][type='hidden']").val().split(new RegExp(separators, 'g'))
+            .filter(function (element) {
+                return element.length != 0;
+            });
 
         if (title == '') {
             SetMessage(messageElement, "Введите заголовок(первое поле)!");

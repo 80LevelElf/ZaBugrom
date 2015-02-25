@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using CommonDAL.Managers;
 using Models.Data;
 using Models.Data.Enums;
 using Models.InputModels.AddContent;

@@ -2,6 +2,7 @@
 using System.IO;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using CommonDAL.Managers;
 using EmitMapper;
 using Models.Data;
 using Models.Data.Settings;

@@ -85,9 +85,15 @@
                         commentArea.prepend(newComment);
                     } else {
                         //Create comment area for parent of current comment
-                        commentArea = $("<div class='comment-shift-area comment-shift-area-border'></div>");
-                        parentComment.after(commentArea);
+                        commentArea = $("<div class='comment-shift-area'></div>");
 
+                        //If there is another comments in commentArea
+                        /////////TODO
+                        if (commentArea.hasChildNodes("div.comment-shift-area")) {
+                            commentArea.addClass("comment-shift-area-border");
+                        }
+
+                        parentComment.after(commentArea);
                         commentArea.append(newComment);
                     }
                 }

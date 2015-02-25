@@ -12,12 +12,3 @@ div.post.simple-post div.post-foorer a:hover {
 div.post.simple-post div.post-content {
     padding: 16px;
 }
-
-div.post.simple-post div.post-content div.quote 
-{
-    display: block;
-    background-color: rgba(0,0,0,0.05);
-    border: 1px solid #ddd;
-    padding: 4px;
-    padding-left: 12px;
-}

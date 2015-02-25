@@ -3,6 +3,7 @@
     min-height: 150px;
     margin: 0;
     display: block;
+    font-size: 16px;
 }
 
 div.post-editor-area div.tool-area {

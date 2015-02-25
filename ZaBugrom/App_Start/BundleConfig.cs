@@ -26,7 +26,7 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/jquery.autosize").Include("~/Scripts/jquery.autosize.js"));
-            bundles.Add(new ScriptBundle("~/bundles/tag-it").Include("~/Scripts/tag-it.js"));
+            bundles.Add(new ScriptBundle("~/bundles/textext").IncludeDirectory("~/Scripts/textext", "*.js"));
 
             //Utils
             bundles.Add(new ScriptBundle("~/bundles/creater").Include("~/Scripts/Utils/ElementCreater.js"));
@@ -39,13 +39,13 @@ namespace ZaBugrom
             //---CSS
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/parseData").Include("~/Content/ParseData.css"));
-            bundles.Add(new StyleBundle("~/Content/tag-it").Include("~/Content/Tag-it.css"));
+            bundles.Add(new ScriptBundle("~/Content/textext").IncludeDirectory("~/Content/textext", "*.css"));
 
             //JQuiry
             bundles.Add(new StyleBundle("~/Content/themes/baseTeame").Include(
                         "~/Content/themes/base/jquery-ui.css",
                         "~/Content/themes/base/jquery-ui.theme.css"));
-
+            
             //Pages scripts bundles
             foreach (var bundle in GetPagesBundles("\\Scripts\\Pages\\", BundleType.Script))
             {

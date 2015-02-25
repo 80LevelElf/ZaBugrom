@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Web.Mvc;
+using CommonDAL.Managers;
 using Models.Data;
 using Models.Data.Enums;
 using Models.HelpModels.Post;

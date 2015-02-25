@@ -1,4 +1,5 @@
-﻿using Models.Data;
+﻿using CommonDAL.Managers;
+using Models.Data;
 using WebMatrix.WebData;
 using ZaBugrom.Managers;
 
@@ -8,20 +9,11 @@ namespace ZaBugrom
     {
         public static void Prepare()
         {
-            PrepareSimpleMembershipProvider();
-            PrepareHeaderImageManager();
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserData", "Id", "Name", true);
+            RepositoryManager.Initialize();
+            HeaderImageManager.Load();
 
             FirstInicialization();
-        }
-
-        private static void PrepareSimpleMembershipProvider()
-        {
-            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserData", "Id", "Name", true);
-        }
-
-        private static void PrepareHeaderImageManager()
-        {
-            HeaderImageManager.Load();
         }
 
         private static void FirstInicialization()

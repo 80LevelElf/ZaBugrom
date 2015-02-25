@@ -25,3 +25,12 @@ iframe {
     padding-right: 20%;
     background-color: black;
 }
+
+div.quote 
+{
+    display: block;
+    background-color: rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+    padding: 4px;
+    padding-left: 12px;
+}

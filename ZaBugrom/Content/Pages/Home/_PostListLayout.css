@@ -75,3 +75,7 @@ div#post-list-div input {
 div.post {
     margin-bottom: 30px;
 }
+
+div.tag-area {
+    padding-left: 16px;
+}
