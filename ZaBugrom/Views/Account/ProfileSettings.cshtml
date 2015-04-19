@@ -11,8 +11,6 @@
 <form class="big-size" method="POST" action="@Url.Action("ProfileSettings")" enctype="multipart/form-data">
     <p>@Html.ValidationSummary()</p>
     <p class="group-header">Основные настройки</p>
-    <p>Логин (при изменении логина нужно будет осуществить повторный вход с новым логином):</p>
-    <p>@Html.EditorFor(i => i.Name)</p>
     <p>Email:</p>
     <p>@Html.EditorFor(i => i.Email)</p>
     <p>Пол:</p>

@@ -47,7 +47,8 @@
     <Compile Include="BigSqlRepository.cs" />
     <Compile Include="CacheEngine\CachedCollection.cs" />
     <Compile Include="CacheEngine\CachedItem.cs" />
-    <Compile Include="CacheEngine\TagCacheCollection.cs" />
+    <Compile Include="CacheEngine\TagCachedCollection.cs" />
+    <Compile Include="Classes\AutocompliteList.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="DefaulValuesManager.cs" />
     <Compile Include="DAL\CommentRepository.cs" />

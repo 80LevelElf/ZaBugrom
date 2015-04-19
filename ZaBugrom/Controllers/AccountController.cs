@@ -116,7 +116,6 @@ namespace ZaBugrom.Controllers
 
             //We change settings only if everything is ok
             bool isContinue = true;
-            bool isNeedToLogout = false;
             bool isNeedToChangePassword = false;
 
             //If password change
@@ -151,21 +150,6 @@ namespace ZaBugrom.Controllers
             if (userData.Gender != model.Gender)
             {
                 userData.Gender = model.Gender;
-            }
-
-            //If login change
-            if (!string.Equals(userData.Name, model.Name))
-            {
-                if (WebSecurity.UserExists(model.Name))
-                {
-                    ModelState.AddModelError("Name", "Юзер с логином " + model.Name + " уже существует!");
-                    isContinue = false;
-                }
-                else
-                {
-                    userData.Name = model.Name;
-                    isNeedToLogout = true;
-                }
             }
 
             //If avatar change
@@ -208,12 +192,6 @@ namespace ZaBugrom.Controllers
                     UserManager.MembershipProvider.ChangePassword(userData.Name, model.OldPassword, model.NewPassword);
                     model.NewPassword = string.Empty;
                     model.OldPassword = string.Empty;
-                }
-
-                if (isNeedToLogout)
-                {
-                    WebSecurity.Logout();
-                    return RedirectToAction("Login");
                 }
             }
 

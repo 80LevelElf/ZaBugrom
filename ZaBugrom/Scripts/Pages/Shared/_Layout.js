@@ -1,5 +1,4 @@
 ﻿$(function () {
-
     //For somee.com
     $("a[href='http://somee.com']").hide();
 

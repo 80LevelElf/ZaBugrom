@@ -5,28 +5,28 @@ using System.Runtime.CompilerServices;
 using CommonDAL.CacheEngine;
 using Models.Data;
 
-//For TagCacheCollection can use TagRepository internal functions
+//For TagCachedCollection can use TagRepository internal functions
 [assembly: InternalsVisibleTo("DAL")]
 
 namespace CommonDAL.DAL
 {
     public sealed class TagRepository : BigSqlRepository<TagData>
     {
-        private TagCacheCollection CacheCollection { get; set; }
+        private TagCachedCollection CachedCollection { get; set; }
 
         public TagRepository()
         {
-            CacheCollection = new TagCacheCollection(GetList(), i => i.Name, this);
+            CachedCollection = new TagCachedCollection(GetList(), i => i.Name, this);
         }
 
         public TagData GetTag(string name)
         {
-            return CacheCollection.GetTag(name);
+            return CachedCollection.GetItem(name);
         }
 
         public override TagData GetById(Int64 id)
         {
-            return CacheCollection.GetTag(id);
+            return CachedCollection.GetItem(id);
         }
 
         public List<TagData> GetTagList(List<string> nameList)

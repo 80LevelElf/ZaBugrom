@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using Engine;
 
 namespace CommonDAL.CacheEngine
 {
-    public abstract class CachedCollection<T, TKEy> : IEnumerable<T> where T:class 
+    public abstract class CachedCollection<T, TKey> : IEnumerable<T> where T:class 
     {
-        protected ConcurrentDictionary<TKEy, CachedItem<T>> DataDict { get; set; }
+        protected Dictionary<TKey, CachedItem<T>> DataDict { get; set; }
+        protected object _locker = new object();
 
-        public Func<T, TKEy> KeyFunc { get; set; }
+        public Func<T, TKey> KeyFunc { get; set; }
         public TimeChecker TimeChecker { get; set; }
 
-        protected CachedCollection(IEnumerable<T> initialCollection, Func<T, TKEy> keyFunc, TimeChecker timeChecker)
+        protected CachedCollection(IEnumerable<T> initialCollection, Func<T, TKey> keyFunc, TimeChecker timeChecker)
         {
             KeyFunc = keyFunc;
             TimeChecker = timeChecker;
-            DataDict = new ConcurrentDictionary<TKEy, CachedItem<T>>(initialCollection.ToList().Select(i =>
-                new KeyValuePair<TKEy, CachedItem<T>>(KeyFunc(i), new CachedItem<T>(i))));
+            DataDict = initialCollection.ToDictionary(keyFunc, i => new CachedItem<T>(i));
         }
 
         public IEnumerator<T> GetEnumerator()
@@ -32,6 +31,30 @@ namespace CommonDAL.CacheEngine
             return GetEnumerator();
         }
 
+        public virtual T GetItem(TKey key)
+        {
+            lock (_locker)
+            {
+                CachedItem<T> cachedItem;
+                DataDict.TryGetValue(key, out cachedItem);
+
+                if (cachedItem != null)
+                    return cachedItem.Item;
+
+                //Add new item
+                var newItem = SaveNewItem(key);
+                DataDict.Add(key, new CachedItem<T>(newItem));
+
+                return newItem;
+            }
+        }
+
+        ~CachedCollection()
+        {
+            TryToUpate();
+        }
+
         protected abstract void TryToUpate();
+        protected abstract T SaveNewItem(TKey key);
     }
 }

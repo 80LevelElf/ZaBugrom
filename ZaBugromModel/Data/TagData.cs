@@ -7,5 +7,10 @@ namespace Models.Data
         public int CountOfUsage { get; set; }
         public string Name { get; set; }
         public TagType Type { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1}", Name, CountOfUsage);
+        }
     }
 }
