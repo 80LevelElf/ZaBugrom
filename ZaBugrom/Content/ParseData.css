@@ -7,18 +7,18 @@ div.parse-data h4 {
     display: inline-block;
 }
 
-img {
+div.parse-data img {
     max-width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-img.flow {
+div.parse-data img.flow {
     float: left;
     padding: 5px;
 }
 
-iframe {
+div.parse-data iframe {
     margin: 0 auto;
     width: 60%;
     padding-left: 20%;
@@ -26,7 +26,7 @@ iframe {
     background-color: black;
 }
 
-div.quote 
+div.parse-data div.quote 
 {
     display: block;
     background-color: rgba(0,0,0,0.05);

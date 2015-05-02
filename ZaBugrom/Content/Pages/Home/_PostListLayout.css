@@ -4,24 +4,19 @@
     padding: 4px;
     position: absolute;
     right: 0;
-    width: 250px;
+    width: 300px;
 }
 
 div#filter-div
 {
     padding: 5px;
     border: 1px solid #aaaaaa;
+    background-color: white;
 }
 
-div#filter-div p 
-{
-    margin: 5px;
-}
 
-div#filter-div select, div#filter-div span.ui-spinner
-{
-    width: 220px;
-}
+
+
 
 div#post-tools-div {
     border-bottom: 1px solid #aaa;
@@ -31,6 +26,7 @@ div#post-tools-div {
     border-bottom-right-radius: 7px;
     padding: 5px;
     display: flex;
+    background-color: white;
 }
 
 div#post-tools-div input, div#post-tools-div a

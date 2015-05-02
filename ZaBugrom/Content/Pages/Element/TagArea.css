@@ -6,9 +6,11 @@
 }
 
 div.tag-area a {
-    border: 1px solid #555;
+    border: 1px solid #aaa;
     color: black;
     padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 div.tag-area a:hover {
