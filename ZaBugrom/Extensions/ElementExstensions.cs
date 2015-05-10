@@ -9,9 +9,8 @@ namespace ZaBugrom.Extensions
 {
     public static class ElementExstensions
     {
-        public static MvcHtmlString EnumDropDownListFor<TModel, TEnum>(
-                    this HtmlHelper<TModel> htmlHelper,
-                    Expression<Func<TModel, TEnum>> expression)
+        public static MvcHtmlString EnumDropDownListFor<TModel, TEnum> (this HtmlHelper<TModel> htmlHelper,
+            Expression<Func<TModel, TEnum>> expression, bool isMultiple = false)
         {
             var values = Enum.GetValues(typeof(TEnum)).Cast<Enum>();
             var selectedValue = (expression.Compile().Invoke(htmlHelper.ViewData.Model) as Enum);
@@ -21,7 +20,12 @@ namespace ZaBugrom.Extensions
                 Value = value.ToString(),
                 Selected = (Equals(value, selectedValue))
             });
-            return htmlHelper.DropDownListFor(expression, items);
+
+            var attributes = new object();
+            if (isMultiple)
+                attributes = new {multiple = "multiple"};
+
+            return htmlHelper.DropDownListFor(expression, items, attributes);
         }
 
         public static MvcHtmlString VideoTag<TModel>(this HtmlHelper<TModel> htmlHelper, string videoId)

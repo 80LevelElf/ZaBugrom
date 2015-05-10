@@ -10,53 +10,116 @@
 div#filter-div
 {
     padding: 5px;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #ccc;
     background-color: white;
 }
 
+div.filter-tab {
+    margin-bottom: 15px; 
+}
 
+div.filter-tab:first-of-type {
+    margin-bottom: 10px; 
+}
 
+div.filter-tab label.filter-title {
+    padding: 7px;
+    padding-left: 2px;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #ccc;
+    display: block;
+    font-size: 18px;
+}
 
+div.filter-tab div.filter-items-area label {
+    padding: 6px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 8px; /*To set unchecked items in the same order with checked items(padding-left + checkItem.border.Length)*/
+    border: 1px solid #ccc;
+    
+    display: block;
+    cursor: pointer;
+    background-color: rgb(235, 235, 235);
+    color: rgb(120, 120, 120);
+}
 
-div#post-tools-div {
-    border-bottom: 1px solid #aaa;
-    border-left: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 5px;
+div.filter-tab div.filter-items-area label {
+    margin-top: -1px;
+}
+
+div.filter-tab div.filter-items-area label:hover, div.filter-tab div.filter-items-area label.checked 
+{
+    background-color: white;
+    color: black;
+    padding-left: 6px;
+}
+
+div.filter-tab div.filter-items-area label:hover, div.filter-tab div.filter-items-area label.checked {
+    border-left: 3px solid #1e90ff;
+}
+
+div.filter-tab div.filter-items-area label.site:hover, div.filter-tab div.filter-items-area label.site.checked {
+    border-left: 3px solid green;
+}
+
+div.filter-tab div.filter-items-area label.youtube:hover, div.filter-tab div.filter-items-area label.youtube.checked {
+    border-left: 3px solid red;
+}
+
+div.filter-tab div.filter-items-area label.livejournal:hover, div.filter-tab div.filter-items-area label.livejournal.checked {
+    border-left: 3px solid #1e90ff;
+}
+
+div.filter-tab div.filter-items-area label.checked {
+    cursor: default;
+}
+
+div#post-tools-div 
+{
+    border: 1px solid #ccc;
+    border-top: 0;
     display: flex;
     background-color: white;
+    box-sizing: content-box;
 }
 
 div#post-tools-div input, div#post-tools-div a
 {
-    width: 30px;
-    height: 30px;
+    width: 50%;
     display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
     border: 0;
+    padding: 5px;
+    margin: 0;
+    min-height: 30px;
+    
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div#post-tools-div input:hover, div#post-tools-div a:hover {
+    background-color: #1e90ff;
 }
 
 div#post-tools-div input#refresh 
 {
-    background: url("images/refresh.png") no-repeat;
+    background-image: url("images/refresh.png");
 }
 
 div#post-tools-div input#refresh:hover
 {
-    background: url("images/refresh_hover.png") no-repeat;
+    background-image: url("images/refresh_hover.png");
 }
 
 div#post-tools-div a#add-new-post 
 {
-    background: url("images/add_new_post.png") no-repeat;
+    background-image: url("images/add_new_post.png");
 }
 
 div#post-tools-div a#add-new-post:hover
 {
-    background: url("images/add_new_post_hover.png") no-repeat;
+    background-image: url("images/add_new_post_hover.png");
 }
 
 div#post-list-div 

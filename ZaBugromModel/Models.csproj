@@ -48,6 +48,7 @@
     <Compile Include="Data\BigData.cs" />
     <Compile Include="Data\CommentData.cs" />
     <Compile Include="Data\CommentVotingData.cs" />
+    <Compile Include="Data\Enums\Settings\FilterSortType.cs" />
     <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="Data\Enums\MessageType.cs" />
     <Compile Include="Data\Enums\PostType.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Data\MessageData.cs" />
     <Compile Include="Data\PostData.cs" />
     <Compile Include="Data\PostVotingData.cs" />
+    <Compile Include="Data\Settings\FilterSettingsData.cs" />
     <Compile Include="Data\Settings\MessageSettingsData.cs" />
     <Compile Include="Data\TagData.cs" />
     <Compile Include="Data\TagPostData.cs" />

@@ -27,8 +27,9 @@
             <label id="city-name" class="header-opacity"></label>
             <div id="toolbar" class="header-opacity">
                 <div id="post-menu">
-                    <a>Лента</a>
-                    <a>Источники</a>
+                    <a class="right-border left-border">Общая лента</a>
+                    <a class="right-border">Моя лента</a>
+                    <a class="right-border">Рекомендации</a>
                 </div>
 
                 <div id="user-menu">
@@ -52,14 +53,17 @@
                             <a id="inbox-button" href="@Url.Action("Messages", "Account")">@userData.MessageCount</a>
                         }
                     }
-                    <a id="login-button" href="@Url.Action("Login", "Account")">
+
                         @{
                             if (!WebSecurity.HasUserId)
                             {
-                                <label>Вход и регистрация</label>
+                                <a id="login-button" href="@Url.Action("Login", "Account")">Вход</a>
+                            }
+                            else
+                            {
+                                <a id="login-button" href="@Url.Action("Login", "Account")" class="authorize"></a>
                             }
                         }
-                    </a>
                 </div>
             </div>
         </header>

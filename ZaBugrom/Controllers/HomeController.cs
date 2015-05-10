@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Models.Data.Settings;
 
 namespace ZaBugrom.Controllers
 {
@@ -6,6 +7,8 @@ namespace ZaBugrom.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.FilterSettings = new FilterSettingsData();
+
             return View();
         }
     }

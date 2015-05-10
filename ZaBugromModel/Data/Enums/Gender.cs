@@ -5,10 +5,10 @@ namespace Models.Data.Enums
     public enum Gender
     {
         [Description("Не указан")]
-        NotSpecified = 1,
+        NotSpecified = 0,
         [Description("Мужчина")]
-        Male = 2,
+        Male = 1,
         [Description("Женщина")]
-        Female = 3
+        Female = 2
     }
 }

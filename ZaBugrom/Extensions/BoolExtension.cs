@@ -19,5 +19,13 @@ namespace ZaBugrom.Extensions
 
             return new MvcHtmlString("Не прочитано");
         }
+
+        public static MvcHtmlString GetCheckedString(bool isChecked)
+        {
+            if (isChecked)
+                return new MvcHtmlString("checked");
+
+            return new MvcHtmlString("");
+        }
     }
 }
