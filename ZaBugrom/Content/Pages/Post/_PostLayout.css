@@ -1,6 +1,6 @@
 ﻿div.post 
 {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
 }
 
 div.post div.post-header {
@@ -19,37 +19,4 @@ div.post div.post-header a{
 
 div.post div.post-header a.title:hover {
     border-bottom: 0;
-}
-
-div.post div.post-foorer
-{
-    background-color: #eee;
-    padding: 4px;
-    padding-left: 8px;
-}
-
-div.post div.post-foorer a {
-    color: black;
-}
-
-div.post div.post-foorer a:hover {
-    border-bottom: 0;
-}
-
-div.right-footer-area {
-    float: right;
-}
-
-div.right-footer-area a {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-}
-
-div.right-footer-area a.complain {
-    background: url("images/complain.png") no-repeat;
-}
-
-div.right-footer-area a.complain:hover {
-    background: url("images/complain-hover.png") no-repeat;
 }

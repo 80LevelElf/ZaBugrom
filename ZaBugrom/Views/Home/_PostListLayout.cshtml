@@ -5,49 +5,33 @@
     FilterSortType sortType = ViewBag.FilterSettings.SortType; //because extension methods don't work with dynamic code
 }
 
-<div id="right-div">
-    <div id="filter-div">
-        <div class="filter-tab">
-            <label class="filter-title">Показывать</label>
-            <div class="filter-items-area">
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SourceFromSite)">
-                    Лучшее
-                </label>
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SourceFromYoutube)">
-                    Свежее
-                </label>
-            </div>
+<div id="filter-div">
+    <div class="filter-tab">
+        <div class="filter-tab-title">
+            <label>Что показывать</label>
+            <button></button>
         </div>
-        <div class="filter-tab">
-            <label class="filter-title">Источники</label>
-            <div class="filter-items-area">
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SourceFromSite) site">
-                    Site
-                </label>
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SourceFromYoutube) youtube">
-                    Youtube
-                </label>
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SourceFromLiveJournal) livejournal">
-                    Livejournal
-                </label>
-            </div>
-        </div>
-        <div class="filter-tab">
-            <label class="filter-title">Отсортировать</label>
-            <div class="filter-items-area">
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SortType == FilterSortType.ByTime)">
-                    По времени
-                </label>
-                <label class="@BoolExtension.GetCheckedString(ViewBag.FilterSettings.SortType == FilterSortType.ByRating)">
-                    По рейтингу
-                </label>
-            </div>
+        <div class="check-div">
+            
         </div>
     </div>
-    
-    <div id="post-tools-div">
-        <input id="refresh" type="submit" value="" title="Обновить посты, используя фильтры"/>
-        <a id="add-new-post" title="Добавить новый пост" href="@Url.Action("Index", "AddPost")"></a>
+    <div class="filter-tab">
+        <div class="filter-tab-title">
+            <label>Источники</label>
+            <button></button>
+        </div>
+        <div class="check-div">
+            
+        </div>
+    </div>
+    <div class="filter-tab">
+        <div class="filter-tab-title">
+                  <label>Сортировать</label>
+                  <button></button>
+              </div>
+        <div class="check-div">
+            
+        </div>
     </div>
 </div>
 

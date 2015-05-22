@@ -5,25 +5,36 @@
 }
 
 div.raiting-area a.rating-up,
-div.raiting-area a.rating-down {
-    color: black;
-    font-size: 14px;
-    border: 1px solid #ccc;
+div.raiting-area a.rating-down,
+div.raiting-area label.rating  {
     width: 20px;
-    text-align: center;
+    height: 20px;
     display: inline-block;
+    border: 0;
+    padding: 0;
 }
 
-div.raiting-area a.rating-up:hover,
-div.raiting-area a.rating-up.selected {
-    background: rgba(0, 255, 0, 0.4);
+div.raiting-area a.rating-up {
+    background-image: url("images/rating-up.png");
 }
 
-div.raiting-area a.rating-down:hover,
-div.raiting-area a.rating-down.selected {
-    background: rgba(255, 0, 0, 0.4);
+div.raiting-area a.rating-down {
+    background-image: url("images/rating-down.png");
 }
 
-div.raiting-area label.rating {
+div.raiting-area a.rating-up:hover, div.raiting-area a.rating-up.selected {
+    background-image: url("images/rating-up_hover.png");
+}
+
+div.raiting-area a.rating-down:hover, div.raiting-area a.rating-down.selected {
+    background-image: url("images/rating-down_hover.png");
+}
+
+div.raiting-area label.rating 
+{
+    float: left;
     font-size: 16px;
+    width: auto;
+    padding-right: 6px;
+    text-align: center;
 }

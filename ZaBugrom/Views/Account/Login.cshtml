@@ -6,7 +6,7 @@
     Html.EnableClientValidation(true);
 }
 
-<form class="middle-size-without-right-margin" action="@Url.Action("Login")" method="POST">
+<form class="middle-size" action="@Url.Action("Login")" method="POST">
     <p>@Html.ValidationSummary()</p>
     <p>Логин</p>
     <p> @Html.EditorFor(i => i.Name)</p>

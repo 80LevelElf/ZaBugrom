@@ -185,6 +185,10 @@
     <Content Include="Content\Pages\Element\images\italic.png" />
     <Content Include="Content\Pages\Element\images\link.png" />
     <Content Include="Content\Pages\Element\images\quote.png" />
+    <Content Include="Content\Pages\Element\images\rating-down.png" />
+    <Content Include="Content\Pages\Element\images\rating-down_hover.png" />
+    <Content Include="Content\Pages\Element\images\rating-up.png" />
+    <Content Include="Content\Pages\Element\images\rating-up_hover.png" />
     <Content Include="Content\Pages\Element\images\user.png" />
     <Content Include="Content\Pages\Element\images\youtube.png" />
     <Content Include="Content\Pages\Element\PostEditor.css" />
@@ -196,6 +200,8 @@
     <Content Include="Content\images\HeaderImages\1.jpg" />
     <Content Include="Content\images\login.png" />
     <Content Include="Content\images\login_hover.png" />
+    <Content Include="Content\Pages\Home\images\more-button.png" />
+    <Content Include="Content\Pages\Home\images\more-button_hover.png" />
     <Content Include="Content\Pages\Home\images\refresh.png" />
     <Content Include="Content\Pages\Home\images\refresh_hover.png" />
     <Content Include="Content\images\settings.png" />
@@ -205,8 +211,6 @@
     <Content Include="Content\Pages\AddPost\AddSimplePost.css" />
     <Content Include="Content\Pages\AddPost\AddVideoPost.css" />
     <Content Include="Content\Pages\AddPost\_AddPostLayout.css" />
-    <Content Include="Content\Pages\Home\images\search.png" />
-    <Content Include="Content\Pages\Home\images\search_hover.png" />
     <Content Include="Content\Pages\Home\_PostListLayout.css" />
     <Content Include="Content\Pages\Post\DetailPost.css" />
     <Content Include="Content\Pages\Post\images\comment-rating-down-hover.png" />

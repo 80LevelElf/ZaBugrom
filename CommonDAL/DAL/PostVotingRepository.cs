@@ -40,6 +40,7 @@ namespace CommonDAL.DAL
                 var postRating = post.Rating + (instance.IsVoteUp ? 1 : -1);
                 db.PostTable.Where(i => i.Id == instance.PostId).Set(i => i.Rating, postRating).Update();
 
+                db.CommitTransaction();
                 return true;
             }
         }

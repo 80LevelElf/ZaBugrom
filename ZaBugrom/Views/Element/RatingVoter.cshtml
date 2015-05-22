@@ -2,8 +2,8 @@
 
 <div class="raiting-area">
     <label class="rating" title="Рейтинг поста">@Model.Rating</label>
-    <a class="rating-up @((Model.IsVote && Model.IsVoteUp)?"selected":"")" title="Неистово плюсую">+</a>
-    <a class="rating-down  @((Model.IsVote && !Model.IsVoteUp)?"selected":"")" title="Сударь, позвольте вам возразить">-</a>
+    <a class="rating-up @((Model.IsVote && Model.IsVoteUp)?"selected":"")" title="Неистово плюсую"></a>
+    <a class="rating-down  @((Model.IsVote && !Model.IsVoteUp)?"selected":"")" title="Сударь, позвольте вам возразить"></a>
 </div>
 
 @Styles.Render("~/Content/Pages/Element/RatingVoter")
