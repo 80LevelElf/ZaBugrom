@@ -185,6 +185,26 @@ form.big-size    input[type="text"], form.big-size    input[type="password"], fo
     border-bottom: 1px solid #aaaaaa;
 }
 
+div.menu-area 
+{
+    background-color: white;
+    border: 1px solid #aaa;
+    border-top: 2px solid #1e90ff;
+    padding: 4px;
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.3);
+}
+
+div.menu-item:hover div.menu-area {
+    display: block;
+}
+
+div.menu-area .menu-area-item {
+    display: block;
+}
+
 /* Header
 -----------------------------------------------------------*/
 header {
@@ -267,13 +287,6 @@ header div#toolbar div#post-menu a:hover
     color: white;
 }
 
-header div#toolbar div#user-menu {
-    display: inline-flex;
-    float: right;
-    margin-right: 100px;
-    height: 100%;
-}
-
 header a 
 {
     color: black;
@@ -295,13 +308,6 @@ header a#login-button
     text-align:left;
 }
 
-header a#login-button:hover
-{
-    background-color: #1e90ff;
-    color: white;
-    border-bottom: 0;
-}
-
 header a#login-button.authorize 
 {
     padding-left: 0px;
@@ -315,49 +321,52 @@ header a#login-button.authorize:hover {
     background-image: url("images/login_hover.png");
 }
 
-header div#user-div div#user-quick-area 
-{
-    display: none;
-    position: absolute;
-    right: 68px;
-    top: 196px;
-    width: 240px;
-    height: 120px;
-    border: 1px solid #aaa;
-    cursor: default;
-    background-color: white;
-    z-index: 2;
+div#user-menu {
+    display: inline-flex;
+    float: right;
+    margin-right: 100px;
+    height: 100%;
 }
 
-header div#user-div:hover div#user-quick-area {
-    display: flex;
-    box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.3);
+div#user-menu div.menu-item:hover a{
+    background-color: #1e90ff;
+    color: white;
 }
 
-header div#user-div div#user-quick-area a 
-{
-    font-size: 0.8em;
-    text-align: center;
-    border-bottom: 1px solid transparent;
-    text-align: left;
+div#user-menu div.menu-area {
+    width: 260px;
+    right: 153px;
 }
 
-header div#user-div div#user-quick-area a:hover 
-{
-    border-bottom: 1px solid #1e90ff;
-}
-
-header div#user-div div#user-quick-area div#user-quick-area-left 
+div#user-menu div.menu-area div#user-quick-area-left 
 {
     padding: 5px;
     width: 85px;
     float: left;
 }
 
-header div#user-div div#user-quick-area div#user-quick-area-right
+div#user-menu div.menu-area div#user-quick-area-right
 {
     float: right;
-    width: 155px; /*240 - 85*/
+    width: 160px;
+    height: 100%;
+}
+
+div#user-menu div.menu-area div#user-quick-area-right a {
+    background-color: white;
+    border: 0;
+    color: black;
+    display: block;
+    font-size: 14px;
+    padding: 3px;
+    padding-left: 6px;
+    margin: 0;
+}
+
+div#user-menu div.menu-area div#user-quick-area-right a:hover 
+{
+    background-color: #1e90ff;
+    color: white;
 }
 
 header div#user-div div#user-quick-area #avatar 
@@ -382,12 +391,14 @@ header a#inbox-button, header a#user-button {
     font-weight: bold;
     text-align: center;
     border-bottom: 0;
-    height: 25px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
     padding-left: 3px;
     padding-right: 3px;
+    padding-top: 3px;
     border: 1px solid transparent;
-    margin-top: 2px;
-    margin-bottom: 1px;
+    box-sizing: border-box;
 }
 
 header a#inbox-button {
@@ -396,13 +407,9 @@ header a#inbox-button {
     margin-left: 0;
 }
 
-header a#user-button {
-    margin-right: 2px;
-    margin-left: 2px;
-}
-
-header a#inbox-button:hover, header a.user-button:hover 
+header a#inbox-button:hover, header a.user-button:hover, header a#login-button:hover
 {
-    background-color: white;
-    border: 1px solid #aaa;
+    background-color: #1e90ff;
+    color: white;
+    border-bottom: 0;
 }

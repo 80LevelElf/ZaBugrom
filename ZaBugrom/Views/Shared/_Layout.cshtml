@@ -36,9 +36,9 @@
                     @{
                         if (WebSecurity.HasUserId)
                         {
-                            <div id="user-div">
+                            <div class="menu-item">
                                 <a id="user-button">@WebSecurity.CurrentUserName</a>
-                                <div id="user-quick-area">
+                                <div class="menu-area">
                                     <div id="user-quick-area-left">
                                         <img alt="Аватар" id="avatar" runat="server" title="Ваш аватар" src="/Content/images/UserAvatars/@userData.AvatarName" />
                                         <label id="rating" title="Ваш рейтинг">100</label>
