@@ -7,11 +7,11 @@
 
 <div id="message-area-div">
     <div id="filter-div">
-        <label id="new-content-filter" class="selected">Новый контент</label>
+        <label id="new-content-filter" class="@(ViewBag.Settings.IsNewContent ? "selected" : "") setting-option">Новый контент</label>
         <label class="slash">/</label>
-        <label id="nofication-filter">Уведомления</label>
+        <label id="nofication-filter" class="@(ViewBag.Settings.IsNotification ? "selected" : "") setting-option">Уведомления</label>
         <label class="slash">/</label>
-        <label id="user-mail-filter">Сообщения от пользователей</label>
+        <label id="user-mail-filter" class="@(ViewBag.Settings.IsUserMail ? "selected" : "") setting-option">Сообщения от пользователей</label>
     </div>
     <div id="list-div">
         @Html.Action("MessageList", "Element", new { Model })

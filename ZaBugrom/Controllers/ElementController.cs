@@ -46,5 +46,10 @@ namespace ZaBugrom.Controllers
         {
             return PartialView(tagList);
         }
+
+        public PartialViewResult CssLoad()
+        {
+            return PartialView();
+        }
     }
 }

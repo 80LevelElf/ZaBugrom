@@ -43,7 +43,7 @@
             return;
         }
 
-        var source = PrepareNewPostForAdding(source);
+        source = PrepareNewPostForAdding(source);
 
          $.ajax({
             type: "POST",

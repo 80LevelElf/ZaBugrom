@@ -35,6 +35,7 @@ namespace ZaBugrom
             bundles.Add(new ScriptBundle("~/bundles/messager").Include("~/Scripts/Utils/Messager.js"));
             bundles.Add(new ScriptBundle("~/bundles/postManager").Include("~/Scripts/Utils/PostManager.js"));
             bundles.Add(new ScriptBundle("~/bundles/videoManager").Include("~/Scripts/Utils/VideoManager.js"));
+            bundles.Add(new ScriptBundle("~/bundles/cssLoad").Include("~/Scripts/Utils/CssLoad.js"));
 
             //---CSS
             bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/site.css"));

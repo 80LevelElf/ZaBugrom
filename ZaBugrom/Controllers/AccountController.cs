@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Razor;
+using System.Web.Routing;
 using CommonDAL.Managers;
 using EmitMapper;
 using Models.Data;
@@ -204,7 +207,23 @@ namespace ZaBugrom.Controllers
         {
             MessageSettingsData messageSettings = RepositoryManager.MessageSettingsRepository.GetById(UserManager.UserId);
             var model = RepositoryManager.MessageRepository.GetList(UserManager.UserId, 1, 10, messageSettings);
+
+            ViewBag.Settings = messageSettings;
+
             return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public PartialViewResult ChangeMessageSettingsAndReturnNewList(bool isNewContent, bool isNotification, bool isUserMail)
+        {
+            //Save new settings
+            RepositoryManager.MessageSettingsRepository.InsertOrReplace(new MessageSettingsData(UserManager.UserId,
+                isNewContent, isNotification, isUserMail));
+
+            MessageSettingsData messageSettings = RepositoryManager.MessageSettingsRepository.GetById(UserManager.UserId);
+            var model = RepositoryManager.MessageRepository.GetList(UserManager.UserId, 1, 10, messageSettings);
+            return PartialView(model);
         }
     }
 }
