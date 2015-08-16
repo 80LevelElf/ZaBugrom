@@ -1,0 +1,14 @@
+﻿@using CommonDAL.Managers
+@{
+    ViewBag.Title = "Общая лента";
+    Layout = "~/Views/Home/_PostListLayout.cshtml";
+}
+
+@{
+    foreach (var postData in RepositoryManager.PostRepository.GetList(-1))
+    {
+        @Html.Action("Post", "Post", new {postData})
+    }
+}
+
+@Scripts.Render("~/bundles/Pages/Home/CommonFlow")

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using CommonDAL.Managers;
 using Models.Data;
@@ -23,7 +24,7 @@ namespace CommonDAL.DAL
         {
             using (var db = new DataBase())
             {
-                return (from p in db.PostTable
+                var result = (from p in db.PostTable
                     from pv in db.PostVotingTable.Where(i => i.PostId == p.Id && i.UserId == userId).DefaultIfEmpty()
                     select new PostData
                     {
@@ -39,7 +40,12 @@ namespace CommonDAL.DAL
                         IsVoteUp = pv.IsVoteUp,
                         TagList = (db.TagPostTable.Where(i => i.PostId == p.Id)
                                 .Select(i => RepositoryManager.TagRepository.GetById(i.TagId))).ToList()
-                    }).OrderByDescending(i => i.Id).ToList();
+                    }
+                    
+                    ).OrderByDescending(i => i.Id).ToList();
+
+                Debug.WriteLine(db.LastQuery);
+                return result;
             }
         }
 

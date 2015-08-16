@@ -1,7 +1,7 @@
 ﻿@using CommonDAL.Managers
 @using ZaBugrom.Managers
 @{
-    ViewBag.Title = "За бугром.ком";
+    ViewBag.Title = "Моя лента";
     Layout = "~/Views/Home/_PostListLayout.cshtml";
 }
 
@@ -11,3 +11,5 @@
         @Html.Action("Post", "Post", new {postData})
     }
 }
+
+@Scripts.Render("~/bundles/Pages/Home/UserFlow")

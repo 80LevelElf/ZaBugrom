@@ -256,13 +256,13 @@ header div#toolbar {
     box-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
-header div#toolbar div#post-menu {
+header div#toolbar div#content-menu {
     display: inline-flex;
     margin-left: 100px;
     height: 100%;
 }
 
-header div#toolbar div#post-menu a{
+header div#toolbar div#content-menu a{
     display: inline-block;
     font-size: 16px;
     height: 100%;
@@ -273,18 +273,18 @@ header div#toolbar div#post-menu a{
     box-sizing: border-box;
 }
 
+header div#toolbar div#content-menu a:hover , header div#toolbar div#content-menu a.selected
+{
+    background-color: #1e90ff;
+    color: white;
+}
+
 header a.right-border {
     border-right: 1px solid #aaa;
 }
 
 header a.left-border {
     border-left: 1px solid #aaa;
-}
-
-header div#toolbar div#post-menu a:hover 
-{
-    background-color: #1e90ff;
-    color: white;
 }
 
 header a 

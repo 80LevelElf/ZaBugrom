@@ -26,10 +26,13 @@
             <a href="@Url.Action("Index", "Home")" id="logo"></a>
             <label id="city-name" class="header-opacity"></label>
             <div id="toolbar" class="header-opacity">
-                <div id="post-menu">
-                    <a class="right-border left-border">Общая лента</a>
-                    <a class="right-border">Моя лента</a>
-                    <a class="right-border">Рекомендации</a>
+                <div id="content-menu">
+                    <a id="common-flow-link" class="right-border left-border" href="@Url.Action("CommonFlow", "Home")">Общая лента</a>
+                    @if (WebSecurity.HasUserId)
+                    {
+                        <a id="user-flow-link" class="right-border" href="@Url.Action("UserFlow", "Home")">Моя лента</a>
+                        <a id="recomendations-link" class="right-border">Рекомендации</a>
+                    }
                 </div>
 
                 <div id="user-menu">

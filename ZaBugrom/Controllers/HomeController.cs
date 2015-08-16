@@ -7,6 +7,16 @@ namespace ZaBugrom.Controllers
     {
         public ActionResult Index()
         {
+            return RedirectToAction("CommonFlow");
+        }
+
+        public ActionResult CommonFlow()
+        {
+            return View();
+        }
+
+        public ActionResult UserFlow()
+        {
             ViewBag.FilterSettings = new FilterSettingsData();
 
             return View();

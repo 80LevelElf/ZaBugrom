@@ -283,6 +283,8 @@
     <Content Include="Scripts\Pages\Account\Register.js" />
     <Content Include="Scripts\Pages\AddPost\AddSimplePost.js" />
     <Content Include="Scripts\Pages\AddPost\AddVideoPost.js" />
+    <Content Include="Scripts\Pages\Home\CommonFlow.js" />
+    <Content Include="Scripts\Pages\Home\UserFlow.js" />
     <Content Include="Scripts\Utils\CssLoad.js" />
     <Content Include="Scripts\Pages\Element\PostEditor.js" />
     <Content Include="Scripts\Pages\Element\RatingVoter.js" />
@@ -332,9 +334,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonDAL\DAL.csproj">
@@ -392,6 +391,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Element\CssLoad.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\CommonFlow.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\UserFlow.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

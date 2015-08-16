@@ -10,12 +10,13 @@ div#profile-menu-div a {
     padding: 4px;
     color: black;
     font-size: 0.9em;
+    border: 1px solid white;
 }
 
-div#profile-menu-div a.selected 
+div#profile-menu-div a.selected, div#profile-menu-div a:hover
 {
-    border-bottom: 1px solid #1e90ff;
-    font-weight: bold;
+    background-color: #1e90ff;
+    color: white;
 }
 
 div#profile-data-div {
